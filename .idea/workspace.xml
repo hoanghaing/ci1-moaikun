@@ -1,117 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69b48197-2efd-4b94-abef-fb8ddeb323ba" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/background/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/bullets/blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/bullets/cyan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/bullets/green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/bullets/pink.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/bullets/red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/bullets/white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/bullets/yellow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion-big/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion-big/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion-big/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion-big/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion-big/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion-big/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion-big/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion-big/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/explosion/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/black/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/black/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/black/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/black/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/black/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/black/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/black/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/black/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/blue/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/blue/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/blue/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/blue/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/pink/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/pink/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/pink/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/enemies/level0/pink/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/enemy-banner.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/numbers/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/numbers/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/numbers/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/numbers/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/numbers/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/numbers/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/numbers/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/numbers/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/numbers/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/numbers/9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/picture.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/player.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/power.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/hud/ring.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/items/power-up-blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/items/power-up-red.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/menus/quit-color.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/menus/quit-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/menus/start-color.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/menus/start-white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/player-bullets/a/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/player-bullets/a/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/player-bullets/a/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/player-bullets/a/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/explosions/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/explosions/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/explosions/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/explosions/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/explosions/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/explosions/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/explosions/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/explosions/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/left/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/left/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/left/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/left/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/left/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/left/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/right/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/right/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/right/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/right/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/right/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/right/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/straight/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/straight/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/straight/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/straight/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/straight/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/straight/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/players/straight/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/scenes/background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/scenes/game-over-background.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/scenes/menu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/scenes/thanks-for-playing.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/scenes/victory-background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/scenes/victory.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/sphere-bullets/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/sphere-bullets/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/sphere-bullets/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/sphere-bullets/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/sphere/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/sphere/1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/sphere/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/sphere/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/touhou/GameWindow.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Program.java" afterPath="$PROJECT_DIR$/src/Program.java" />
-    </list>
+    <list default="true" id="69b48197-2efd-4b94-abef-fb8ddeb323ba" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -125,14 +15,19 @@
       <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/moaimoai/GameWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="323">
+              <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#533#687#0" expanded="true" />
-                <element signature="e#686#687#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stage2.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/images/stagedemo/stage2.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -175,9 +70,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1234" />
-    <option name="height" value="777" />
+    <option name="width" value="1342" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -194,9 +88,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -207,12 +100,59 @@
             <path>
               <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
               <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="backgrounds" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="rocks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="rocks" type="462c0819:PsiDirectoryNode" />
+              <item name="rollingrock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="stagedemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="moaimoai" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -464,7 +404,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="-8" width="1317" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -474,12 +415,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767624" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24105012" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.240625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -514,8 +455,24 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#533#687#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/moaimoai/GameWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -574,6 +531,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/backgrounds/background5.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/backgrounds/background13.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/doors/blue/door3.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/doors/blue/door2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/doors/blue/door1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/backgrounds/background9.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Program.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -582,14 +569,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/standinggrounds/grass/green/biggrass.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/standinggrounds/grass/green/grass2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/standinggrounds/grass/green/grass4.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/standinggrounds/grass/green/grass11.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/stagedemo/stage2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/stagedemo/stage1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/backgrounds/background1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/rocks/rollingrock/pink.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/rocks/rollingrock/yellow.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/moaimoai/GameWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        <state relative-caret-position="323">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#533#687#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
           </folding>
         </state>
       </provider>
