@@ -26,7 +26,7 @@ public class Animation implements Renderer {
     }
 
     public Animation(BufferedImage... images) {
-        this(12, false, false, images);
+        this(10, false, false, images);
     }
 
     @Override

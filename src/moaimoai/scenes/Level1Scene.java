@@ -49,7 +49,7 @@ public class Level1Scene extends Scene{
         GameObject.add(platform1);
 
         Platform platform2 = new Platform();
-        platform2.getPosition().set(500 , 350);
+        platform2.getPosition().set(500 , 375);
         GameObject.add(platform2);
     }
 }

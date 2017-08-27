@@ -12,15 +12,18 @@ import bases.renderers.ImageRenderer;
 import moaimoai.inputs.InputManager;
 import tklibs.SpriteUtils;
 
+import java.awt.image.BufferedImage;
+
 /**
  * Created by NguyenGiaThe on 8/26/2017.
  */
 public class Player extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
-    private static final int SPEED = 5;
-
+    private static final int SPEED = 3;
+    private PlayerAnimator playerAnimator;
     private InputManager inputManager;
     private Constraints constraints;
+
 
     private Vector2D velocity;
 
@@ -32,10 +35,12 @@ public class Player extends GameObject implements PhysicsBody {
 
     public Player(){
         super();
-        this.renderer = new ImageRenderer(SpriteUtils.loadImage("assets/images/peoples/orange/people1.png"));
+        BufferedImage image = SpriteUtils.loadImage("assets/images/player/left/stand/1.png");
+        this.renderer = new ImageRenderer(image);
         this.velocity = new Vector2D();
         this.boxCollider = new BoxCollider(20, 20);
         this.children.add(boxCollider);
+        this.playerAnimator = new PlayerAnimator();
     }
 
     public void setConstraints(Constraints constraints){
@@ -44,30 +49,37 @@ public class Player extends GameObject implements PhysicsBody {
 
     public void run(Vector2D parentPosition){
         super.run(parentPosition);
+        playerAnimator.update(this);
         velocity.set(0,0);
 
         this.velocity.y += 2;
 
         if (InputManager.instance.upPressed){
+
             if (Physics.bodyInRect(position.add(0, 1), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) != null) {
-                this.velocity.y = -70;
+                this.velocity.y = -35;
             }
         }
         if (InputManager.instance.leftPressed)
-            velocity.x -= SPEED;
+                velocity.x -= SPEED;
+
         if (InputManager.instance.rightPressed)
-            velocity.x += SPEED;
+                velocity.x += SPEED;
+
 
         if (constraints != null) {
             constraints.make(position);
         }
 
-        moveHorizontal();
-        moveVertical();
-
+        moveHorizontal(); // xu li va cham theo chieu ngang
+        moveVertical(); // xu li va cham theo chieu doc, trong luc , bla bla
         this.position.addUp(velocity);
+
     }
 
+    public Vector2D getVelocity() {
+        return velocity;
+    }
     @Override
     public BoxCollider getBoxCollider() {
         return boxCollider;
