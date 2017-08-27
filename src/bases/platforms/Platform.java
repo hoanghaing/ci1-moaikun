@@ -17,7 +17,7 @@ public class Platform extends GameObject implements PhysicsBody {
     public Platform() {
         super();
         this.renderer = new ImageRenderer(SpriteUtils.loadImage
-                ("assets/images/standinggrounds/grass/green/grass8.png"));
+                ("assets/images/standinggrounds/green/grass8.png"));
         this.boxCollider = new BoxCollider(304, 32);
         this.children.add(boxCollider);
     }
