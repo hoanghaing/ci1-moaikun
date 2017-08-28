@@ -16,7 +16,7 @@ public class Constraints {
     public void make(Vector2D position) {
         if (position.y < top) position.y = top;
         if (position.y > bottom) position.y = bottom;
-        if (position.x < left) position.x = left;
-        if (position.x > right) position.x = right;
+        if (position.x < left) position.x = right;
+        if (position.x > right) position.x = left;
     }
 }

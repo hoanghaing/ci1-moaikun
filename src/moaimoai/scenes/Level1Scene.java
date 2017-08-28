@@ -3,13 +3,14 @@ package moaimoai.scenes;
 import bases.Constraints;
 import bases.GameObject;
 import bases.platforms.Platform;
+import moaimoai.allies.Ally;
 import moaimoai.inputs.InputManager;
 import moaimoai.players.Player;
 import moaimoai.settings.Settings;
 
 public class Level1Scene extends Scene{
     Player player = new Player();
-     // TODO: Viec cua lop: sua thanh game object
+    Ally ally = new Ally();
 
     Settings settings = Settings.instance;
 
@@ -18,6 +19,21 @@ public class Level1Scene extends Scene{
         addBackground();
         addPlayer();
         addPlatform();
+        addAlly();
+    }
+
+    private void addAlly() {
+        ally.setConstraints(new Constraints(
+                settings.getWindowInsets().top,
+                settings.getGamePlayHeight(),
+                settings.getWindowInsets().left,
+                settings.getGamePlayWidth())
+        );
+        ally.getPosition().set(
+                settings.getGamePlayWidth(),
+                settings.getWindowHeight() * 3 / 4
+        );
+        GameObject.add(ally);
     }
 
     private void addBackground() {
