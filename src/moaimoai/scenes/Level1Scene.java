@@ -23,14 +23,8 @@ public class Level1Scene extends Scene{
     }
 
     private void addAlly() {
-        ally.setConstraints(new Constraints(
-                settings.getWindowInsets().top,
-                settings.getGamePlayHeight(),
-                settings.getWindowInsets().left,
-                settings.getGamePlayWidth())
-        );
         ally.getPosition().set(
-                500,350
+                400, 150
         );
         GameObject.add(ally);
     }

@@ -16,7 +16,6 @@ import tklibs.SpriteUtils;
 public class Ally extends GameObject implements PhysicsBody{
     private BoxCollider boxCollider;
     private static final int SPEED = 3;
-    private Constraints constraints;
     private Vector2D velocity;
 
 
@@ -28,14 +27,15 @@ public class Ally extends GameObject implements PhysicsBody{
         velocity = new Vector2D();
     }
 
-    public void setConstraints(Constraints constraints){
-        this.constraints = constraints;
-    }
 
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
         velocity.set(0,0);
+        velocity.y += 2;
+        if (Physics.bodyInRect(position.add(0, 1), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) != null) {
+            this.velocity.y = -35;
+        }
         moveHorizontal();
         moveVertical();
         TouchPlayer();

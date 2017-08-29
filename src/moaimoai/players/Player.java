@@ -49,14 +49,14 @@ public class Player extends GameObject implements PhysicsBody {
     public void run(Vector2D parentPosition){
         super.run(parentPosition);
         playerAnimator.update(this);
-        velocity.set(0,0);
 
-        this.velocity.y += 2;
+        this.velocity.y += 0.9;
+        velocity.x = 0;
 
         if (InputManager.instance.cPressed){
 
             if (Physics.bodyInRect(position.add(0, 1), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) != null) {
-                this.velocity.y = -35;
+                this.velocity.y = -7;
             }
         }
         if (InputManager.instance.leftPressed)
@@ -116,6 +116,4 @@ public class Player extends GameObject implements PhysicsBody {
         super.render(g2d);
         playerAnimator.render(g2d,position);
     }
-
-
 }
