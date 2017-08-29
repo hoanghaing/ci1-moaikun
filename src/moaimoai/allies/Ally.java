@@ -8,6 +8,7 @@ import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.platforms.Platform;
 import bases.renderers.ImageRenderer;
+import moaimoai.players.Player;
 import tklibs.SpriteUtils;
 
 
@@ -37,6 +38,14 @@ public class Ally extends GameObject implements PhysicsBody{
         move();
         moveHorizontal();
         moveVertical();
+        touchPlayer();
+    }
+
+    private void touchPlayer() {
+        Player player = Physics.collideWith(boxCollider, Player.class);
+        if(player != null){
+            isActive = false;
+        }
     }
 
     private void move() {
