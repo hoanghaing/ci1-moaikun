@@ -1,6 +1,7 @@
 package bases.physics;
 
 import bases.Vector2D;
+import moaimoai.players.Player;
 
 import java.util.Vector;
 
@@ -44,4 +45,5 @@ public class Physics {
     public static void clearAll() {
         bodies.clear();
     }
+
 }

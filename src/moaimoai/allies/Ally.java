@@ -8,6 +8,7 @@ import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.platforms.Platform;
 import bases.renderers.ImageRenderer;
+import com.sun.org.apache.xml.internal.serializer.ToUnknownStream;
 import moaimoai.players.Player;
 import tklibs.SpriteUtils;
 
@@ -35,26 +36,19 @@ public class Ally extends GameObject implements PhysicsBody{
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
         velocity.set(0,0);
-        move();
         moveHorizontal();
         moveVertical();
-        touchPlayer();
+        TouchPlayer();
     }
 
-    private void touchPlayer() {
-        Player player = Physics.collideWith(boxCollider, Player.class);
+    private void TouchPlayer() {
+        Player player = Physics.collideWith(this.boxCollider, Player.class);
         if(player != null){
-            isActive = false;
+
+            this.isActive = false;
         }
     }
 
-    private void move() {
-        velocity.x = SPEED;
-        position.addUp(velocity );
-        if(constraints != null){
-            constraints.make(position);
-        }
-    }
 
     @Override
     public BoxCollider getBoxCollider() {

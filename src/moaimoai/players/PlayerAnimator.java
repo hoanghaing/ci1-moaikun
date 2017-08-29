@@ -3,24 +3,27 @@ package moaimoai.players;
 import bases.Vector2D;
 import bases.renderers.Animation;
 import bases.renderers.Renderer;
+import moaimoai.inputs.InputManager;
 import tklibs.SpriteUtils;
 
 import java.awt.*;
 
 public class PlayerAnimator implements Renderer {
 
-
+    private boolean isleft = true;
+    private boolean isright = false;
+    InputManager inputManager = InputManager.instance;
     // STANDING (Khi đứng im bình thường, ko di chuyển)
-    private Animation leftStandingAnimation = new Animation(
+    private Animation leftStandingAnimation = new Animation(75,false,false,
             SpriteUtils.loadImage("assets/images/player/left/stand/1.png"),
             SpriteUtils.loadImage("assets/images/player/left/stand/2.png")
     );
 
-    private Animation rightStandingAnimation = new Animation(
+    private Animation rightStandingAnimation = new Animation(75,false,false,
             SpriteUtils.loadImage("assets/images/player/right/stand/1.png"),
             SpriteUtils.loadImage("assets/images/player/right/stand/2.png")
     );
-    private Animation currentAnimation = leftStandingAnimation;
+    private Animation currentAnimation = rightStandingAnimation;
     //SITTING (Ngồi xuống, dùng khi đặt bom)
     private Animation leftSittingAnimation = new Animation(
             SpriteUtils.loadImage("assets/images/player/left/sit/1.png"),
@@ -41,7 +44,15 @@ public class PlayerAnimator implements Renderer {
             SpriteUtils.loadImage("assets/images/player/right/move/1.png"),
             SpriteUtils.loadImage("assets/images/player/right/move/2.png")
     );
+    //JUMP
+    private Animation leftJumpingAnimation = new Animation(
+            SpriteUtils.loadImage("assets/images/player/left/move/2.png")
 
+    );
+    private Animation rightJumpingAnimation = new Animation(
+            SpriteUtils.loadImage("assets/images/player/right/move/2.png")
+
+    );
 
     //ATTACK (Đánh đầu tấn công)
     private Animation leftAttackAnimation = new Animation(
@@ -97,11 +108,49 @@ public class PlayerAnimator implements Renderer {
     public void update(Player player){
         Vector2D velocity = player.getVelocity();
         if(velocity.x < 0){
+            isleft = true;
+            isright = false;
             currentAnimation = leftMovingAnimation;
+
         }
-        else {
+        if (velocity.x > 0){
+            isleft = false;
+            isright = true;
             currentAnimation = rightMovingAnimation;
         }
+
+            if(isright && velocity.x ==0) {
+                currentAnimation = rightStandingAnimation;
+            }
+            if(isleft && velocity.x == 0){
+                currentAnimation = leftStandingAnimation;
+            }
+
+        // TẤN CÔNG
+        if (inputManager.xPressed){
+            if (isleft)
+                currentAnimation = leftAttackAnimation;
+            if (isright)
+                currentAnimation = rightAttackAnimation;
+        }
+
+        // NGỒI XUỐNG
+        if(inputManager.downPressed){
+            if(isleft)
+                currentAnimation = leftSittingAnimation;
+            if(isright)
+                currentAnimation = rightSittingAnimation;
+        }
+
+        // NHAỶ
+        if(inputManager.cPressed){
+            if(isleft)
+                currentAnimation = leftJumpingAnimation;
+            if(isright)
+                currentAnimation = rightJumpingAnimation;
+        }
+
+
     }
     @Override
     public void render(Graphics2D g2d, Vector2D position) {

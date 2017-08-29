@@ -10,8 +10,11 @@ public class InputManager {
     public boolean leftPressed;
     public boolean rightPressed;
     public boolean xPressed;
-
+    public boolean cPressed;
     public static final InputManager instance = new InputManager();
+    public boolean enterPressed;
+    public boolean shiftPressed;
+
 
     private InputManager() {
 
@@ -34,6 +37,12 @@ public class InputManager {
             case VK_X:
                 xPressed = true;
                 break;
+            case VK_C:
+                cPressed = true;
+            case VK_ENTER:
+                enterPressed = true;
+            case VK_SHIFT:
+                shiftPressed = true;
         }
     }
 
@@ -54,6 +63,12 @@ public class InputManager {
             case VK_X:
                 xPressed = false;
                 break;
+            case VK_C:
+                cPressed = false;
+            case VK_ENTER:
+                enterPressed = false;
+            case VK_SHIFT:
+                shiftPressed = false;
         }
     }
 }

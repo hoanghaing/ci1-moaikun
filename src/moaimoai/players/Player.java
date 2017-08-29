@@ -12,6 +12,7 @@ import bases.renderers.ImageRenderer;
 import moaimoai.inputs.InputManager;
 import tklibs.SpriteUtils;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
@@ -35,8 +36,6 @@ public class Player extends GameObject implements PhysicsBody {
 
     public Player(){
         super();
-        BufferedImage image = SpriteUtils.loadImage("assets/images/player/left/stand/1.png");
-        this.renderer = new ImageRenderer(image);
         this.velocity = new Vector2D();
         this.boxCollider = new BoxCollider(20, 20);
         this.children.add(boxCollider);
@@ -54,7 +53,7 @@ public class Player extends GameObject implements PhysicsBody {
 
         this.velocity.y += 2;
 
-        if (InputManager.instance.upPressed){
+        if (InputManager.instance.cPressed){
 
             if (Physics.bodyInRect(position.add(0, 1), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) != null) {
                 this.velocity.y = -35;
@@ -110,6 +109,12 @@ public class Player extends GameObject implements PhysicsBody {
             }
             this.velocity.y = 0;
         }
+    }
+
+    @Override
+    public void render(Graphics2D g2d) {
+        super.render(g2d);
+        playerAnimator.render(g2d,position);
     }
 
 

@@ -30,8 +30,7 @@ public class Level1Scene extends Scene{
                 settings.getGamePlayWidth())
         );
         ally.getPosition().set(
-                settings.getGamePlayWidth(),
-                settings.getWindowHeight() * 3 / 4
+                500,350
         );
         GameObject.add(ally);
     }
@@ -49,8 +48,8 @@ public class Level1Scene extends Scene{
                 settings.getGamePlayWidth())
         );
         player.getPosition().set(
-                settings.getGamePlayWidth() / 2,
-                settings.getGamePlayHeight() * 3 / 4);
+            500,250
+        );
 
         GameObject.add(player);
     }
