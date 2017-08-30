@@ -15,7 +15,6 @@ import tklibs.SpriteUtils;
 
 public class Ally extends GameObject implements PhysicsBody{
     private BoxCollider boxCollider;
-    private static final int SPEED = 3;
     private Vector2D velocity;
 
 
@@ -31,20 +30,15 @@ public class Ally extends GameObject implements PhysicsBody{
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
-        velocity.set(0,0);
-        velocity.y += 2;
-        if (Physics.bodyInRect(position.add(0, 1), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) != null) {
-            this.velocity.y = -35;
-        }
-        moveHorizontal();
+        velocity.y += 0.5;
         moveVertical();
         TouchPlayer();
+        position.addUp(velocity);
     }
 
     private void TouchPlayer() {
         Player player = Physics.collideWith(this.boxCollider, Player.class);
         if(player != null){
-
             this.isActive = false;
         }
     }
@@ -54,16 +48,7 @@ public class Ally extends GameObject implements PhysicsBody{
     public BoxCollider getBoxCollider() {
         return boxCollider;
     }
-    private void moveHorizontal() {
-        float deltaX = velocity.x > 0 ? 1: -1;
-        PhysicsBody body = Physics.bodyInRect(position.add(velocity.x, 0), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
-        if (body != null) {
-            while(Physics.bodyInRect(position.add(deltaX, 0), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) == null) {
-                position.addUp(deltaX, 0);
-            }
-            this.velocity.x = 0;
-        }
-    }
+
 
     private void moveVertical() {
         float deltaY = velocity.y > 0 ? 1: -1;
