@@ -7,6 +7,7 @@ import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.platforms.Platform;
+import bases.renderers.Animation;
 import bases.renderers.ImageRenderer;
 import com.sun.org.apache.xml.internal.serializer.ToUnknownStream;
 import moaimoai.players.Player;
@@ -17,13 +18,19 @@ public class Ally extends GameObject implements PhysicsBody{
     private BoxCollider boxCollider;
     private Vector2D velocity;
 
-
     public Ally(){
         super();
         boxCollider = new BoxCollider(20,20);
         this.children.add(boxCollider);
-        renderer = new ImageRenderer(SpriteUtils.loadImage("assets/images/peoples/pink/1.png"));
+        renderer = new Animation(5,false,false,
+                SpriteUtils.loadImage("assets/images/peoples/pink/1.png"),
+                SpriteUtils.loadImage("assets/images/peoples/pink/2.png"),
+                SpriteUtils.loadImage("assets/images/peoples/pink/3.png"),
+                SpriteUtils.loadImage("assets/images/peoples/pink/4.png"),
+                SpriteUtils.loadImage("assets/images/peoples/pink/5.png")
+        );
         velocity = new Vector2D();
+
     }
 
 
