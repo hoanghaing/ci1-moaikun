@@ -9,6 +9,7 @@ import bases.physics.PhysicsBody;
 import bases.renderers.ImageRenderer;
 import moaimoai.inputs.InputManager;
 import moaimoai.players.Player;
+import moaimoai.players.PlayerDeath;
 
 
 public class Platform extends GameObject implements PhysicsBody{
@@ -48,11 +49,26 @@ public class Platform extends GameObject implements PhysicsBody{
         if (type == 2) {
             velocity.y += GRAVITY;
             updateVerticalPhysics();
+            hitPlayer();
         }
         if(type == 3){
             velocity.y += GRAVITY;
             updateVerticalPhysics();
+
         }
+    }
+
+    private void hitPlayer() {
+        Vector2D checkPosition = screenPosition.add(0, velocity.y);
+        Player player = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), Player.class);
+        if (player != null) {
+            player.getHit();
+            PlayerDeath playerDeath = new PlayerDeath();
+            playerDeath.getPosition().set(player.getPosition());
+            GameObject.add(playerDeath);
+        }
+        this.position.y += velocity.y;
+        this.screenPosition.y += velocity.y;
     }
 
     @Override
