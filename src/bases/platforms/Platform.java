@@ -17,7 +17,7 @@ public class Platform extends GameObject implements PhysicsBody{
     private BoxCollider boxCollider;
     private Vector2D velocity;
     private int type;
-    private final float GRAVITY = 0.9f;
+    private final float GRAVITY = 0.1f;
 
     public Platform(int type){
         this.type = type;
@@ -67,8 +67,6 @@ public class Platform extends GameObject implements PhysicsBody{
             playerDeath.getPosition().set(player.getPosition());
             GameObject.add(playerDeath);
         }
-        this.position.y += velocity.y;
-        this.screenPosition.y += velocity.y;
     }
 
     @Override
