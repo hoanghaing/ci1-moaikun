@@ -37,7 +37,7 @@ public class Player extends GameObject implements PhysicsBody {
     public Player(){
         super();
         this.velocity = new Vector2D();
-        this.boxCollider = new BoxCollider(20, 20);
+        this.boxCollider = new BoxCollider(32, 32);
         this.children.add(boxCollider);
         this.playerAnimator = new PlayerAnimator();
     }
@@ -50,12 +50,12 @@ public class Player extends GameObject implements PhysicsBody {
         super.run(parentPosition);
         playerAnimator.update(this);
 
-        this.velocity.y += 0.9;
+        this.velocity.y += 0.7;
         velocity.x = 0;
 
         if (InputManager.instance.cPressed){
 
-            if (Physics.bodyInRect(position.add(0, 1), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) != null) {
+            if (Physics.collideWith(screenPosition,position.add(0, 1), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) != null) {
                 this.velocity.y = -7;
             }
         }
@@ -90,9 +90,9 @@ public class Player extends GameObject implements PhysicsBody {
 
     private void moveHorizontal() {
         float deltaX = velocity.x > 0 ? 1: -1;
-        PhysicsBody body = Physics.bodyInRect(position.add(velocity.x, 0), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
+        PhysicsBody body = Physics.collideWith(screenPosition,position.add(velocity.x, 0), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
         if (body != null) {
-            while(Physics.bodyInRect(position.add(deltaX, 0), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) == null) {
+            while(Physics.collideWith(screenPosition,position.add(deltaX, 0), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) == null) {
                 position.addUp(deltaX, 0);
             }
             this.velocity.x = 0;
@@ -101,10 +101,10 @@ public class Player extends GameObject implements PhysicsBody {
 
     private void moveVertical() {
         float deltaY = velocity.y > 0 ? 1: -1;
-        PhysicsBody body = Physics.bodyInRect(position.add(0, velocity.y), boxCollider.getWidth(), boxCollider.getHeight(),
+        PhysicsBody body = Physics.collideWith(screenPosition,position.add(0, velocity.y), boxCollider.getWidth(), boxCollider.getHeight(),
                 Platform.class);
         if (body != null) {
-            while(Physics.bodyInRect(position.add(0, deltaY), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) == null) {
+            while(Physics.collideWith(screenPosition,position.add(0, deltaY), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) == null) {
                 position.addUp(0, deltaY);
             }
             this.velocity.y = 0;

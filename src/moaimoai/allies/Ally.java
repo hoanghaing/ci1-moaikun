@@ -59,10 +59,10 @@ public class Ally extends GameObject implements PhysicsBody{
 
     private void moveVertical() {
         float deltaY = velocity.y > 0 ? 1: -1;
-        PhysicsBody body = Physics.bodyInRect(position.add(0, velocity.y), boxCollider.getWidth(), boxCollider.getHeight(),
+        PhysicsBody body = Physics.collideWith(screenPosition,position.add(0, velocity.y), boxCollider.getWidth(), boxCollider.getHeight(),
                 Platform.class);
         if (body != null) {
-            while(Physics.bodyInRect(position.add(0, deltaY), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) == null) {
+            while(Physics.collideWith(screenPosition,position.add(0, deltaY), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) == null) {
                 position.addUp(0, deltaY);
             }
             this.velocity.y = 0;

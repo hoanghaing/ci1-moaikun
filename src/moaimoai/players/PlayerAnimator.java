@@ -1,3 +1,4 @@
+
 package moaimoai.players;
 
 import bases.Vector2D;
@@ -157,3 +158,4 @@ public class PlayerAnimator implements Renderer {
         currentAnimation.render(g2d, position);
     }
 }
+

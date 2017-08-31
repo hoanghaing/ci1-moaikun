@@ -1,6 +1,7 @@
 package bases.physics;
 
 import bases.GameObject;
+import bases.Vector2D;
 import tklibs.Mathx;
 
 public class BoxCollider extends GameObject {
@@ -47,6 +48,16 @@ public class BoxCollider extends GameObject {
                 this.top() <= other.bottom() &&
                 this.right() >= other.left() &&
                 this.left() <= other.right();
+    }
+    public boolean intersects(Vector2D center, float width, float height){
+        float top = center.y - height / 2;
+        float bottom = center.y + height / 2;
+        float left = center.x - width / 2;
+        float right = center.x + width / 2;
+        return this.bottom() >= top &&
+                this.top() <= bottom &&
+                this.right() >= left &&
+                this.left() <= right;
     }
 
     public boolean collideWith(float top, float bottom, float left, float right) {

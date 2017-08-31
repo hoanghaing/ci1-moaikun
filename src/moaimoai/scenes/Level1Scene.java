@@ -49,16 +49,24 @@ public class Level1Scene extends Scene{
     }
 
     private void addPlatform(){
-        Platform platform = new Platform();
-        platform.getPosition().set(50 , 405);
+        Platform platform = new Platform(1);
+        platform.getPosition().set(304 , 405);
         GameObject.add(platform);
 
-        Platform platform1 = new Platform();
-        platform1.getPosition().set(400, 405);
-        GameObject.add(platform1);
+       for(int i = 0, platX = 100; i < 4 ; i++, platX += 100){
+           for(int j = 0, platY = 350; j < i +1 ; j++, platY -= 50){
+               Platform platform1 = new Platform(2);
+               platform1.getPosition().set(platX,platY);
+               GameObject.add(platform1);
+           }
+       }
 
-        Platform platform2 = new Platform();
-        platform2.getPosition().set(500 , 375);
-        GameObject.add(platform2);
+//        Platform platform1 = new Platform(1);
+//        platform1.getPosition().set(400, 405);
+//        GameObject.add(platform1);
+//
+//        Platform platform2 = new Platform();
+//        platform2.getPosition().set(500 , 375);
+//        GameObject.add(platform2);
     }
 }
