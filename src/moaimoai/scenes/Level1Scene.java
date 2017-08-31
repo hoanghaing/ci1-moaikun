@@ -34,7 +34,6 @@ public class Level1Scene extends Scene{
     }
 
     private void addPlayer() {
-        player.setInputManager(InputManager.instance);
         player.setConstraints(new Constraints(
                 settings.getWindowInsets().top,
                 settings.getGamePlayHeight(),

@@ -32,6 +32,12 @@ public class Platform extends GameObject implements PhysicsBody{
                 this.children.add(boxCollider);
                 this.velocity = new Vector2D();
                 break;
+            case 3:
+                this.renderer = ImageRenderer.create("assets/images/rocks/rollingrock/yellow.png");
+                this.boxCollider = new BoxCollider(46,40);
+                this.children.add(boxCollider);
+                this.velocity = new Vector2D();
+                break;
         }
     }
 
@@ -40,7 +46,12 @@ public class Platform extends GameObject implements PhysicsBody{
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
         if (type == 2) {
-            updatePhysics();
+            velocity.y += GRAVITY;
+            updateVerticalPhysics();
+        }
+        if(type == 3){
+            velocity.y += GRAVITY;
+            updateVerticalPhysics();
         }
     }
 
@@ -50,13 +61,13 @@ public class Platform extends GameObject implements PhysicsBody{
     }
 
 
-    private void updatePhysics(){
-        velocity.y += GRAVITY;
-
-        updateVerticalPhysics();
-        getHit();
-        // Check future colision
-    }
+//    private void updatePhysics(){
+//        velocity.y += GRAVITY;
+//
+//        updateVerticalPhysics();
+//        getHit();
+//        // Check future colision
+//    }
 
 
 
@@ -77,33 +88,9 @@ public class Platform extends GameObject implements PhysicsBody{
 
 
     public void getHit() {
-        if(InputManager.instance.xPressed){
-            checkHitLeft();
-            checkHitRight();
-        }
+        this.isActive = false;
     }
 
-    private void checkHitLeft() {
-
-        Vector2D checkPosition = screenPosition.add(2, 0);
-        Player player = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight() / 1000000, Player.class);
-        if(player != null){
-            this.isActive = false;
-            BrokenPlatform brokenPlatform = new BrokenPlatform();
-            brokenPlatform.getPosition().set(this.position);
-            GameObject.add(brokenPlatform);
-        }
-    }
-    private void checkHitRight(){
-        Vector2D checkPosition = screenPosition.add(-2, 0);
-        Player player = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight() / 1000000, Player.class);
-        if(player != null){
-            this.isActive = false;
-            BrokenPlatform brokenPlatform = new BrokenPlatform();
-            brokenPlatform.getPosition().set(this.position);
-            GameObject.add(brokenPlatform);
-        }
-    }
 
     public int getType() {
         return type;

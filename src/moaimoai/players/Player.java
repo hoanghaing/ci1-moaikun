@@ -7,6 +7,7 @@ import bases.Vector2D;
 import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
+import bases.platforms.BrokenPlatform;
 import bases.platforms.Platform;
 import bases.renderers.ImageRenderer;
 import moaimoai.inputs.InputManager;
@@ -22,7 +23,6 @@ public class Player extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
     private static final int SPEED = 3;
     private PlayerAnimator playerAnimator;
-    private InputManager inputManager;
     private Constraints constraints;
 
 
@@ -70,10 +70,25 @@ public class Player extends GameObject implements PhysicsBody {
             constraints.make(position);
         }
 
+        if(InputManager.instance.xPressed){
+            hitRock();
+        }
+
         moveHorizontal(); // xu li va cham theo chieu ngang
         moveVertical(); // xu li va cham theo chieu doc, trong luc , bla bla
         this.position.addUp(velocity);
 
+    }
+
+    private void hitRock() {
+        Vector2D checkPosition = screenPosition.add(playerAnimator.getCheck(), 0);
+        Platform platform = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight() / 1000000, Platform.class);
+        if(platform != null){
+            platform.getHit();
+            BrokenPlatform brokenPlatform = new BrokenPlatform();
+            brokenPlatform.getPosition().set(platform.getPosition());
+            GameObject.add(brokenPlatform);
+        }
     }
 
     public Vector2D getVelocity() {
@@ -84,9 +99,6 @@ public class Player extends GameObject implements PhysicsBody {
         return boxCollider;
     }
 
-    public void setInputManager(InputManager inputManager) {
-        this.inputManager = inputManager;
-    }
 
     private void moveHorizontal() {
         float deltaX = velocity.x > 0 ? 1: -1;

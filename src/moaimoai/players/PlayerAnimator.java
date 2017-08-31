@@ -13,6 +13,7 @@ public class PlayerAnimator implements Renderer {
 
     private boolean isleft = true;
     private boolean isright = false;
+    private int check;
     // STANDING (Khi đứng im bình thường, ko di chuyển)
     private Animation leftStandingAnimation = new Animation(75,false,false,
             SpriteUtils.loadImage("assets/images/player/left/stand/1.png"),
@@ -108,12 +109,14 @@ public class PlayerAnimator implements Renderer {
     public void update(Player player){
         Vector2D velocity = player.getVelocity();
         if(velocity.x < 0){
+            check = -1;
             isleft = true;
             isright = false;
             currentAnimation = leftMovingAnimation;
 
         }
         if (velocity.x > 0){
+            check = 1;
             isleft = false;
             isright = true;
             currentAnimation = rightMovingAnimation;
@@ -155,6 +158,10 @@ public class PlayerAnimator implements Renderer {
     @Override
     public void render(Graphics2D g2d, Vector2D position) {
         currentAnimation.render(g2d, position);
+    }
+
+    public int getCheck() {
+        return check;
     }
 }
 
