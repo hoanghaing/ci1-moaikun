@@ -7,8 +7,8 @@ import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.renderers.ImageRenderer;
-import bases.renderers.Renderer;
-import tklibs.SpriteUtils;
+import moaimoai.inputs.InputManager;
+import moaimoai.players.Player;
 
 
 public class Platform extends GameObject implements PhysicsBody{
@@ -25,7 +25,6 @@ public class Platform extends GameObject implements PhysicsBody{
                 this.renderer = ImageRenderer.create("assets/images/standinggrounds/green/biggrass.png");
                 this.boxCollider = new BoxCollider(608, 32);
                 this.children.add(boxCollider);
-
                 break;
             case 2:
                 this.renderer = ImageRenderer.create("assets/images/rocks/weakrock/greensky.png");
@@ -55,6 +54,7 @@ public class Platform extends GameObject implements PhysicsBody{
         velocity.y += GRAVITY;
 
         updateVerticalPhysics();
+        getHit();
         // Check future colision
     }
 
@@ -74,4 +74,38 @@ public class Platform extends GameObject implements PhysicsBody{
         this.screenPosition.y += velocity.y;
     }
 
+
+
+    public void getHit() {
+        if(InputManager.instance.xPressed){
+            checkHitLeft();
+            checkHitRight();
+        }
+    }
+
+    private void checkHitLeft() {
+
+        Vector2D checkPosition = screenPosition.add(2, 0);
+        Player player = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight() / 1000000, Player.class);
+        if(player != null){
+            this.isActive = false;
+            BrokenPlatform brokenPlatform = new BrokenPlatform();
+            brokenPlatform.getPosition().set(this.position);
+            GameObject.add(brokenPlatform);
+        }
+    }
+    private void checkHitRight(){
+        Vector2D checkPosition = screenPosition.add(-2, 0);
+        Player player = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight() / 1000000, Player.class);
+        if(player != null){
+            this.isActive = false;
+            BrokenPlatform brokenPlatform = new BrokenPlatform();
+            brokenPlatform.getPosition().set(this.position);
+            GameObject.add(brokenPlatform);
+        }
+    }
+
+    public int getType() {
+        return type;
+    }
 }

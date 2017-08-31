@@ -13,7 +13,6 @@ public class PlayerAnimator implements Renderer {
 
     private boolean isleft = true;
     private boolean isright = false;
-    InputManager inputManager = InputManager.instance;
     // STANDING (Khi đứng im bình thường, ko di chuyển)
     private Animation leftStandingAnimation = new Animation(75,false,false,
             SpriteUtils.loadImage("assets/images/player/left/stand/1.png"),
@@ -128,7 +127,7 @@ public class PlayerAnimator implements Renderer {
             }
 
         // TẤN CÔNG
-        if (inputManager.xPressed){
+        if (InputManager.instance.xPressed){
             if (isleft)
                 currentAnimation = leftAttackAnimation;
             if (isright)
@@ -136,7 +135,7 @@ public class PlayerAnimator implements Renderer {
         }
 
         // NGỒI XUỐNG
-        if(inputManager.downPressed){
+        if(InputManager.instance.downPressed){
             if(isleft)
                 currentAnimation = leftSittingAnimation;
             if(isright)
@@ -144,7 +143,7 @@ public class PlayerAnimator implements Renderer {
         }
 
         // NHAỶ
-        if(inputManager.cPressed){
+        if(InputManager.instance.cPressed){
             if(isleft)
                 currentAnimation = leftJumpingAnimation;
             if(isright)
