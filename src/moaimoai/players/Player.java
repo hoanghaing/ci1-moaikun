@@ -28,11 +28,6 @@ public class Player extends GameObject implements PhysicsBody {
 
     private Vector2D velocity;
 
-    private static Player instance;
-
-    public static Player getInstance(){
-        return instance;
-    }
 
     public Player(){
         super();
@@ -76,7 +71,6 @@ public class Player extends GameObject implements PhysicsBody {
 
         moveHorizontal(); // xu li va cham theo chieu ngang
         moveVertical(); // xu li va cham theo chieu doc, trong luc , bla bla
-        this.position.addUp(velocity);
     }
 
     private void hitRock() {
@@ -108,6 +102,8 @@ public class Player extends GameObject implements PhysicsBody {
             }
             this.velocity.x = 0;
         }
+        this.position.addUp(velocity.x,0);
+        this.screenPosition.addUp(velocity.x, 0);
     }
 
     private void moveVertical() {
@@ -120,6 +116,8 @@ public class Player extends GameObject implements PhysicsBody {
             }
             this.velocity.y = 0;
         }
+        this.position.addUp(0,velocity.y);
+        this.screenPosition.addUp(0,velocity.y);
     }
 
     public void getHit(){
