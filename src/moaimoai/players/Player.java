@@ -21,7 +21,7 @@ import java.awt.image.BufferedImage;
  */
 public class Player extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
-    private static final int SPEED = 3;
+    private static final float SPEED = 3;
     private PlayerAnimator playerAnimator;
     private Constraints constraints;
 
@@ -54,13 +54,12 @@ public class Player extends GameObject implements PhysicsBody {
                 this.velocity.y = -7;
             }
         }
-        if (InputManager.instance.leftPressed)
+        if (InputManager.instance.leftPressed && !InputManager.instance.xPressed)
                 velocity.x -= SPEED;
 
-        if (InputManager.instance.rightPressed)
+
+        if (InputManager.instance.rightPressed && !InputManager.instance.xPressed)
                 velocity.x += SPEED;
-
-
         if (constraints != null) {
             constraints.make(position);
         }

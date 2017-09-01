@@ -73,17 +73,6 @@ public class Platform extends GameObject implements PhysicsBody{
         return boxCollider;
     }
 
-
-//    private void updatePhysics(){
-//        velocity.y += GRAVITY;
-//
-//        updateVerticalPhysics();
-//        getHit();
-//        // Check future colision
-//    }
-
-
-
     private void updateVerticalPhysics() {
         Vector2D checkPosition = screenPosition.add(0, velocity.y);
         Platform platform = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
