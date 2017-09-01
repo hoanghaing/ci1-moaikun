@@ -59,8 +59,7 @@ public class Platform extends GameObject implements PhysicsBody{
     }
 
     private void hitPlayer() {
-        Vector2D checkPosition = screenPosition.add(0, velocity.y);
-        Player player = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), Player.class);
+        Player player = Physics.collideWith(this.boxCollider, Player.class);
         if (player != null) {
             player.getHit();
             PlayerDeath playerDeath = new PlayerDeath();
