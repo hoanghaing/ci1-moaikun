@@ -15,24 +15,20 @@ public class PlayerAnimator implements Renderer {
     private boolean isright = false;
     private int check;
     // STANDING (Khi đứng im bình thường, ko di chuyển)
-    private Animation leftStandingAnimation = new Animation(75,false,false,
-            SpriteUtils.loadImage("assets/images/player/left/stand/1.png"),
-            SpriteUtils.loadImage("assets/images/player/left/stand/2.png")
+    private Animation leftStandingAnimation = new Animation(
+            SpriteUtils.loadImage("assets/images/player/left/stand/1.png")
     );
 
-    private Animation rightStandingAnimation = new Animation(75,false,false,
-            SpriteUtils.loadImage("assets/images/player/right/stand/1.png"),
-            SpriteUtils.loadImage("assets/images/player/right/stand/2.png")
+    private Animation rightStandingAnimation = new Animation(
+            SpriteUtils.loadImage("assets/images/player/right/stand/1.png")
     );
-    private Animation currentAnimation = rightStandingAnimation;
+    private Animation currentAnimation = leftStandingAnimation;
     //SITTING (Ngồi xuống, dùng khi đặt bom)
     private Animation leftSittingAnimation = new Animation(
-            SpriteUtils.loadImage("assets/images/player/left/sit/1.png"),
             SpriteUtils.loadImage("assets/images/player/left/sit/2.png")
     );
 
     private Animation rightSittingAnimation = new Animation(
-            SpriteUtils.loadImage("assets/images/player/right/sit/1.png"),
             SpriteUtils.loadImage("assets/images/player/right/sit/2.png")
     );
 
@@ -108,12 +104,13 @@ public class PlayerAnimator implements Renderer {
     //TODO: FIX ANIMATION
     public void update(Player player){
         Vector2D velocity = player.getVelocity();
+        // TẤN CÔNG
+
         if(velocity.x < 0){
             check = -1;
             isleft = true;
             isright = false;
             currentAnimation = leftMovingAnimation;
-
         }
         if (velocity.x > 0){
             check = 1;
@@ -122,14 +119,13 @@ public class PlayerAnimator implements Renderer {
             currentAnimation = rightMovingAnimation;
         }
 
-            if(isright && velocity.x ==0) {
+        if(isright && velocity.x == 0) {
                 currentAnimation = rightStandingAnimation;
-            }
-            if(isleft && velocity.x == 0){
+        }
+        if(isleft && velocity.x == 0){
                 currentAnimation = leftStandingAnimation;
-            }
+        }
 
-        // TẤN CÔNG
         if (InputManager.instance.xPressed){
             if (isleft)
                 currentAnimation = leftAttackAnimation;
@@ -139,6 +135,9 @@ public class PlayerAnimator implements Renderer {
 
         // NGỒI XUỐNG
         if(InputManager.instance.downPressed){
+            InputManager.instance.cPressed = false;
+            InputManager.instance.rightPressed = false;
+            InputManager.instance.leftPressed = false;
             if(isleft)
                 currentAnimation = leftSittingAnimation;
             if(isright)

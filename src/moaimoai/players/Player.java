@@ -77,7 +77,6 @@ public class Player extends GameObject implements PhysicsBody {
         moveHorizontal(); // xu li va cham theo chieu ngang
         moveVertical(); // xu li va cham theo chieu doc, trong luc , bla bla
         this.position.addUp(velocity);
-
     }
 
     private void hitRock() {
