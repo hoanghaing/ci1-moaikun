@@ -25,7 +25,7 @@ public class AllyAnimator implements Renderer{
             SpriteUtils.loadImage("assets/images/peoples/pink/5.png")
 
     );
-    private Animation currentAnimation = pinkAllyAnimation;
+    private Animation currentAnimation = orangeAllyAnimation;
     @Override
     public void render(Graphics2D g2d, Vector2D position) {
         currentAnimation.render(g2d, position);

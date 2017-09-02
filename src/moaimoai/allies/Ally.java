@@ -17,8 +17,8 @@ import tklibs.SpriteUtils;
 public class Ally extends GameObject implements PhysicsBody{
     private BoxCollider boxCollider;
     private Vector2D velocity;
-
-    public Ally(){
+    private static int ALLYNUMBER = 0;
+        public Ally(){
         super();
         boxCollider = new BoxCollider(20,20);
         this.children.add(boxCollider);
@@ -32,7 +32,13 @@ public class Ally extends GameObject implements PhysicsBody{
         velocity = new Vector2D();
 
     }
+    public static int getAllynumber() {
+        return ALLYNUMBER;
+    }
 
+    public static void setAllynumber(int allynumber) {
+        ALLYNUMBER = allynumber;
+    }
 
     @Override
     public void run(Vector2D parentPosition) {
@@ -47,6 +53,7 @@ public class Ally extends GameObject implements PhysicsBody{
         Player player = Physics.collideWith(this.boxCollider, Player.class);
         if(player != null){
             this.isActive = false;
+            ALLYNUMBER --;
         }
     }
 

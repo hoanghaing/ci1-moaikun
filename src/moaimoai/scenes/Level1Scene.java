@@ -4,6 +4,7 @@ import bases.Constraints;
 import bases.GameObject;
 import bases.platforms.Platform;
 import moaimoai.allies.Ally;
+import moaimoai.door.Door;
 import moaimoai.inputs.InputManager;
 import moaimoai.players.Player;
 import moaimoai.settings.Settings;
@@ -11,18 +12,25 @@ import moaimoai.settings.Settings;
 public class Level1Scene extends Scene{
     Player player = new Player();
     Ally ally = new Ally();
-
+    Door door = new Door(1);
     Settings settings = Settings.instance;
 
     @Override
     public void init() {
         addBackground();
-        addPlayer();
         addPlatform();
         addAlly();
+        addDoor();
+        addPlayer();
+    }
+
+    private void addDoor() {
+        door.getPosition().set(500,350);
+        GameObject.add(door);
     }
 
     private void addAlly() {
+        ally.setAllynumber(1);
         ally.getPosition().set(
                 400, 150
         );
@@ -59,13 +67,5 @@ public class Level1Scene extends Scene{
                GameObject.add(platform1);
            }
        }
-
-//        Platform platform1 = new Platform(1);
-//        platform1.getPosition().set(400, 405);
-//        GameObject.add(platform1);
-//
-//        Platform platform2 = new Platform();
-//        platform2.getPosition().set(500 , 375);
-//        GameObject.add(platform2);
     }
 }

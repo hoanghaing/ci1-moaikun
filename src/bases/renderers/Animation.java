@@ -37,7 +37,6 @@ public class Animation implements Renderer {
                     image.getWidth() / 2,
                     image.getHeight() / 2
             );
-
             g2d.drawImage(image, (int) renderPosition.x, (int) renderPosition.y, null);
         }
 
