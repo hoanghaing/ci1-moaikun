@@ -1,21 +1,20 @@
 package bases.utils;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
+/**
+ * Created by huynq on 8/31/17.
+ */
 public class Utils {
-    public static BufferedImage loadImage(String url) {
+    public static String readTextFile(String url) {
         try {
-            return ImageIO.read(new File(url));
+            return new String(Files.readAllBytes(Paths.get(url)));
         } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
     }
-
-    public static BufferedImage loadAssetImage(String url) {
-        return loadImage("assets/images" + url);
-    }
 }
+

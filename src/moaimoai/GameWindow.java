@@ -4,6 +4,7 @@ import bases.GameObject;
 import moaimoai.inputs.InputManager;
 import moaimoai.scenes.Level1Scene;
 import moaimoai.scenes.SceneManager;
+import moaimoai.scenes.testScene;
 import moaimoai.settings.Settings;
 
 import java.awt.*;
@@ -35,7 +36,6 @@ public class GameWindow extends Frame {
     private void setupBackbuffetImage() {
         this.backbufferImage = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
         this.backbufferGraphics = (Graphics2D) this.backbufferImage.getGraphics();
-
         this.blackBackground = new BufferedImage(this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_ARGB);
         Graphics2D backgroundGraphics = (Graphics2D) this.blackBackground.getGraphics();
         backgroundGraphics.setColor(Color.BLACK);
@@ -65,7 +65,7 @@ public class GameWindow extends Frame {
     }
 
     private void setupLevel() {
-        SceneManager.changeScene(new Level1Scene());
+        SceneManager.changeScene(new testScene());
     }
 
     private void setupGameLoop() {
@@ -73,7 +73,7 @@ public class GameWindow extends Frame {
     }
 
     private void setupWindow() {
-        this.setSize(610, 460);
+        this.setSize(620, 460);//Kích cỡ background là 608 x 448, cho to thêm để ko bị khuất
         this.setVisible(true);
         this.setTitle("CI1-Moaikun");
         this.addWindowListener(new WindowAdapter() {
@@ -82,8 +82,6 @@ public class GameWindow extends Frame {
                 System.exit(0);
             }
         });
-
-
     }
 
     public void loop() {

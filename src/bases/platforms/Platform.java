@@ -7,9 +7,9 @@ import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.renderers.ImageRenderer;
-import moaimoai.inputs.InputManager;
 import moaimoai.players.Player;
 import moaimoai.players.PlayerDeath;
+
 
 
 public class Platform extends GameObject implements PhysicsBody{
@@ -17,36 +17,39 @@ public class Platform extends GameObject implements PhysicsBody{
     private BoxCollider boxCollider;
     private Vector2D velocity;
     private int type;
-    private final float GRAVITY = 0.1f;
+    private static final float GRAVITY = 0.1f;
+    public Platform() {
+        super();
+        this.boxCollider = new BoxCollider(38, 32);
+        this.children.add(boxCollider);
+    }
+    public static Platform create(int platformType) {
 
-    public Platform(int type){
-        this.type = type;
-        switch (type){
+        Platform platform = new Platform();
+        switch (platformType){
             case 1:
-                this.renderer = ImageRenderer.create("assets/images/standinggrounds/green/biggrass.png");
-                this.boxCollider = new BoxCollider(608, 32);
-                this.children.add(boxCollider);
+                platform.renderer = ImageRenderer.create("assets/images/standinggrounds/green/grass1.png");
                 break;
             case 2:
-                this.renderer = ImageRenderer.create("assets/images/rocks/weakrock/greensky.png");
-                this.boxCollider = new BoxCollider(40, 32);
-                this.children.add(boxCollider);
-                this.velocity = new Vector2D();
+                platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/greensky.png");
+                platform.velocity = new Vector2D();
                 break;
             case 3:
-                this.renderer = ImageRenderer.create("assets/images/rocks/rollingrock/yellow.png");
-                this.boxCollider = new BoxCollider(46,40);
-                this.children.add(boxCollider);
-                this.velocity = new Vector2D();
+                platform.renderer = ImageRenderer.create("assets/images/rocks/unbreakrock/orange.png");
+                break;
+            case 5:
+                platform.renderer = ImageRenderer.create("assets/images/rocks/rollingrock/yellow.png");
+                platform.velocity = new Vector2D();
                 break;
         }
+        return platform;
     }
 
 
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
-        if (type == 2) {
+        if ( type == 2) {
             velocity.y += GRAVITY;
             updateVerticalPhysics();
             hitPlayer();
@@ -54,10 +57,8 @@ public class Platform extends GameObject implements PhysicsBody{
         if(type == 3){
             velocity.y += GRAVITY;
             updateVerticalPhysics();
-
         }
     }
-
     private void hitPlayer() {
         Player player = Physics.collideWith(this.boxCollider, Player.class);
         if (player != null) {
@@ -67,13 +68,12 @@ public class Platform extends GameObject implements PhysicsBody{
             GameObject.add(playerDeath);
         }
     }
-
     @Override
     public BoxCollider getBoxCollider() {
         return boxCollider;
     }
 
-    private void updateVerticalPhysics() {
+    public void updateVerticalPhysics() {
         Vector2D checkPosition = screenPosition.add(0, velocity.y);
         Platform platform = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
         if (platform != null) {
@@ -97,4 +97,6 @@ public class Platform extends GameObject implements PhysicsBody{
     public int getType() {
         return type;
     }
+
+
 }
