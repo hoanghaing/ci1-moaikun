@@ -17,20 +17,25 @@ public class GameWindow extends Frame {
 
     private long lastTimeUpdate;
     private long currentTime;
+
     private BufferedImage blackBackground;
     private BufferedImage backbufferImage;
     private Graphics2D backbufferGraphics;
+
     InputManager inputManager = InputManager.instance;
+
     public GameWindow() {
         setupGameLoop();
         setupWindow();
-        setupBackBuffet();
         setupLevel();
         setupInput();
+        setupBackbuffetImage();
     }
-    private void setupBackBuffet() {
+
+    private void setupBackbuffetImage() {
         this.backbufferImage = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
         this.backbufferGraphics = (Graphics2D) this.backbufferImage.getGraphics();
+
         this.blackBackground = new BufferedImage(this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_ARGB);
         Graphics2D backgroundGraphics = (Graphics2D) this.blackBackground.getGraphics();
         backgroundGraphics.setColor(Color.BLACK);
@@ -39,12 +44,14 @@ public class GameWindow extends Frame {
     }
 
     private void setupInput() {
+
         this.addKeyListener(new KeyListener() {
 
             @Override
             public void keyTyped(KeyEvent e) {
 
             }
+
             @Override
             public void keyPressed(KeyEvent e) {
                 inputManager.keyPressed(e);
@@ -66,7 +73,7 @@ public class GameWindow extends Frame {
     }
 
     private void setupWindow() {
-        this.setSize(628, 468);
+        this.setSize(610, 460);
         this.setVisible(true);
         this.setTitle("CI1-Moaikun");
         this.addWindowListener(new WindowAdapter() {
@@ -75,6 +82,8 @@ public class GameWindow extends Frame {
                 System.exit(0);
             }
         });
+
+
     }
 
     public void loop() {
