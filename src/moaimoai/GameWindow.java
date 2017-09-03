@@ -17,18 +17,44 @@ public class GameWindow extends Frame {
 
     private long lastTimeUpdate;
     private long currentTime;
-
     private BufferedImage blackBackground;
-
     private BufferedImage backbufferImage;
     private Graphics2D backbufferGraphics;
-
     InputManager inputManager = InputManager.instance;
-
     public GameWindow() {
         setupGameLoop();
         setupWindow();
+        setupBackBuffet();
         setupLevel();
+        setupInput();
+    }
+    private void setupBackBuffet() {
+        this.backbufferImage = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
+        this.backbufferGraphics = (Graphics2D) this.backbufferImage.getGraphics();
+        this.blackBackground = new BufferedImage(this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        Graphics2D backgroundGraphics = (Graphics2D) this.blackBackground.getGraphics();
+        backgroundGraphics.setColor(Color.BLACK);
+        backgroundGraphics.fillRect(0, 0, this.getWidth(), this.getHeight());
+        Settings.instance.setWindowInsets(this.getInsets());
+    }
+
+    private void setupInput() {
+        this.addKeyListener(new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+            @Override
+            public void keyPressed(KeyEvent e) {
+                inputManager.keyPressed(e);
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                inputManager.keyReleased(e);
+            }
+        });
     }
 
     private void setupLevel() {
@@ -40,7 +66,7 @@ public class GameWindow extends Frame {
     }
 
     private void setupWindow() {
-        this.setSize(610, 460);
+        this.setSize(628, 468);
         this.setVisible(true);
         this.setTitle("CI1-Moaikun");
         this.addWindowListener(new WindowAdapter() {
@@ -49,34 +75,6 @@ public class GameWindow extends Frame {
                 System.exit(0);
             }
         });
-
-        this.addKeyListener(new KeyListener() {
-
-            @Override
-            public void keyTyped(KeyEvent e) {
-
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                inputManager.keyPressed(e);
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                inputManager.keyReleased(e);
-            }
-        });
-
-        this.backbufferImage = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
-        this.backbufferGraphics = (Graphics2D) this.backbufferImage.getGraphics();
-
-        this.blackBackground = new BufferedImage(this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_ARGB);
-        Graphics2D backgroundGraphics = (Graphics2D) this.blackBackground.getGraphics();
-        backgroundGraphics.setColor(Color.BLACK);
-        backgroundGraphics.fillRect(0, 0, this.getWidth(), this.getHeight());
-        Settings.instance.setWindowInsets(this.getInsets());
-
     }
 
     public void loop() {
