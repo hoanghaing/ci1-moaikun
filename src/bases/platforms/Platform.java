@@ -33,6 +33,7 @@ public class Platform extends GameObject implements PhysicsBody{
             case 2:
                 platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/greensky.png");
                 platform.velocity = new Vector2D();
+                platform.getPlatformType(platformType);
                 break;
             case 3:
                 platform.renderer = ImageRenderer.create("assets/images/rocks/unbreakrock/orange.png");
@@ -45,6 +46,9 @@ public class Platform extends GameObject implements PhysicsBody{
         return platform;
     }
 
+    private void getPlatformType(int platformType) {
+        this.type = platformType;
+    }
 
     @Override
     public void run(Vector2D parentPosition) {
@@ -54,7 +58,7 @@ public class Platform extends GameObject implements PhysicsBody{
             updateVerticalPhysics();
             hitPlayer();
         }
-        if(type == 3){
+        if(type == 5){
             velocity.y += GRAVITY;
             updateVerticalPhysics();
         }
