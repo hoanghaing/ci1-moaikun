@@ -8,6 +8,7 @@ import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.renderers.ImageRenderer;
+import moaimoai.enemies.Enemy;
 import moaimoai.players.Player;
 import moaimoai.players.PlayerDeath;
 
@@ -70,7 +71,7 @@ public class Platform extends GameObject implements PhysicsBody{
             updateVericalPhysics();
             updateHorizontalPhysics();
             if(!moveable) {
-                hitPlayer();
+                hitPlayerAndEnemy();
             }
         }
         if(constraints != null){
@@ -110,14 +111,15 @@ public class Platform extends GameObject implements PhysicsBody{
     }
 
 
-    private void hitPlayer() {
+    private void hitPlayerAndEnemy() {
         Vector2D checkPosition = screenPosition.add(0, 2);
         Player player = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), Player.class);
         if (player != null) {
             player.getHit();
-            PlayerDeath playerDeath = new PlayerDeath();
-            playerDeath.getPosition().set(player.getPosition());
-            GameObject.add(playerDeath);
+        }
+        Enemy enemy = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), Enemy.class);
+        if (enemy != null){
+            enemy.getHit();
         }
     }
 
@@ -128,6 +130,9 @@ public class Platform extends GameObject implements PhysicsBody{
 
     public void getHit() {
         this.isActive = false;
+        BrokenPlatform brokenPlatform = new BrokenPlatform();
+        brokenPlatform.getPosition().set(this.getPosition());
+        GameObject.add(brokenPlatform);
     }
 
     @Override

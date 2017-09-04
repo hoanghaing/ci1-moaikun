@@ -52,7 +52,8 @@ public class Door extends GameObject implements PhysicsBody {
     private void hitPlayer() {
         Player player = Physics.collideWith(this.boxCollider, Player.class);
         if(player != null && Ally.getAllynumber() == 0){
-            player.getHit();
+//            player.getHit();
+            player.setActive(false);
             DoorOpen doorOpen = new DoorOpen(doortype);
             doorOpen.getPosition().set(this.position);
             GameObject.add(doorOpen);

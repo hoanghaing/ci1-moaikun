@@ -5,6 +5,7 @@ import bases.GameObject;
 import bases.maps.Map;
 import moaimoai.allies.Ally;
 import moaimoai.door.Door;
+import moaimoai.enemies.Enemy;
 import moaimoai.players.Player;
 import moaimoai.settings.Settings;
 
@@ -21,11 +22,24 @@ public class testScene extends Scene {
         addPlatform();
         addPlayer();
         addAlly();
+        addEnemy();
     }
     private void addDoor() {
         door.getPosition().set(513,176);
         GameObject.add(door);
     }
+
+    private void addEnemy() {
+        Enemy enemy = new Enemy();
+        enemy.getPosition().set(250 , 200);
+        enemy.setConstraints(new Constraints(
+                settings.getWindowInsets().top,
+                settings.getGamePlayHeight(),
+                settings.getWindowInsets().left ,
+                settings.getGamePlayWidth()));
+        GameObject.add(enemy);
+    }
+
     private void addAlly() {
         Ally ally2 = new Ally();
         Ally ally3 = new Ally();

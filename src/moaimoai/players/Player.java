@@ -10,6 +10,7 @@ import bases.physics.PhysicsBody;
 import bases.platforms.BrokenPlatform;
 import bases.platforms.Platform;
 import bases.renderers.ImageRenderer;
+import moaimoai.enemies.Enemy;
 import moaimoai.inputs.InputManager;
 import tklibs.SpriteUtils;
 
@@ -29,6 +30,7 @@ public class Player extends GameObject implements PhysicsBody {
     private boolean attack;
     private boolean left = true;
     private boolean right;
+    private int rangeAttack;
 
 
     private FrameCounter attackCoolDown;
@@ -61,7 +63,7 @@ public class Player extends GameObject implements PhysicsBody {
         }
         if (InputManager.instance.xPressed) {
             if (!attack) {
-//                hitEnemy();
+                hitEnemy();
                 hitRock();
                 setAttack(true);
             }
@@ -71,12 +73,17 @@ public class Player extends GameObject implements PhysicsBody {
     }
 
 
-//    private void hitEnemy() {
-//        Enemy enemy = Physics.collideWith(this.boxCollider, Enemy.class);
-//        if (enemy != null) {
-//            enemy.getHit();
-//        }
-//    }
+    private void hitEnemy() {
+        if(right){
+            rangeAttack = 10;
+        }else
+            rangeAttack = -10;
+        Vector2D checkPosition = screenPosition.add(rangeAttack, 0);
+        Enemy enemy = Physics.collideWith(checkPosition, boxCollider.getWidth(), 0, Enemy.class);
+        if (enemy != null) {
+            enemy.getHit();
+        }
+    }
 
     public void unlockAttack() {
         if (attack){
@@ -112,7 +119,7 @@ public class Player extends GameObject implements PhysicsBody {
     }
 
     private void moveHorizontal() {
-        if (InputManager.instance.leftPressed && !InputManager.instance.xPressed){
+        if (InputManager.instance.leftPressed ){
             velocity.x -= SPEED;
             Platform platform = Physics.collideWith(screenPosition.add(Math.signum(velocity.x), 0), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
             if(platform != null && platform.isMoveable()){
@@ -123,7 +130,7 @@ public class Player extends GameObject implements PhysicsBody {
             left = true;
             right = false;
         }
-        if (InputManager.instance.rightPressed && !InputManager.instance.xPressed){
+        if (InputManager.instance.rightPressed ){
             velocity.x += SPEED;
             Platform platform = Physics.collideWith(screenPosition.add(Math.signum(velocity.x), 0), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
             if(platform != null && platform.isMoveable()){
@@ -139,7 +146,7 @@ public class Player extends GameObject implements PhysicsBody {
     private void jump() {
         if (InputManager.instance.cPressed) {
             if (Physics.collideWith(screenPosition.add(0, 1), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) != null) {
-                velocity.y = -7;
+                velocity.y = -9;
             }
         }
     }
@@ -160,18 +167,14 @@ public class Player extends GameObject implements PhysicsBody {
     }
 
     private void hitRock() {
-        int check;
         if(right){
-            check = 10;
+            rangeAttack = 10;
         }else
-            check = -10;
-        Vector2D checkPosition = screenPosition.add(check, 0);
+            rangeAttack = -10;
+        Vector2D checkPosition = screenPosition.add(rangeAttack, 0);
         Platform platform = Physics.collideWith(checkPosition, boxCollider.getWidth(), 0, Platform.class);
         if(platform != null && platform.isBreakable()){
             platform.getHit();
-            BrokenPlatform brokenPlatform = new BrokenPlatform();
-            brokenPlatform.getPosition().set(platform.getPosition());
-            GameObject.add(brokenPlatform);
         }
     }
 
@@ -181,6 +184,9 @@ public class Player extends GameObject implements PhysicsBody {
 
     public void getHit(){
         this.isActive = false;
+        PlayerDeath playerDeath = new PlayerDeath();
+        playerDeath.getPosition().set(this.getPosition());
+        GameObject.add(playerDeath);
     }
 
     public void setAttack(boolean attack) {

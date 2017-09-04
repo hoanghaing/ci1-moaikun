@@ -10,6 +10,8 @@ import bases.platforms.Platform;
 import bases.renderers.Animation;
 import bases.renderers.ImageRenderer;
 import com.sun.org.apache.xml.internal.serializer.ToUnknownStream;
+import moaimoai.enemies.Enemy;
+import moaimoai.enemies.Explosion;
 import moaimoai.players.Player;
 import tklibs.SpriteUtils;
 
@@ -45,11 +47,11 @@ public class Ally extends GameObject implements PhysicsBody{
         super.run(parentPosition);
         velocity.y += 0.5;
         moveVertical();
-        TouchPlayer();
+        touchPlayer();
         position.addUp(velocity);
     }
 
-    private void TouchPlayer() {
+    private void touchPlayer() {
         Player player = Physics.collideWith(this.boxCollider, Player.class);
         if(player != null){
             this.isActive = false;
@@ -61,6 +63,16 @@ public class Ally extends GameObject implements PhysicsBody{
     @Override
     public BoxCollider getBoxCollider() {
         return boxCollider;
+    }
+
+    public void getHit(){
+        Enemy enemy = Physics.collideWith(this.boxCollider, Enemy.class);
+        if (enemy != null){
+            this.isActive = false;
+            Explosion explosion = new Explosion();
+            explosion.setPosition(this.position);
+            GameObject.add(explosion);
+        }
     }
 
 
