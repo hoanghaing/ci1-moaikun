@@ -10,11 +10,14 @@ import tklibs.SpriteUtils;
 import java.awt.*;
 
 public class PlayerAnimator implements Renderer {
+    private boolean left = true;
+    private boolean right;
+    InputManager inputManager = InputManager.instance;
 
-    private boolean isleft = true;
-    private boolean isright = false;
-    private int check;
-    // STANDING (Khi đứng im bình thường, ko di chuyển)
+    private Animation standingAnimation = new Animation(
+            SpriteUtils.loadImage("assets/images/player/left/stand/1.png")
+    );
+
     private Animation leftStandingAnimation = new Animation(
             SpriteUtils.loadImage("assets/images/player/left/stand/1.png")
     );
@@ -22,9 +25,10 @@ public class PlayerAnimator implements Renderer {
     private Animation rightStandingAnimation = new Animation(
             SpriteUtils.loadImage("assets/images/player/right/stand/1.png")
     );
-    private Animation currentAnimation = leftStandingAnimation;
+
     //SITTING (Ngồi xuống, dùng khi đặt bom)
     private Animation leftSittingAnimation = new Animation(
+
             SpriteUtils.loadImage("assets/images/player/left/sit/2.png")
     );
 
@@ -41,30 +45,24 @@ public class PlayerAnimator implements Renderer {
             SpriteUtils.loadImage("assets/images/player/right/move/1.png"),
             SpriteUtils.loadImage("assets/images/player/right/move/2.png")
     );
-    //JUMP
-    private Animation leftJumpingAnimation = new Animation(
-            SpriteUtils.loadImage("assets/images/player/left/move/2.png")
 
-    );
-    private Animation rightJumpingAnimation = new Animation(
-            SpriteUtils.loadImage("assets/images/player/right/move/2.png")
-
-    );
 
     //ATTACK (Đánh đầu tấn công)
-    private Animation leftAttackAnimation = new Animation(
+    private Animation leftAttackAnimation = new Animation(10, false, false,
             SpriteUtils.loadImage("assets/images/player/left/attack/1.png"),
             SpriteUtils.loadImage("assets/images/player/left/attack/2.png")
     );
-    private Animation rightAttackAnimation = new Animation(
+    private Animation rightAttackAnimation = new Animation(10, false, false,
             SpriteUtils.loadImage("assets/images/player/right/attack/1.png"),
             SpriteUtils.loadImage("assets/images/player/right/attack/2.png")
+
     );
 
     //FALL FROM HIGH PLACE (Khi rơi tự do từ trên cao xuống)
     private Animation leftFallAnimation = new Animation(
             SpriteUtils.loadImage("assets/images/player/left/fall/1.png")
     );
+
     private Animation rightFallAnimation = new Animation(
             SpriteUtils.loadImage("assets/images/player/right/fall/2.png")
     );
@@ -101,66 +99,60 @@ public class PlayerAnimator implements Renderer {
             SpriteUtils.loadImage("assets/images/player/right/dead/2.png")
     );
 
-    //TODO: FIX ANIMATION
-    public void update(Player player){
+    private Animation currentAnimation = standingAnimation;
+    private int check;
+
+    public void update(Player player) {
         Vector2D velocity = player.getVelocity();
-        // TẤN CÔNG
 
-        if(velocity.x < 0){
-            check = -1;
-            isleft = true;
-            isright = false;
+        if (InputManager.instance.leftPressed) {
             currentAnimation = leftMovingAnimation;
+            left = true;
+            right = false;
         }
-        if (velocity.x > 0){
-            check = 1;
-            isleft = false;
-            isright = true;
+        if (InputManager.instance.rightPressed) {
             currentAnimation = rightMovingAnimation;
+            right = true;
+            left = false;
         }
 
-        if(isright && velocity.x == 0) {
-                currentAnimation = rightStandingAnimation;
+        if (velocity.x == 0 && left) {
+            currentAnimation = leftStandingAnimation;
         }
-        if(isleft && velocity.x == 0){
-                currentAnimation = leftStandingAnimation;
+        if (velocity.x == 0 && right) {
+            currentAnimation = rightStandingAnimation;
         }
-
-        if (InputManager.instance.xPressed){
-            if (isleft)
-                currentAnimation = leftAttackAnimation;
-            if (isright)
-                currentAnimation = rightAttackAnimation;
-        }
-
-        // NGỒI XUỐNG
-        if(InputManager.instance.downPressed){
-            InputManager.instance.cPressed = false;
+        if (inputManager.downPressed) {
             InputManager.instance.rightPressed = false;
             InputManager.instance.leftPressed = false;
-            if(isleft)
+            InputManager.instance.cPressed = false;
+            if (left)
                 currentAnimation = leftSittingAnimation;
-            if(isright)
+            if (right)
                 currentAnimation = rightSittingAnimation;
         }
+        if (inputManager.cPressed) {
+            if (left)
+                currentAnimation = leftFallAnimation;
+            if (right)
+                currentAnimation = rightFallAnimation;
+        }
 
-        // NHAỶ
-        if(InputManager.instance.cPressed){
-            if(isleft)
-                currentAnimation = leftJumpingAnimation;
-            if(isright)
-                currentAnimation = rightJumpingAnimation;
+        if (inputManager.xPressed) {
+            if (left) {
+                currentAnimation = leftAttackAnimation;
+            }
+            if (right) {
+                currentAnimation = rightAttackAnimation;
+            }
         }
 
 
     }
+
     @Override
     public void render(Graphics2D g2d, Vector2D position) {
         currentAnimation.render(g2d, position);
-    }
-
-    public int getCheck() {
-        return check;
     }
 }
 

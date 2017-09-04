@@ -1,6 +1,7 @@
 package bases.platforms;
 
 
+import bases.Constraints;
 import bases.GameObject;
 import bases.Vector2D;
 import bases.physics.BoxCollider;
@@ -15,9 +16,15 @@ import moaimoai.players.PlayerDeath;
 public class Platform extends GameObject implements PhysicsBody{
 
     private BoxCollider boxCollider;
+    private Constraints constraints;
     private Vector2D velocity;
+    private final float GRAVITY = 0.2f;
+    private boolean hasGravity;
+    private boolean breakable;
+    private boolean moveable;
     private int type;
-    private static final float GRAVITY = 0.1f;
+
+
     public Platform() {
         super();
         this.boxCollider = new BoxCollider(38, 32);
@@ -33,6 +40,8 @@ public class Platform extends GameObject implements PhysicsBody{
             case 2:
                 platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/greensky.png");
                 platform.velocity = new Vector2D();
+                platform.hasGravity = true;
+                platform.breakable = true;
                 platform.getPlatformType(platformType);
                 break;
             case 3:
@@ -41,6 +50,8 @@ public class Platform extends GameObject implements PhysicsBody{
             case 5:
                 platform.renderer = ImageRenderer.create("assets/images/rocks/rollingrock/yellow.png");
                 platform.velocity = new Vector2D();
+                platform.hasGravity = true;
+                platform.moveable = true;
                 break;
         }
         return platform;
@@ -53,37 +64,44 @@ public class Platform extends GameObject implements PhysicsBody{
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
-        if ( type == 2) {
+        if(hasGravity) {
             velocity.y += GRAVITY;
-            updateVerticalPhysics();
-            hitPlayer();
+
+            updateVericalPhysics();
+            updateHorizontalPhysics();
+            if(!moveable) {
+                hitPlayer();
+            }
         }
-        if(type == 5){
-            velocity.y += GRAVITY;
-            updateVerticalPhysics();
+        if(constraints != null){
+            constraints.make(position);
         }
-    }
-    private void hitPlayer() {
-        Player player = Physics.collideWith(this.boxCollider, Player.class);
-        if (player != null) {
-            player.getHit();
-            PlayerDeath playerDeath = new PlayerDeath();
-            playerDeath.getPosition().set(player.getPosition());
-            GameObject.add(playerDeath);
-        }
-    }
-    @Override
-    public BoxCollider getBoxCollider() {
-        return boxCollider;
     }
 
-    public void updateVerticalPhysics() {
-        Vector2D checkPosition = screenPosition.add(0, velocity.y);
-        Platform platform = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
-        if (platform != null) {
-            while (Physics.collideWith(screenPosition, screenPosition.add(0,Math.signum(velocity.y)), boxCollider.getWidth(),boxCollider.getHeight(), Platform.class) == null){
-                position.addUp(0,Math.signum(velocity.y));
-                screenPosition.addUp(0,Math.signum(velocity.y));
+
+    private void updateHorizontalPhysics() {
+        Vector2D checkPositon = screenPosition.add(velocity.x, 0);
+        Platform platform = Physics.collideWith(screenPosition,checkPositon, boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
+        if (platform != null ){
+            while (Physics.collideWith(screenPosition.add(Math.signum(velocity.x), 0), boxCollider.getWidth(),
+                    boxCollider.getHeight(), Platform.class) == null){
+                position.addUp(Math.signum(velocity.x), 0);
+                screenPosition.addUp(Math.signum(velocity.x), 0);
+            }
+            velocity.x = 0;
+        }
+        this.position.x += velocity.x;
+        this.screenPosition.x += velocity.x;
+        velocity.x = 0;
+    }
+
+    private void updateVericalPhysics() {
+        Vector2D checkPosition = screenPosition.add(0,velocity.y);
+        Platform platform =  Physics.collideWith(screenPosition,checkPosition,this.boxCollider.getWidth(),this.boxCollider.getHeight(),Platform.class);
+        if(platform != null){
+            while (Physics.collideWith(screenPosition,this.screenPosition.add(0,1),this.boxCollider.getWidth(),this.boxCollider.getHeight(),Platform.class) == null){
+                position.addUp(0,1);
+                screenPosition.addUp(0,1);
             }
             velocity.y = 0;
         }
@@ -92,15 +110,46 @@ public class Platform extends GameObject implements PhysicsBody{
     }
 
 
+    private void hitPlayer() {
+        Vector2D checkPosition = screenPosition.add(0, 2);
+        Player player = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), Player.class);
+        if (player != null) {
+            player.getHit();
+            PlayerDeath playerDeath = new PlayerDeath();
+            playerDeath.getPosition().set(player.getPosition());
+            GameObject.add(playerDeath);
+        }
+    }
+
+
+    public void setConstraints(Constraints constraints){
+        this.constraints = constraints;
+    }
 
     public void getHit() {
         this.isActive = false;
     }
 
-
-    public int getType() {
-        return type;
+    @Override
+    public BoxCollider getBoxCollider() {
+        return boxCollider;
     }
 
+
+    public boolean isBreakable() {
+        return breakable;
+    }
+
+    public boolean isMoveable() {
+        return moveable;
+    }
+
+    public Constraints getConstraints() {
+        return constraints;
+    }
+
+    public Vector2D getVelocity() {
+        return velocity;
+    }
 
 }
