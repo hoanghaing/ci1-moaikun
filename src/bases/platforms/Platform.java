@@ -36,57 +36,67 @@ public class Platform extends GameObject implements PhysicsBody{
 
         Platform platform = new Platform();
         switch (platformType){
-            case 1:
+            case 1: //CỎ XANH
                 platform.renderer = ImageRenderer.create("assets/images/standinggrounds/green/grass1.png");
                 break;
-            case 2:
+            case 2: // ĐÁ RƠI XANH
                 platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/greensky.png");
                 platform.velocity = new Vector2D();
                 platform.hasGravity = true;
                 platform.breakable = true;
                 break;
-            case 3:
+            case 3: // ĐÁ CỨNG DA CAM
                 platform.renderer = ImageRenderer.create("assets/images/rocks/unbreakrock/orange.png");
                 break;
-            case 4:
+            case 4: // ĐÁ LĂN vàng cam
                 platform.renderer = ImageRenderer.create("assets/images/rocks/rollingrock/yellow.png");
                 platform.velocity = new Vector2D();
                 platform.hasGravity = true;
                 platform.moveable = true;
                 break;
 
-            case 5:
+            case 5: // ĐÁ MỀM VÀNG
+                platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/orange.png");
                 break;
-            case 6:
+            case 6: //CỌC SẮT
                 platform.boxCollider = new BoxCollider(25,32);
                 platform.renderer = ImageRenderer.create("assets/images/deadgrounds/cocsat/coc2.png");
                 platform.velocity = new Vector2D();
                 platform.killPlayer = true;
                 break;
-            case 7:
+            case 7: //MÂY HỒNG 1
+                platform.renderer = ImageRenderer.create("assets/images/standinggrounds/pink/grass111.png");
                 break;
-            case 8:
+
+            case 8: // MÂY HỒNG 2
+                platform.renderer = ImageRenderer.create("assets/images/standinggrounds/pink/grass11.png");
                 break;
-            case 9:
+            case 9: // MÂY HỒNG 3
+                platform.renderer = ImageRenderer.create("assets/images/standinggrounds/pink/grass1.png");
                 break;
-            case 10:
+            case 10: //ĐINH GỈ
+                platform.renderer = ImageRenderer.create("assets/images/deadgrounds/dinhgi/white.png");
                 break;
-            case 11:
+            case 11: // ĐÁ MỀM, XÁM TRẮNG
                 platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/gray.png");
                 break;
-            case 12:
+            case 12: //ĐÁ RƠI VÀNG CAM
+                platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/orangesky.png");
+                break;
+            case 13: // ĐÁ ĐỠ NÂU
                 platform.renderer = ImageRenderer.create("assets/images/standinggrounds/brown/1.png");
                 break;
-            case 13:
-                platform.renderer = ImageRenderer.create("assets/images/standinggrounds/brown/1.png");
-                break;
-            case 14:
+            case 14: // ĐÁ CỨNG HỒNG
                 platform.renderer = ImageRenderer.create("assets/images/rocks/unbreakrock/pink.png");
                 break;
-            case 15:
+            case 15: //ĐÁ LĂN ĐỎ
+                platform.renderer = ImageRenderer.create("assets/images/rocks/rollingrock/pink.png");
                 break;
-            case 16:
-                platform.renderer = ImageRenderer.create("assets/images/deadgrounds/cocsat/coc2.png");
+            case 16: // ĐÁ CỨNG XANH
+                platform.renderer = ImageRenderer.create("assets/images/rocks/unbreakrock/blue.png");
+                break;
+            case 17: //ĐÁ ĐỠ TRẮNG
+                platform.renderer = ImageRenderer.create("assets/images/standinggrounds/white/1.png");
                 break;
             default:
                 break;

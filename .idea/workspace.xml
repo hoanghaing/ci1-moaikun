@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69b48197-2efd-4b94-abef-fb8ddeb323ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/bases/maps/Layer.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/bases/maps/Layer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/testScene.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/testScene.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/testStage10.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/testStage10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/testStage2.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/testStage2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bases/maps/Layer.java" afterPath="$PROJECT_DIR$/src/bases/maps/Layer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/scenes/testScene.java" afterPath="$PROJECT_DIR$/src/moaimoai/scenes/testScene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/scenes/testStage10.java" afterPath="$PROJECT_DIR$/src/moaimoai/scenes/testStage10.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/scenes/testStage2.java" afterPath="$PROJECT_DIR$/src/moaimoai/scenes/testStage2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bases/platforms/Platform.java" afterPath="$PROJECT_DIR$/src/bases/platforms/Platform.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,57 +15,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Platform.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Platform.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/bases/platforms/Platform.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="72" column="22" lean-forward="true" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Background.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/Background.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="18" column="66" lean-forward="false" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
-              <folding />
-            </state>
+      <file leaf-file-name="grass1.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/images/standinggrounds/pink/grass1.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Layer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bases/maps/Layer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="27" column="63" lean-forward="false" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
-              <folding />
-            </state>
+      <file leaf-file-name="pink.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/images/rocks/rollingrock/pink.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testStage10.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/testStage10.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
+      <file leaf-file-name="1.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/images/standinggrounds/white/1.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/moaimoai/GameWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
+      <file leaf-file-name="orange.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/images/rocks/weakrock/orange.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -124,13 +101,13 @@
         <option value="$PROJECT_DIR$/src/moaimoai/players/Player.java" />
         <option value="$PROJECT_DIR$/assets/maps/jsonfile/stage2.json" />
         <option value="$PROJECT_DIR$/src/bases/renderers/ImageRenderer.java" />
-        <option value="$PROJECT_DIR$/src/bases/platforms/Platform.java" />
         <option value="$PROJECT_DIR$/src/bases/maps/Layer.java" />
         <option value="$PROJECT_DIR$/src/moaimoai/scenes/testStage2.java" />
         <option value="$PROJECT_DIR$/src/moaimoai/scenes/testScene.java" />
         <option value="$PROJECT_DIR$/src/moaimoai/GameWindow.java" />
         <option value="$PROJECT_DIR$/src/moaimoai/scenes/testStage10.java" />
         <option value="$PROJECT_DIR$/src/moaimoai/scenes/Background.java" />
+        <option value="$PROJECT_DIR$/src/bases/platforms/Platform.java" />
       </list>
     </option>
   </component>
@@ -179,14 +156,42 @@
               <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
               <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="maps" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="deadgrounds" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="rocks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="standinggrounds" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="standinggrounds" type="462c0819:PsiDirectoryNode" />
+              <item name="pink" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
               <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="maps" type="462c0819:PsiDirectoryNode" />
-              <item name="jsonfile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
@@ -216,7 +221,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="back&#9;PSI&#9;JAVA://moaimoai.scenes.Background&#10;bac&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/scenes/Background.java&#10;ga&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/GameWindow.java&#10;te&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/scenes/testScene.java&#10;test&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/scenes/testStage2.java&#10;pl&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/players/Player.java&#10;layer&#9;PSI&#9;JAVA://bases.maps.Layer&#10;bo&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/bases/physics/BoxCollider.java&#10;im&#9;PSI&#9;JAVA://bases.renderers.ImageRenderer&#10;g&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/GameWindow.java&#10;G&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/GameWindow.java&#10;pla&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/players/Player.java&#10;Pla&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/players/PlayerAnimator.java" />
+    <property name="SearchEverywhereHistoryKey" value="pl&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/bases/platforms/Platform.java&#10;back&#9;PSI&#9;JAVA://moaimoai.scenes.Background&#10;bac&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/scenes/Background.java&#10;ga&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/GameWindow.java&#10;te&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/scenes/testScene.java&#10;test&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/scenes/testStage2.java&#10;layer&#9;PSI&#9;JAVA://bases.maps.Layer&#10;bo&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/bases/physics/BoxCollider.java&#10;im&#9;PSI&#9;JAVA://bases.renderers.ImageRenderer&#10;g&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/GameWindow.java&#10;G&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/GameWindow.java&#10;pla&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/players/Player.java&#10;Pla&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/players/PlayerAnimator.java" />
     <property name="findjar.last.used.dir" value="$USER_HOME$/jet-zero" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -620,60 +625,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/bases/maps/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/moaimoai/inputs/InputManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/moaimoai/allies/AllyAnimator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="27" column="60" lean-forward="false" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bases/platforms/BrokenPlatform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/images/explosion/enemy explosion/expl_01_0000.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/images/explosion/enemy explosion/expl_01_0001.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/images/explosion/enemy explosion/expl_01_0002.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/images/explosion/enemy explosion/expl_01_0016.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/images/explosion/enemy explosion/expl_01_0006.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/images/explosion/enemy explosion/expl_01_0008.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -854,14 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bases/platforms/Platform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/Level1Scene.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -922,6 +865,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/testStage10.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/Background.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -948,13 +901,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/testStage10.java">
+    <entry file="file://$PROJECT_DIR$/assets/images/rocks/unbreakrock/blue.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/rocks/rollingrock/pink.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/deadgrounds/dinhgi/white.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/rocks/weakrock/yellow.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/rocks/weakrock/orangesky.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/standinggrounds/white/1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/rocks/weakrock/orange.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/standinggrounds/pink/grass1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/standinggrounds/pink/grass111.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bases/platforms/Platform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="30" column="23" lean-forward="false" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="204">
+          <caret line="72" column="22" lean-forward="true" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
