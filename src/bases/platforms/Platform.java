@@ -23,6 +23,7 @@ public class Platform extends GameObject implements PhysicsBody{
     private boolean hasGravity;
     private boolean breakable;
     private boolean moveable;
+    private boolean killPlayer;
     private int type;
 
 
@@ -43,24 +44,28 @@ public class Platform extends GameObject implements PhysicsBody{
                 platform.velocity = new Vector2D();
                 platform.hasGravity = true;
                 platform.breakable = true;
-                platform.getPlatformType(platformType);
                 break;
             case 3:
                 platform.renderer = ImageRenderer.create("assets/images/rocks/unbreakrock/orange.png");
                 break;
-            case 5:
+            case 4:
                 platform.renderer = ImageRenderer.create("assets/images/rocks/rollingrock/yellow.png");
                 platform.velocity = new Vector2D();
                 platform.hasGravity = true;
                 platform.moveable = true;
                 break;
+            case 5:
+                break;
+            case 6:
+                platform.boxCollider = new BoxCollider(25,32);
+                platform.renderer = ImageRenderer.create("assets/images/deadgrounds/cocsat/coc2.png");
+                platform.velocity = new Vector2D();
+                platform.killPlayer = true;
+                break;
         }
         return platform;
     }
 
-    private void getPlatformType(int platformType) {
-        this.type = platformType;
-    }
 
     @Override
     public void run(Vector2D parentPosition) {
@@ -71,8 +76,11 @@ public class Platform extends GameObject implements PhysicsBody{
             updateVericalPhysics();
             updateHorizontalPhysics();
             if(!moveable) {
-                hitPlayerAndEnemy();
+                hitPlayerAndEnemy(0,2);
             }
+        }
+        if(killPlayer){
+            hitPlayerAndEnemy(0,-2);
         }
         if(constraints != null){
             constraints.make(position);
@@ -111,8 +119,8 @@ public class Platform extends GameObject implements PhysicsBody{
     }
 
 
-    private void hitPlayerAndEnemy() {
-        Vector2D checkPosition = screenPosition.add(0, 2);
+    private void hitPlayerAndEnemy(int dx, int dy) {
+        Vector2D checkPosition = screenPosition.add(dx, dy);
         Player player = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), Player.class);
         if (player != null) {
             player.getHit();
