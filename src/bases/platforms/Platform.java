@@ -54,6 +54,7 @@ public class Platform extends GameObject implements PhysicsBody{
                 platform.hasGravity = true;
                 platform.moveable = true;
                 break;
+
             case 5:
                 break;
             case 6:
@@ -61,6 +62,33 @@ public class Platform extends GameObject implements PhysicsBody{
                 platform.renderer = ImageRenderer.create("assets/images/deadgrounds/cocsat/coc2.png");
                 platform.velocity = new Vector2D();
                 platform.killPlayer = true;
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;
+            case 10:
+                break;
+            case 11:
+                platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/gray.png");
+                break;
+            case 12:
+                platform.renderer = ImageRenderer.create("assets/images/standinggrounds/brown/1.png");
+                break;
+            case 13:
+                platform.renderer = ImageRenderer.create("assets/images/standinggrounds/brown/1.png");
+                break;
+            case 14:
+                platform.renderer = ImageRenderer.create("assets/images/rocks/unbreakrock/pink.png");
+                break;
+            case 15:
+                break;
+            case 16:
+                platform.renderer = ImageRenderer.create("assets/images/deadgrounds/cocsat/coc2.png");
+                break;
+            default:
                 break;
         }
         return platform;

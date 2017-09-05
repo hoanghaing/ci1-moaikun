@@ -2,10 +2,7 @@ package moaimoai;
 
 import bases.GameObject;
 import moaimoai.inputs.InputManager;
-import moaimoai.scenes.Level1Scene;
-import moaimoai.scenes.SceneManager;
-import moaimoai.scenes.testScene;
-import moaimoai.scenes.testStage2;
+import moaimoai.scenes.*;
 import moaimoai.settings.Settings;
 
 import java.awt.*;
@@ -67,7 +64,9 @@ public class GameWindow extends Frame {
 
     private void setupLevel() {
 //        SceneManager.changeScene(new testScene());
-        SceneManager.changeScene(new testStage2());
+//        SceneManager.changeScene(new testStage2());
+    SceneManager.changeScene(new testStage10());
+
     }
 
     private void setupGameLoop() {
