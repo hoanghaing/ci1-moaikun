@@ -8,7 +8,6 @@ import tklibs.SpriteUtils;
 
 public class Background extends GameObject {
     private ImageRenderer imageRenderer;
-    private final float SPEED = 4;
     private final float imageHeight;
 
     public Background() {
@@ -22,12 +21,4 @@ public class Background extends GameObject {
         this.renderer = imageRenderer;
     }
 
-    @Override
-    public void run(Vector2D parentPosition) {
-        super.run(parentPosition);
-        position.y += SPEED;
-        if (position.y > imageHeight) {
-            position.y = imageHeight;
-        }
-    }
 }

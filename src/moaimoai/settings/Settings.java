@@ -45,6 +45,6 @@ public class Settings {
     }
 
     private Settings() {
-        this(600, 500, 600, 500);
+        this(600, 460, 600, 448);
     }
 }
