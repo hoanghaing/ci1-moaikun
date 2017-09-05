@@ -3,7 +3,7 @@ package moaimoai.scenes;
 import bases.Constraints;
 import bases.GameObject;
 import bases.maps.Map;
-import moaimoai.allies.Ally;
+import moaimoai.allies.FriendlyObject;
 import moaimoai.door.Door;
 import moaimoai.enemies.Enemy;
 import moaimoai.players.Player;
@@ -12,7 +12,6 @@ import moaimoai.settings.Settings;
 
 public class testScene extends Scene {
     Player player = new Player();
-    Ally ally1 = new Ally();
     Door door = new Door(1);
     Settings settings = Settings.instance;
     @Override
@@ -41,10 +40,11 @@ public class testScene extends Scene {
     }
 
     private void addAlly() {
-        Ally ally2 = new Ally();
-        Ally ally3 = new Ally();
-        Ally ally4 = new Ally();
-        Ally ally5 = new Ally();
+        FriendlyObject ally1 = FriendlyObject.creat(1);
+        FriendlyObject ally2 = FriendlyObject.creat(1);
+        FriendlyObject ally3 = FriendlyObject.creat(1);
+        FriendlyObject ally4 = FriendlyObject.creat(1);
+        FriendlyObject ally5 = FriendlyObject.creat(1);
         ally1.setAllynumber(5);
         ally1.getPosition().set(
                 418, 192
@@ -58,6 +58,10 @@ public class testScene extends Scene {
         GameObject.add(ally3);
         GameObject.add(ally4);
         GameObject.add(ally5);
+
+        FriendlyObject bomb1 = FriendlyObject.creat(2);
+        bomb1.getPosition().set(100, 350);
+        GameObject.add(bomb1);
     }
     private void addPlayer() {
         player.setConstraints(new Constraints(

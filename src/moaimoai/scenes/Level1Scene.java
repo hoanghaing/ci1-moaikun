@@ -3,15 +3,14 @@ package moaimoai.scenes;
 import bases.Constraints;
 import bases.GameObject;
 import bases.platforms.Platform;
-import moaimoai.allies.Ally;
+import moaimoai.allies.FriendlyObject;
 import moaimoai.door.Door;
-import moaimoai.inputs.InputManager;
 import moaimoai.players.Player;
 import moaimoai.settings.Settings;
 
 public class Level1Scene extends Scene{
     Player player = new Player();
-    Ally ally = new Ally();
+    FriendlyObject ally = new FriendlyObject();
     Door door = new Door(1);
     Settings settings = Settings.instance;
 

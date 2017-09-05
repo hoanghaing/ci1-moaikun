@@ -138,7 +138,7 @@ public class PlayerAnimator implements Renderer {
                 currentAnimation = rightFallAnimation;
         }
 
-        if (inputManager.xPressed) {
+        if (inputManager.xPressed && !inputManager.downPressed) {
             if (left) {
                 currentAnimation = leftAttackAnimation;
             }

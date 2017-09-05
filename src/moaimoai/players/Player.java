@@ -10,7 +10,9 @@ import bases.physics.PhysicsBody;
 import bases.platforms.BrokenPlatform;
 import bases.platforms.Platform;
 import bases.renderers.ImageRenderer;
+import moaimoai.allies.FriendlyObject;
 import moaimoai.enemies.Enemy;
+import moaimoai.enemies.Explosion;
 import moaimoai.inputs.InputManager;
 import tklibs.SpriteUtils;
 
@@ -31,9 +33,11 @@ public class Player extends GameObject implements PhysicsBody {
     private boolean left = true;
     private boolean right;
     private int rangeAttack;
+    private int bomb = 0;
 
 
     private FrameCounter attackCoolDown;
+    private FrameCounter setMineTime;
 
     private PlayerAnimator playerAminator;
 
@@ -46,6 +50,7 @@ public class Player extends GameObject implements PhysicsBody {
         this.playerAminator = new PlayerAnimator();
         this.renderer = playerAminator;
         this.attackCoolDown = new FrameCounter(20);
+        this.setMineTime = new FrameCounter(90);
     }
 
     public void setConstraints(Constraints constraints) {
@@ -61,7 +66,7 @@ public class Player extends GameObject implements PhysicsBody {
         if (constraints != null) {
             constraints.make(this.position);
         }
-        if (InputManager.instance.xPressed) {
+        if (InputManager.instance.xPressed && !InputManager.instance.downPressed) {
             if (!attack) {
                 hitEnemy();
                 hitRock();
@@ -69,6 +74,40 @@ public class Player extends GameObject implements PhysicsBody {
             }
         }else {
             unlockAttack();
+        }
+        if(InputManager.instance.xPressed && InputManager.instance.downPressed){
+            if(setMineTime.run() && bomb != 0){
+                bomb --;
+                setMine();
+                setMineTime.reset();
+            }
+        }
+
+        hitFriendlyObject();
+    }
+
+    private void hitFriendlyObject() {
+        FriendlyObject friendlyObject = Physics.collideWith(boxCollider,FriendlyObject.class);
+        if(friendlyObject != null){
+            if(friendlyObject.isAlly()){
+                FriendlyObject.setAllynumber(FriendlyObject.getAllynumber() - 1);
+                friendlyObject.setActive(false);
+            }
+            if(friendlyObject.isBomb()){
+                this.bomb ++;
+                friendlyObject.setActive(false);
+            }
+        }
+    }
+
+    private void setMine() {
+        Vector2D checkPosition = screenPosition.add(0, 1);
+        Platform platform = Physics.collideWith(checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
+        if(platform != null && platform.isBreakable()){
+            platform.getHit();
+            Explosion explosion = new Explosion();
+            explosion.getPosition().set(platform.getPosition());
+            GameObject.add(explosion);
         }
     }
 
@@ -119,7 +158,7 @@ public class Player extends GameObject implements PhysicsBody {
     }
 
     private void moveHorizontal() {
-        if (InputManager.instance.leftPressed ){
+        if (InputManager.instance.leftPressed && !InputManager.instance.xPressed && !InputManager.instance.downPressed){
             velocity.x -= SPEED;
             Platform platform = Physics.collideWith(screenPosition.add(Math.signum(velocity.x), 0), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
             if(platform != null && platform.isMoveable()){
@@ -130,7 +169,7 @@ public class Player extends GameObject implements PhysicsBody {
             left = true;
             right = false;
         }
-        if (InputManager.instance.rightPressed ){
+        if (InputManager.instance.rightPressed && !InputManager.instance.xPressed && !InputManager.instance.downPressed){
             velocity.x += SPEED;
             Platform platform = Physics.collideWith(screenPosition.add(Math.signum(velocity.x), 0), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
             if(platform != null && platform.isMoveable()){

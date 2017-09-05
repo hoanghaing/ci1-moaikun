@@ -7,7 +7,7 @@ import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.platforms.Platform;
-import moaimoai.allies.Ally;
+import moaimoai.allies.FriendlyObject;
 import moaimoai.players.Player;
 
 /**
@@ -128,7 +128,7 @@ public class Enemy extends GameObject implements PhysicsBody {
     }
 
     private void hitAlly(){
-        Ally ally = Physics.collideWith(this.boxCollider, Ally.class);
+        FriendlyObject ally = Physics.collideWith(this.boxCollider, FriendlyObject.class);
         if (ally != null){
             ally.getHit();
         }

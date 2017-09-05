@@ -16,24 +16,42 @@ import moaimoai.players.Player;
 import tklibs.SpriteUtils;
 
 
-public class Ally extends GameObject implements PhysicsBody{
+public class FriendlyObject extends GameObject implements PhysicsBody{
     private BoxCollider boxCollider;
     private Vector2D velocity;
     private static int ALLYNUMBER = 0;
-        public Ally(){
+    private boolean isBomb;
+    private boolean isAlly;
+
+    public FriendlyObject(){
         super();
         boxCollider = new BoxCollider(20,20);
         this.children.add(boxCollider);
-        renderer = new Animation(5,false,false,
-                SpriteUtils.loadImage("assets/images/peoples/pink/1.png"),
-                SpriteUtils.loadImage("assets/images/peoples/pink/2.png"),
-                SpriteUtils.loadImage("assets/images/peoples/pink/3.png"),
-                SpriteUtils.loadImage("assets/images/peoples/pink/4.png"),
-                SpriteUtils.loadImage("assets/images/peoples/pink/5.png")
-        );
         velocity = new Vector2D();
-
     }
+
+    public static FriendlyObject creat(int friendlyObjectType) {
+        FriendlyObject friendlyObject
+                = new FriendlyObject();
+        switch (friendlyObjectType) {
+            case 1:
+                friendlyObject.renderer = new Animation(5, false, false,
+                        SpriteUtils.loadImage("assets/images/peoples/pink/1.png"),
+                        SpriteUtils.loadImage("assets/images/peoples/pink/2.png"),
+                        SpriteUtils.loadImage("assets/images/peoples/pink/3.png"),
+                        SpriteUtils.loadImage("assets/images/peoples/pink/4.png"),
+                        SpriteUtils.loadImage("assets/images/peoples/pink/5.png")
+                );
+                friendlyObject.isAlly = true;
+                break;
+            case 2:
+                friendlyObject.renderer = ImageRenderer.create("assets/images/items/bombs/blue.png");
+                friendlyObject.isBomb = true;
+                break;
+        }
+        return friendlyObject;
+    }
+
     public static int getAllynumber() {
         return ALLYNUMBER;
     }
@@ -47,32 +65,15 @@ public class Ally extends GameObject implements PhysicsBody{
         super.run(parentPosition);
         velocity.y += 0.5;
         moveVertical();
-        touchPlayer();
         position.addUp(velocity);
     }
 
-    private void touchPlayer() {
-        Player player = Physics.collideWith(this.boxCollider, Player.class);
-        if(player != null){
-            this.isActive = false;
-            ALLYNUMBER --;
-        }
-    }
+
 
 
     @Override
     public BoxCollider getBoxCollider() {
         return boxCollider;
-    }
-
-    public void getHit(){
-        Enemy enemy = Physics.collideWith(this.boxCollider, Enemy.class);
-        if (enemy != null){
-            this.isActive = false;
-            Explosion explosion = new Explosion();
-            explosion.setPosition(this.position);
-            GameObject.add(explosion);
-        }
     }
 
 
@@ -86,5 +87,23 @@ public class Ally extends GameObject implements PhysicsBody{
             }
             this.velocity.y = 0;
         }
+    }
+
+    public void getHit(){
+        Enemy enemy = Physics.collideWith(this.boxCollider, Enemy.class);
+        if (enemy != null){
+            this.isActive = false;
+            Explosion explosion = new Explosion();
+            explosion.setPosition(this.position);
+            GameObject.add(explosion);
+        }
+    }
+
+    public boolean isBomb() {
+        return isBomb;
+    }
+
+    public boolean isAlly() {
+        return isAlly;
     }
 }

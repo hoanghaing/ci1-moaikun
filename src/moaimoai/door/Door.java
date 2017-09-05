@@ -6,7 +6,7 @@ import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.renderers.ImageRenderer;
-import moaimoai.allies.Ally;
+import moaimoai.allies.FriendlyObject;
 import moaimoai.players.Player;
 
 public class Door extends GameObject implements PhysicsBody {
@@ -51,7 +51,7 @@ public class Door extends GameObject implements PhysicsBody {
 
     private void hitPlayer() {
         Player player = Physics.collideWith(this.boxCollider, Player.class);
-        if(player != null && Ally.getAllynumber() == 0){
+        if(player != null && FriendlyObject.getAllynumber() == 0){
             player.setActive(false);
             DoorOpen doorOpen = new DoorOpen(doortype);
             doorOpen.getPosition().set(this.position);
