@@ -5,6 +5,7 @@ import moaimoai.inputs.InputManager;
 import moaimoai.scenes.Level1Scene;
 import moaimoai.scenes.SceneManager;
 import moaimoai.scenes.testScene;
+import moaimoai.scenes.testStage2;
 import moaimoai.settings.Settings;
 
 import java.awt.*;
@@ -65,7 +66,8 @@ public class GameWindow extends Frame {
     }
 
     private void setupLevel() {
-        SceneManager.changeScene(new testScene());
+//        SceneManager.changeScene(new testScene());
+        SceneManager.changeScene(new testStage2());
     }
 
     private void setupGameLoop() {
@@ -73,7 +75,7 @@ public class GameWindow extends Frame {
     }
 
     private void setupWindow() {
-        this.setSize(620, 460);//Kích cỡ background là 608 x 448, cho to thêm để ko bị khuất
+        this.setSize(620, 460);
         this.setVisible(true);
         this.setTitle("CI1-Moaikun");
         this.addWindowListener(new WindowAdapter() {

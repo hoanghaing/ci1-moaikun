@@ -17,8 +17,9 @@ public class testScene extends Scene {
     @Override
     public void init() {
         addBackground();
-        addDoor();
         addPlatform();
+        addDoor();
+
         addPlayer();
         addAlly();
         addEnemy();

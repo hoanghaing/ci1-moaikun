@@ -26,7 +26,7 @@ public class Player extends GameObject implements PhysicsBody {
 
     private final float SPEED = 2;
     private Vector2D velocity;
-    private final float GRAVITY = 0.6f;
+    private final float GRAVITY = 0.5f;
     private BoxCollider boxCollider;
     private Constraints constraints;
     private boolean attack;
@@ -44,7 +44,7 @@ public class Player extends GameObject implements PhysicsBody {
     public Player(){
         super();
         this.velocity = new Vector2D();
-        this.boxCollider = new BoxCollider(32, 32);
+        this.boxCollider = new BoxCollider(30, 30);
         this.children.add(boxCollider);
         this.attack = false;
         this.playerAminator = new PlayerAnimator();
@@ -185,7 +185,7 @@ public class Player extends GameObject implements PhysicsBody {
     private void jump() {
         if (InputManager.instance.cPressed) {
             if (Physics.collideWith(screenPosition.add(0, 1), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) != null) {
-                velocity.y = -9;
+                velocity.y = -6;
             }
         }
     }
