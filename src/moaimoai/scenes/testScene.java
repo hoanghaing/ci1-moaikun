@@ -25,7 +25,7 @@ public class testScene extends Scene {
         addEnemy();
     }
     private void addDoor() {
-        door.getPosition().set(513,176);
+        door.getPosition().set(532,192);
         GameObject.add(door);
     }
 
@@ -48,18 +48,17 @@ public class testScene extends Scene {
         FriendlyObject ally5 = FriendlyObject.creat(1);
         ally1.setAllynumber(5);
         ally1.getPosition().set(
-                418, 192
+                437, 208
         );
-        ally2.getPosition().set(342,224);
-        ally3.getPosition().set(266,256);
-        ally4.getPosition().set(190,288);
-        ally5.getPosition().set(114,320);
+        ally2.getPosition().set(361,240);
+        ally3.getPosition().set(285,272);
+        ally4.getPosition().set(209,304);
+        ally5.getPosition().set(133,336);
         GameObject.add(ally1);
         GameObject.add(ally2);
         GameObject.add(ally3);
         GameObject.add(ally4);
         GameObject.add(ally5);
-
         FriendlyObject bomb1 = FriendlyObject.creat(2);
         bomb1.getPosition().set(100, 350);
         GameObject.add(bomb1);

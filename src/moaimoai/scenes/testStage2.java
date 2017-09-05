@@ -28,7 +28,7 @@ public class testStage2 extends Scene{
                 settings.getGamePlayWidth())
         );
         player.getPosition().set(
-                494,350
+                513,368
         );
         GameObject.add(player);
     }
@@ -39,7 +39,7 @@ public class testStage2 extends Scene{
     }
 
     private void addDoor() {
-        door.getPosition().set(57,144);
+        door.getPosition().set(76,160);
         GameObject.add(door);
     }
 
