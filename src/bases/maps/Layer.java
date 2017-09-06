@@ -24,9 +24,9 @@ public class Layer {
             for(int titleX = 0 ; titleX < width; titleX ++){
                 int mapData = data.get(titleY * width + titleX);
                 if(mapData != 0){
-                    Platform platform = Platform.create(mapData);
-                    platform.getPosition().set(titleX * 38 + 19, titleY * 32 + 16);
-                    GameObject.add(platform);
+                    GameObject gameObject = GameObject.create(mapData);
+                    gameObject.getPosition().set(titleX * 38 + 19, titleY * 32 + 16);
+                    GameObject.add(gameObject);
                 }
             }
         }

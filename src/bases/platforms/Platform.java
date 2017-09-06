@@ -98,6 +98,9 @@ public class Platform extends GameObject implements PhysicsBody{
             case 17: //ĐÁ ĐỠ TRẮNG
                 platform.renderer = ImageRenderer.create("assets/images/standinggrounds/white/1.png");
                 break;
+//            case 18:
+//                platform.renderer = ImageRenderer.create("assets/images/standinggrounds/white/1.png");
+//                break;
             default:
                 break;
         }

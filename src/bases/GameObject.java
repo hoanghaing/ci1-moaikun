@@ -2,8 +2,12 @@ package bases;
 
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
+import bases.platforms.Platform;
 import bases.pools.GameObjectPool;
 import bases.renderers.Renderer;
+import moaimoai.allies.FriendlyObject;
+import moaimoai.door.Door;
+import moaimoai.players.Player;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -65,6 +69,75 @@ public class GameObject {
         position = new Vector2D();
         screenPosition = new Vector2D();
         isActive = true;
+    }
+
+    public static GameObject create(int gameObjectType) {
+        /**
+         * group 1: player (1xx)
+         * group 2: enemies (2xx)
+         * group 3: platform (3xx)
+         */
+        switch (gameObjectType) {
+            case 1 :
+                return (GameObject) Platform.create(gameObjectType);
+            case 2 :
+                return (GameObject) Platform.create(gameObjectType);
+            case 3 :
+                return (GameObject) Platform.create(gameObjectType);
+            case 4 :
+                return (GameObject) Platform.create(gameObjectType);
+            case 5:
+
+            case 6:
+
+            case 7:
+
+            case 8:
+                return (GameObject) Platform.create(gameObjectType);
+            case 9:
+                return (GameObject) Platform.create(gameObjectType);
+            case 10:
+                return (GameObject) Platform.create(gameObjectType);
+            case 11:
+                return (GameObject) Platform.create(gameObjectType);
+            case 12:
+                return (GameObject) Platform.create(gameObjectType);
+            case 13:
+                return (GameObject) Platform.create(gameObjectType);
+            case 14:
+                return (GameObject) Platform.create(gameObjectType);
+            case 15:
+                return (GameObject) Platform.create(gameObjectType);
+            case 16:
+                return (GameObject) Platform.create(gameObjectType);
+            case 17 : {
+                //return platform
+                return (GameObject) Platform.create(gameObjectType);
+            }
+            case 18 :
+                return (GameObject) Player.create();
+            case 19 :
+                int allynumber = FriendlyObject.getAllynumber();
+                allynumber++;
+                FriendlyObject.setAllynumber(allynumber);
+                return (GameObject) FriendlyObject.create();
+            case 20 :
+                return (GameObject) Door.create();
+            case 21 :
+//                return (GameObject) Door.create();
+                return null;
+            case 22:
+                return null;
+//                return (GameObject) Door.create();
+            case 23:
+                return null;
+//                return (GameObject) Door.create();
+            case 30 : {
+                //return player
+                break;
+            }
+        }
+        return null;
     }
 
     public void run(Vector2D parentPosition) {

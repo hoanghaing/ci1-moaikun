@@ -30,6 +30,13 @@ public class Enemy extends GameObject implements PhysicsBody {
         this.children.add(boxCollider);
         this.velocity = new Vector2D();
     }
+    public static Enemy create(int enemyType) {
+        Enemy enemy = new Enemy();
+        switch (enemyType){
+
+        }
+        return enemy;
+    }
 
     public void setConstraints(Constraints constraints) {
         this.constraints = constraints;
@@ -40,7 +47,7 @@ public class Enemy extends GameObject implements PhysicsBody {
         super.run(parentPosition);
         updatePhysics();
         hitPlayer();
-        hitAlly();
+//        hitAlly();
         enemyAminator.update(this);
         if (constraints != null){
             constraints.make(position);
@@ -127,12 +134,12 @@ public class Enemy extends GameObject implements PhysicsBody {
         }
     }
 
-    private void hitAlly(){
-        FriendlyObject ally = Physics.collideWith(this.boxCollider, FriendlyObject.class);
-        if (ally != null){
-            ally.getHit();
-        }
-    }
+//    private void hitAlly(){
+//        FriendlyObject ally = Physics.collideWith(this.boxCollider, FriendlyObject.class);
+//        if (ally != null){
+//            ally.getHit();
+//        }
+//    }
 
     public Vector2D getVelocity() {
         return velocity;

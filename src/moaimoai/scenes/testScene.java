@@ -11,18 +11,18 @@ import moaimoai.settings.Settings;
 
 
 public class testScene extends Scene {
-    Player player = new Player();
+//    Player player = new Player();
     Door door = new Door(1);
     Settings settings = Settings.instance;
+    private static int stageLevel = 1;
     @Override
     public void init() {
-        addBackground();
-        addPlatform();
-        addDoor();
-
-        addPlayer();
-        addAlly();
-        addEnemy();
+        addBackground(stageLevel);
+        addPlatform(stageLevel);
+//        addDoor();
+//        addPlayer();
+//        addAlly();
+//        addEnemy();
     }
     private void addDoor() {
         door.getPosition().set(532,192);
@@ -40,46 +40,34 @@ public class testScene extends Scene {
         GameObject.add(enemy);
     }
 
-    private void addAlly() {
-        FriendlyObject ally1 = FriendlyObject.creat(1);
-        FriendlyObject ally2 = FriendlyObject.creat(1);
-        FriendlyObject ally3 = FriendlyObject.creat(1);
-        FriendlyObject ally4 = FriendlyObject.creat(1);
-        FriendlyObject ally5 = FriendlyObject.creat(1);
-        ally1.setAllynumber(5);
-        ally1.getPosition().set(
-                437, 208
-        );
-        ally2.getPosition().set(361,240);
-        ally3.getPosition().set(285,272);
-        ally4.getPosition().set(209,304);
-        ally5.getPosition().set(133,336);
-        GameObject.add(ally1);
-        GameObject.add(ally2);
-        GameObject.add(ally3);
-        GameObject.add(ally4);
-        GameObject.add(ally5);
-        FriendlyObject bomb1 = FriendlyObject.creat(2);
-        bomb1.getPosition().set(100, 350);
-        GameObject.add(bomb1);
-    }
-    private void addPlayer() {
-        player.setConstraints(new Constraints(
-                settings.getWindowInsets().top,
-                settings.getGamePlayHeight(),
-                settings.getWindowInsets().left,
-                settings.getGamePlayWidth())
-        );
-        player.getPosition().set(
-                50,350
-        );
-        GameObject.add(player);
-    }
-    private void addBackground() {
+//
+//    private void addPlayer() {
+//        player.setConstraints(new Constraints(
+//                settings.getWindowInsets().top,
+//                settings.getGamePlayHeight(),
+//                settings.getWindowInsets().left,
+//                settings.getGamePlayWidth())
+//        );
+//        player.getPosition().set(
+//                50,350
+//        );
+//        GameObject.add(player);
+//    }
+    private void addBackground(int backgroundType) {
         GameObject.add(new Background());
     }
-    private void addPlatform() {
-        Map map = Map.load("assets/maps/jsonfile/stage1.json");
-        map.generate();
+    private void addPlatform(int level) {
+        String stage = "assets/maps/jsonfile/stage"+level+".json";
+        if(stage != null) {
+            Map map = Map.load(stage);
+            map.generate();
+        }
+    }
+    public static int getStageLevel() {
+        return stageLevel;
+    }
+
+    public static void setStageLevel(int stageLevel) {
+        testScene.stageLevel = stageLevel;
     }
 }

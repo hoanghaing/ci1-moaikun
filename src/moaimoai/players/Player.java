@@ -10,6 +10,7 @@ import bases.physics.PhysicsBody;
 import bases.platforms.BrokenPlatform;
 import bases.platforms.Platform;
 import bases.renderers.ImageRenderer;
+import moaimoai.allies.BombObject;
 import moaimoai.allies.FriendlyObject;
 import moaimoai.enemies.Enemy;
 import moaimoai.enemies.Explosion;
@@ -17,6 +18,7 @@ import moaimoai.inputs.InputManager;
 import moaimoai.scenes.GameOverScene;
 import moaimoai.scenes.Scene;
 import moaimoai.scenes.SceneManager;
+import moaimoai.settings.Settings;
 import tklibs.SpriteUtils;
 
 import java.awt.*;
@@ -26,7 +28,7 @@ import java.awt.image.BufferedImage;
  * Created by NguyenGiaThe on 8/26/2017.
  */
 public class Player extends GameObject implements PhysicsBody {
-
+    Settings settings = Settings.instance;
     private final float SPEED = 2;
     private Vector2D velocity;
     private final float GRAVITY = 0.5f;
@@ -54,6 +56,18 @@ public class Player extends GameObject implements PhysicsBody {
         this.renderer = playerAminator;
         this.attackCoolDown = new FrameCounter(20);
         this.setMineTime = new FrameCounter(90);
+
+        this.setConstraints(new Constraints(
+                        settings.getWindowInsets().top,
+                        settings.getGamePlayHeight(),
+                        settings.getWindowInsets().left,
+                        settings.getGamePlayWidth())
+        );
+    }
+
+    public static Player create(){
+        Player player = new Player();
+        return player;
     }
 
     public void setConstraints(Constraints constraints) {
@@ -96,9 +110,13 @@ public class Player extends GameObject implements PhysicsBody {
                 FriendlyObject.setAllynumber(FriendlyObject.getAllynumber() - 1);
                 friendlyObject.setActive(false);
             }
-            if(friendlyObject.isBomb()){
+
+        }
+        BombObject bombObject = Physics.collideWith(boxCollider,BombObject.class);
+        if(bombObject != null){
+            if(bombObject.isBomb()){
                 this.bomb ++;
-                friendlyObject.setActive(false);
+                bombObject.setActive(false);
             }
         }
     }

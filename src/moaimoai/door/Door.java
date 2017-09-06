@@ -8,6 +8,8 @@ import bases.physics.PhysicsBody;
 import bases.renderers.ImageRenderer;
 import moaimoai.allies.FriendlyObject;
 import moaimoai.players.Player;
+import moaimoai.scenes.SceneManager;
+import moaimoai.scenes.testScene;
 
 public class Door extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
@@ -17,7 +19,7 @@ public class Door extends GameObject implements PhysicsBody {
         this.doortype = type;
         switch (type){
             case 1:{ //BLUE
-                this.renderer = ImageRenderer.create("assets/images/doors/blue/door1.png");
+                this.renderer = ImageRenderer.create("assets/images/doors/blue/door11.png");
                 this.boxCollider = new BoxCollider(75, 64);
                 this.children.add(boxCollider);
                 break;
@@ -56,10 +58,19 @@ public class Door extends GameObject implements PhysicsBody {
             DoorOpen doorOpen = new DoorOpen(doortype);
             doorOpen.getPosition().set(this.position);
             GameObject.add(doorOpen);
+            int stage = testScene.getStageLevel();
+            stage++;
+            testScene.setStageLevel(stage);
+            SceneManager.changeScene(new testScene());
         }
     }
     @Override
     public BoxCollider getBoxCollider() {
         return boxCollider;
+    }
+
+    public static Object create() {
+        Door door = new Door(1);
+        return door;
     }
 }

@@ -63,9 +63,9 @@ public class GameWindow extends Frame {
     }
 
     private void setupLevel() {
-//        SceneManager.changeScene(new testScene());
+        SceneManager.changeScene(new testScene());
 //        SceneManager.changeScene(new testStage2());
-    SceneManager.changeScene(new testStage10());
+//    SceneManager.changeScene(new testStage10());
 
     }
 
