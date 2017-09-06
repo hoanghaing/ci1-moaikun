@@ -14,6 +14,9 @@ import moaimoai.allies.FriendlyObject;
 import moaimoai.enemies.Enemy;
 import moaimoai.enemies.Explosion;
 import moaimoai.inputs.InputManager;
+import moaimoai.scenes.GameOverScene;
+import moaimoai.scenes.Scene;
+import moaimoai.scenes.SceneManager;
 import tklibs.SpriteUtils;
 
 import java.awt.*;
@@ -226,6 +229,7 @@ public class Player extends GameObject implements PhysicsBody {
         PlayerDeath playerDeath = new PlayerDeath();
         playerDeath.getPosition().set(this.getPosition());
         GameObject.add(playerDeath);
+        SceneManager.changeScene(new GameOverScene());
     }
 
     public void setAttack(boolean attack) {
