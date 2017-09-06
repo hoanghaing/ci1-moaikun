@@ -128,7 +128,7 @@ public class Platform extends GameObject implements PhysicsBody{
 
     private void updateHorizontalPhysics() {
         Vector2D checkPositon = screenPosition.add(velocity.x, 0);
-        Platform platform = Physics.collideWith(screenPosition,checkPositon, boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
+        Platform platform = Physics.collideWith(screenPosition,checkPositon, boxCollider.getWidth(), boxCollider.getHeight() / 2, Platform.class);
         if (platform != null ){
             while (Physics.collideWith(screenPosition.add(Math.signum(velocity.x), 0), boxCollider.getWidth(),
                     boxCollider.getHeight(), Platform.class) == null){
@@ -144,7 +144,7 @@ public class Platform extends GameObject implements PhysicsBody{
 
     private void updateVericalPhysics() {
         Vector2D checkPosition = screenPosition.add(0,velocity.y);
-        Platform platform =  Physics.collideWith(screenPosition,checkPosition,this.boxCollider.getWidth(),this.boxCollider.getHeight(),Platform.class);
+        Platform platform =  Physics.collideWith(screenPosition,checkPosition,this.boxCollider.getWidth() / 2,this.boxCollider.getHeight(),Platform.class);
         if(platform != null){
             while (Physics.collideWith(screenPosition,this.screenPosition.add(0,1),this.boxCollider.getWidth(),this.boxCollider.getHeight(),Platform.class) == null){
                 position.addUp(0,1);
