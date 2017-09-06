@@ -3,14 +3,12 @@ package moaimoai.scenes;
 import bases.Constraints;
 import bases.GameObject;
 import bases.maps.Map;
-import moaimoai.allies.FriendlyObject;
 import moaimoai.door.Door;
 import moaimoai.enemies.Enemy;
-import moaimoai.players.Player;
 import moaimoai.settings.Settings;
 
 
-public class testScene extends Scene {
+public class GamePlay extends Scene {
 //    Player player = new Player();
     Door door = new Door(1);
     Settings settings = Settings.instance;
@@ -54,7 +52,7 @@ public class testScene extends Scene {
 //        GameObject.add(player);
 //    }
     private void addBackground(int backgroundType) {
-        GameObject.add(new Background());
+        GameObject.add(new Background(backgroundType));
     }
     private void addPlatform(int level) {
         String stage = "assets/maps/jsonfile/stage"+level+".json";
@@ -68,6 +66,6 @@ public class testScene extends Scene {
     }
 
     public static void setStageLevel(int stageLevel) {
-        testScene.stageLevel = stageLevel;
+        GamePlay.stageLevel = stageLevel;
     }
 }

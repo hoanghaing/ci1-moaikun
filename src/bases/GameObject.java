@@ -5,8 +5,10 @@ import bases.physics.PhysicsBody;
 import bases.platforms.Platform;
 import bases.pools.GameObjectPool;
 import bases.renderers.Renderer;
+import moaimoai.allies.BombObject;
 import moaimoai.allies.FriendlyObject;
 import moaimoai.door.Door;
+import moaimoai.enemies.Enemy;
 import moaimoai.players.Player;
 
 import java.awt.*;
@@ -132,6 +134,11 @@ public class GameObject {
             case 23:
                 return null;
 //                return (GameObject) Door.create();
+            case 24:
+                return (GameObject) BombObject.create();
+
+            case 26:
+                return (GameObject) Enemy.create();
             case 30 : {
                 //return player
                 break;

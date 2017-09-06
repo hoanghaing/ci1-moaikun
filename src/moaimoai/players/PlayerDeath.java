@@ -3,6 +3,7 @@ package moaimoai.players;
 import bases.GameObject;
 import bases.Vector2D;
 import bases.renderers.Animation;
+import moaimoai.scenes.SceneManager;
 import tklibs.SpriteUtils;
 
 import java.awt.*;
@@ -26,6 +27,9 @@ public class PlayerDeath extends GameObject{
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
         this.position.y -= SPEED;
+        if(this.position.y <=0){
+            SceneManager.changeScene(SceneManager.getCurrentScene());
+        }
     }
 
 

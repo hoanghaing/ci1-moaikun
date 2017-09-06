@@ -24,4 +24,8 @@ public class SceneManager {
             nextScene = null;
         }
     }
+
+    public static Scene getCurrentScene() {
+        return currentScene;
+    }
 }

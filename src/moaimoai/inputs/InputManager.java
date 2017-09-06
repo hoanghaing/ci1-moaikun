@@ -11,6 +11,7 @@ public class InputManager {
     public boolean rightPressed;
     public boolean xPressed;
     public boolean cPressed;
+
     public static final InputManager instance = new InputManager();
     public boolean enterPressed;
     public boolean shiftPressed;

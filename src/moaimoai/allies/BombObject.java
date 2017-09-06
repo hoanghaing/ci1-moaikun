@@ -6,8 +6,10 @@ import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.platforms.Platform;
+import bases.renderers.ImageRenderer;
 import moaimoai.enemies.Enemy;
 import moaimoai.enemies.Explosion;
+import tklibs.SpriteUtils;
 
 public class BombObject extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
@@ -18,8 +20,7 @@ public class BombObject extends GameObject implements PhysicsBody {
     public BombObject(){
         super();
         boxCollider = new BoxCollider(30,30);
-//        this.allyAnimator = new AllyAnimator();
-//        this.renderer = allyAnimator;
+        this.renderer = new ImageRenderer(SpriteUtils.loadImage("assets/images/items/bombs/blue.png"));
         this.children.add(boxCollider);
         this.velocity = new Vector2D();
         this.isBomb = true;

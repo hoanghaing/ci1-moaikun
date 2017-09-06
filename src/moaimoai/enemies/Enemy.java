@@ -7,13 +7,16 @@ import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.platforms.Platform;
+import bases.renderers.ImageRenderer;
 import moaimoai.allies.FriendlyObject;
 import moaimoai.players.Player;
+import moaimoai.settings.Settings;
 
 /**
  * Created by NguyenGiaThe on 9/1/2017.
  */
 public class Enemy extends GameObject implements PhysicsBody {
+    Settings settings = Settings.instance;
     private BoxCollider boxCollider;
     private Vector2D velocity;
     private Enemy1Aminator enemyAminator;
@@ -24,17 +27,22 @@ public class Enemy extends GameObject implements PhysicsBody {
 
     public Enemy() {
         super();
+        this.boxCollider = new BoxCollider(38, 32);
+        this.children.add(boxCollider);
         this.enemyAminator = new Enemy1Aminator();
         this.renderer = enemyAminator;
-        this.boxCollider = new BoxCollider(32, 38);
-        this.children.add(boxCollider);
         this.velocity = new Vector2D();
-    }
-    public static Enemy create(int enemyType) {
-        Enemy enemy = new Enemy();
-        switch (enemyType){
 
-        }
+
+        this.setConstraints(new Constraints(
+                settings.getWindowInsets().top,
+                settings.getGamePlayHeight(),
+                settings.getWindowInsets().left,
+                settings.getGamePlayWidth())
+        );
+    }
+    public static Enemy create() {
+        Enemy enemy = new Enemy();
         return enemy;
     }
 
@@ -59,7 +67,6 @@ public class Enemy extends GameObject implements PhysicsBody {
         moveHorizontal();
         updateMoveHorizontal();
         updateVerticalPhysics();
-
     }
 
     private void updateMoveHorizontal() {

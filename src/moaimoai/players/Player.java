@@ -10,6 +10,7 @@ import bases.physics.PhysicsBody;
 import bases.platforms.BrokenPlatform;
 import bases.platforms.Platform;
 import bases.renderers.ImageRenderer;
+import moaimoai.GameWindow;
 import moaimoai.allies.BombObject;
 import moaimoai.allies.FriendlyObject;
 import moaimoai.enemies.Enemy;
@@ -45,6 +46,7 @@ public class Player extends GameObject implements PhysicsBody {
     private FrameCounter setMineTime;
 
     private PlayerAnimator playerAminator;
+
 
     public Player(){
         super();
@@ -156,7 +158,6 @@ public class Player extends GameObject implements PhysicsBody {
     private void updatePhysics() {
         velocity.y += GRAVITY;
         velocity.x = 0;
-
         jump();
         moveHorizontal();
         updateVerticalPhysics();
@@ -244,10 +245,19 @@ public class Player extends GameObject implements PhysicsBody {
 
     public void getHit(){
         this.isActive = false;
-        PlayerDeath playerDeath = new PlayerDeath();
-        playerDeath.getPosition().set(this.getPosition());
-        GameObject.add(playerDeath);
-        SceneManager.changeScene(new GameOverScene());
+
+        int HP = GameWindow.getPlayerHP();
+        HP--;
+        GameWindow.setPlayerHP(HP);
+
+        if(HP == 0)
+            SceneManager.changeScene(new GameOverScene());
+        else {
+            PlayerDeath playerDeath = new PlayerDeath();
+            playerDeath.getPosition().set(this.getPosition());
+            GameObject.add(playerDeath);
+        }
+
     }
 
     public void setAttack(boolean attack) {

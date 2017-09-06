@@ -6,10 +6,11 @@ import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.renderers.ImageRenderer;
+import moaimoai.GameWindow;
 import moaimoai.allies.FriendlyObject;
 import moaimoai.players.Player;
+import moaimoai.scenes.GamePlay;
 import moaimoai.scenes.SceneManager;
-import moaimoai.scenes.testScene;
 
 public class Door extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
@@ -58,10 +59,19 @@ public class Door extends GameObject implements PhysicsBody {
             DoorOpen doorOpen = new DoorOpen(doortype);
             doorOpen.getPosition().set(this.position);
             GameObject.add(doorOpen);
-            int stage = testScene.getStageLevel();
+
+            // TĂng lên 1 stage
+            int stage = GamePlay.getStageLevel();
             stage++;
-            testScene.setStageLevel(stage);
-            SceneManager.changeScene(new testScene());
+            GamePlay.setStageLevel(stage);
+
+            // Cho thêm 1 mạng
+            int HP = GameWindow.getPlayerHP();
+            HP++;
+            GameWindow.setPlayerHP(HP);
+
+            // Chuyển Scene
+            SceneManager.changeScene(new GamePlay());
         }
     }
     @Override

@@ -10,10 +10,11 @@ public class Background extends GameObject {
     private ImageRenderer imageRenderer;
     private final float imageHeight;
 
-    public Background() {
+    public Background(int type) {
         super();
+        String background = "assets/images/backgrounds/background" + type + ".png" ;
         this.imageRenderer = new ImageRenderer(
-                SpriteUtils.loadImage("assets/images/backgrounds/background1.png")
+                SpriteUtils.loadImage(background)
         );
         this.imageRenderer.getAnchor().set(0, 1);
         this.position.set(0, Settings.instance.getGamePlayHeight());

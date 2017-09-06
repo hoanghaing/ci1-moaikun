@@ -1,9 +1,12 @@
 package moaimoai;
 
 import bases.GameObject;
+import bases.Utils;
+import bases.renderers.ImageRenderer;
 import moaimoai.inputs.InputManager;
 import moaimoai.scenes.*;
 import moaimoai.settings.Settings;
+import tklibs.SpriteUtils;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -20,7 +23,7 @@ public class GameWindow extends Frame {
     private BufferedImage blackBackground;
     private BufferedImage backbufferImage;
     private Graphics2D backbufferGraphics;
-
+    private static int playerHP = 3;
     InputManager inputManager = InputManager.instance;
 
     public GameWindow() {
@@ -63,12 +66,17 @@ public class GameWindow extends Frame {
     }
 
     private void setupLevel() {
-        SceneManager.changeScene(new testScene());
-//        SceneManager.changeScene(new testStage2());
-//    SceneManager.changeScene(new testStage10());
-
+        SceneManager.changeScene(new GamePlay());
+//        StartingMenu startingMenu = new StartingMenu();
+//        GameObject.add(startingMenu);
+    }
+    public static int getPlayerHP() {
+        return playerHP;
     }
 
+    public static void setPlayerHP(int playerHP) {
+        GameWindow.playerHP = playerHP;
+    }
     private void setupGameLoop() {
         lastTimeUpdate = -1;
     }
@@ -108,5 +116,6 @@ public class GameWindow extends Frame {
         backbufferGraphics.drawImage(blackBackground, 0, 0, null);
         GameObject.renderAll(backbufferGraphics);
         getGraphics().drawImage(backbufferImage, 0, 0, null);
+
     }
 }
