@@ -19,7 +19,7 @@ public class Platform extends GameObject implements PhysicsBody{
     private BoxCollider boxCollider;
     private Constraints constraints;
     private Vector2D velocity;
-    private final float GRAVITY = 0.2f;
+    private final float GRAVITY = 0.6f;
     private boolean hasGravity;
     private boolean breakable;
     private boolean moveable;

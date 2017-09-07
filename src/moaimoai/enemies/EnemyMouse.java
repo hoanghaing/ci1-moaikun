@@ -24,7 +24,7 @@ public class EnemyMouse extends EnemyRabit {
         confixAction(this);
     }
 
-    public static EnemyMouse creat(){
+    public static EnemyMouse create(){
         EnemyMouse enemyMouse = new EnemyMouse();
         return enemyMouse;
     }

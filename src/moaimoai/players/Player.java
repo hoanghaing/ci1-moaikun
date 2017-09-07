@@ -44,6 +44,7 @@ public class Player extends GameObject implements PhysicsBody {
     private FrameCounter attackCoolDown;
     private FrameCounter setMineTime;
     private FrameCounter pushingTime;
+    private FrameCounter standOnTrap;
 
 
     private PlayerAnimator playerAminator;
@@ -59,9 +60,12 @@ public class Player extends GameObject implements PhysicsBody {
         this.attack = false;
         this.playerAminator = new PlayerAnimator();
         this.renderer = playerAminator;
+
         this.attackCoolDown = new FrameCounter(20);
         this.setMineTime = new FrameCounter(50);
         this.pushingTime = new FrameCounter(60);
+        this.standOnTrap = new FrameCounter(60);
+
         this.hitRock = AudioUtils.loadSound("assets/music/sfx/enemy-explosion-big.wav");
         this.playerAtack = new PlayerAtack();
         this.playerPushing = new PlayerPushing();
@@ -95,6 +99,9 @@ public class Player extends GameObject implements PhysicsBody {
         playerHitFriend.hitAlly(this);
         if (constraints != null) {
             constraints.make(this.position);
+        }
+        if(screenPosition.y > constraints.bottom){
+            this.getHit();
         }
     }
 
@@ -270,5 +277,13 @@ public class Player extends GameObject implements PhysicsBody {
 
     public void setBomb(int bomb) {
         this.bomb = bomb;
+    }
+
+    public FrameCounter getStandOnTrap() {
+        return standOnTrap;
+    }
+
+    public void setStandOnTrap(FrameCounter standOnTrap) {
+        this.standOnTrap = standOnTrap;
     }
 }

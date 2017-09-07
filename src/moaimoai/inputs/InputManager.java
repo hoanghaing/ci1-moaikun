@@ -40,10 +40,13 @@ public class InputManager {
                 break;
             case VK_C:
                 cPressed = true;
+                break;
             case VK_ENTER:
                 enterPressed = true;
+                break;
             case VK_SHIFT:
                 shiftPressed = true;
+                break;
         }
     }
 
@@ -66,10 +69,13 @@ public class InputManager {
                 break;
             case VK_C:
                 cPressed = false;
+                break;
             case VK_ENTER:
                 enterPressed = false;
+                break;
             case VK_SHIFT:
                 shiftPressed = false;
+                break;
         }
     }
 }
