@@ -9,6 +9,7 @@ import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.platforms.Platform;
 import moaimoai.GameWindow;
+import moaimoai.allies.FriendlyObject;
 import moaimoai.inputs.InputManager;
 import moaimoai.scenes.GameOverScene;
 import moaimoai.scenes.SceneManager;
@@ -212,6 +213,7 @@ public class Player extends GameObject implements PhysicsBody {
             PlayerDeath playerDeath = new PlayerDeath();
             playerDeath.getPosition().set(this.getPosition());
             GameObject.add(playerDeath);
+            FriendlyObject.setAllynumber(0);
         }
 
     }

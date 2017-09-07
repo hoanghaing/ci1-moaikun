@@ -121,7 +121,6 @@ public class Enemy extends GameObject implements PhysicsBody {
         }
     }
 
-
     @Override
     public BoxCollider getBoxCollider() {
         return boxCollider;
