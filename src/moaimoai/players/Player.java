@@ -24,7 +24,7 @@ import javax.sound.sampled.Clip;
 public class Player extends GameObject implements PhysicsBody {
     private final float SPEED = 2;
     private Vector2D velocity;
-    private final float GRAVITY = 0.5f;
+    private final float GRAVITY = 0.6f;
     private BoxCollider boxCollider;
     private Constraints constraints;
     private boolean attack;
@@ -61,7 +61,7 @@ public class Player extends GameObject implements PhysicsBody {
         this.renderer = playerAminator;
         this.attackCoolDown = new FrameCounter(20);
         this.setMineTime = new FrameCounter(50);
-        this.pushingTime = new FrameCounter(90);
+        this.pushingTime = new FrameCounter(60);
         this.hitRock = AudioUtils.loadSound("assets/music/sfx/enemy-explosion-big.wav");
         this.playerAtack = new PlayerAtack();
         this.playerPushing = new PlayerPushing();
@@ -110,13 +110,15 @@ public class Player extends GameObject implements PhysicsBody {
     }
 
     private void atack() {
-        if (InputManager.instance.xPressed && !InputManager.instance.downPressed) {
-            if (!attack) {
-                playerAtack.doAttack(this);
-                setAttack(true);
+        if(Physics.collideWith(boxCollider, Platform.class) == null) {
+            if (InputManager.instance.xPressed && !InputManager.instance.downPressed) {
+                if (!attack) {
+                    playerAtack.doAttack(this);
+                    setAttack(true);
+                }
+            }else {
+                unlockAttack();
             }
-        }else {
-            unlockAttack();
         }
     }
 

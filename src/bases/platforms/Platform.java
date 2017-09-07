@@ -27,6 +27,7 @@ public class Platform extends GameObject implements PhysicsBody{
     private int type;
     private FrameCounter runingTime;
     private boolean moving;
+    private boolean stopable;
 
 
     public Platform() {
@@ -147,11 +148,12 @@ public class Platform extends GameObject implements PhysicsBody{
                 screenPosition.addUp(Math.signum(velocity.x), 0);
             }
             velocity.x = 0;
+            this.killPlayer = false;
         }
         if(moving) {
             this.position.x += velocity.x;
             this.screenPosition.x += velocity.x;
-            if(runingTime.run()){
+            if(this.stopable && runingTime.run()){
                 moving = false;
                 runingTime.reset();
             }
@@ -234,5 +236,21 @@ public class Platform extends GameObject implements PhysicsBody{
         brokenPlatform.getPosition().set(this.getPosition());
         GameObject.add(brokenPlatform);
 
+    }
+
+    public boolean isStopable() {
+        return stopable;
+    }
+
+    public void setStopable(boolean stopable) {
+        this.stopable = stopable;
+    }
+
+    public boolean isKillPlayer() {
+        return killPlayer;
+    }
+
+    public void setKillPlayer(boolean killPlayer) {
+        this.killPlayer = killPlayer;
     }
 }

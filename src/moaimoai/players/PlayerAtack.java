@@ -21,8 +21,10 @@ public class PlayerAtack {
 
             }
             if(platform.isMoveable()){
-                platform.getVelocity().x =  owner.getRangeAttack() / 3;
+                platform.getVelocity().x =  owner.getRangeAttack() *2/5;
                 platform.setMoving(true);
+                platform.setKillPlayer(true);
+                platform.setStopable(false);
 //                AudioUtils.play(owner.getHitRock());
             }
         }
