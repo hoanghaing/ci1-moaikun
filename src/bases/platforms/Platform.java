@@ -9,6 +9,8 @@ import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.renderers.ImageRenderer;
+import moaimoai.allies.BombObject;
+import moaimoai.allies.FriendlyObject;
 import moaimoai.enemies.EnemyRabit;
 import moaimoai.players.Player;
 import moaimoai.settings.Settings;
@@ -145,6 +147,20 @@ public class Platform extends GameObject implements PhysicsBody{
 
     private void updateHorizontalPhysics() {
         Vector2D checkPositon = screenPosition.add(velocity.x, 0);
+        hitPlatform(checkPositon);
+        hitAlly(checkPositon);
+        hitBomb();
+        if(moving) {
+            this.position.x += velocity.x;
+            this.screenPosition.x += velocity.x;
+            if(this.stopable && runingTime.run()){
+                moving = false;
+                runingTime.reset();
+            }
+        }
+    }
+
+    private void hitPlatform(Vector2D checkPositon) {
         Platform platform = Physics.collideWith(screenPosition,checkPositon, boxCollider.getWidth(), boxCollider.getHeight() - 2 , Platform.class);
         if (platform != null ){
             while (Physics.collideWith(screenPosition.add(Math.signum(velocity.x), 0), boxCollider.getWidth(),
@@ -155,14 +171,27 @@ public class Platform extends GameObject implements PhysicsBody{
             velocity.x = 0;
             this.killPlayer = false;
         }
-        if(moving) {
-            this.position.x += velocity.x;
-            this.screenPosition.x += velocity.x;
-            if(this.stopable && runingTime.run()){
-                moving = false;
-                runingTime.reset();
+    }
+
+
+    private void hitAlly(Vector2D checkPositon) {
+        FriendlyObject friendlyObject = Physics.collideWith(checkPositon, boxCollider.getWidth(), boxCollider.getHeight() - 2 , FriendlyObject.class);
+        if (friendlyObject != null ){
+            while (Physics.collideWith(screenPosition.add(Math.signum(velocity.x), 0), boxCollider.getWidth(),
+                    boxCollider.getHeight() - 2 , Platform.class) == null){
+                position.addUp(Math.signum(velocity.x), 0);
+                screenPosition.addUp(Math.signum(velocity.x), 0);
             }
+            velocity.x = 0;
+            this.killPlayer = false;
         }
+    }
+
+    private void hitBomb(){
+       BombObject bombObject = Physics.collideWith(boxCollider,BombObject.class);
+       if(bombObject != null){
+           bombObject.setActive(false);
+       }
     }
 
     private void updateVericalPhysics() {
