@@ -1,10 +1,8 @@
 package moaimoai.scenes;
 
-import bases.Constraints;
 import bases.GameObject;
 import bases.maps.Map;
 import moaimoai.door.Door;
-import moaimoai.enemies.Enemy;
 import moaimoai.settings.Settings;
 
 
@@ -27,16 +25,16 @@ public class GamePlay extends Scene {
         GameObject.add(door);
     }
 
-    private void addEnemy() {
-        Enemy enemy = new Enemy();
-        enemy.getPosition().set(250 , 200);
-        enemy.setConstraints(new Constraints(
-                settings.getWindowInsets().top,
-                settings.getGamePlayHeight(),
-                settings.getWindowInsets().left ,
-                settings.getGamePlayWidth()));
-        GameObject.add(enemy);
-    }
+//    private void addEnemy() {
+//        EnemyRabit enemy = new EnemyRabit();
+//        enemy.getPosition().set(250 , 200);
+//        enemy.setConstraints(new Constraints(
+//                settings.getWindowInsets().top,
+//                settings.getGamePlayHeight(),
+//                settings.getWindowInsets().left ,
+//                settings.getGamePlayWidth()));
+//        GameObject.add(enemy);
+//    }
 
 //
 //    private void addPlayer() {

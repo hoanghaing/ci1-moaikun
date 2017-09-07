@@ -1,5 +1,6 @@
 package bases;
 
+import bases.actions.Action;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.platforms.Platform;
@@ -8,7 +9,7 @@ import bases.renderers.Renderer;
 import moaimoai.allies.BombObject;
 import moaimoai.allies.FriendlyObject;
 import moaimoai.door.Door;
-import moaimoai.enemies.Enemy;
+import moaimoai.enemies.EnemyRabit;
 import moaimoai.players.Player;
 
 import java.awt.*;
@@ -25,6 +26,8 @@ public class GameObject {
     protected Renderer renderer;
 
     protected ArrayList<GameObject> children;
+    protected ArrayList<Action> actions;
+    protected ArrayList<Action> newActions;
     protected boolean isActive;
     protected boolean isRenewing;
 
@@ -67,6 +70,9 @@ public class GameObject {
     }
 
     public GameObject() {
+        actions = new ArrayList<>();
+        newActions = new ArrayList<>();
+
         children = new ArrayList<>();
         position = new Vector2D();
         screenPosition = new Vector2D();
@@ -138,7 +144,7 @@ public class GameObject {
                 return (GameObject) BombObject.create();
 
             case 26:
-                return (GameObject) Enemy.create();
+                return (GameObject) EnemyRabit.create();
             case 30 : {
                 //return player
                 break;
@@ -201,5 +207,25 @@ public class GameObject {
         if (renderer != null)
             this.renderer = renderer;
         return this;
+    }
+
+    public static void runAllActions() {
+        for (GameObject gameObject : gameObjects){
+            if (gameObject.isActive) {
+                gameObject.runActions();
+            }
+        }
+    }
+
+    private void runActions() {
+
+        actions.removeIf(action -> action.run(this));
+
+        actions.addAll(newActions);
+        newActions.clear();
+    }
+
+    public void addAction(Action action){
+        newActions.add(action);
     }
 }

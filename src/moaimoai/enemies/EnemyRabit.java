@@ -7,47 +7,39 @@ import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.platforms.Platform;
-import bases.renderers.ImageRenderer;
-import moaimoai.allies.FriendlyObject;
 import moaimoai.players.Player;
 import moaimoai.settings.Settings;
 
 /**
  * Created by NguyenGiaThe on 9/1/2017.
  */
-public class Enemy extends GameObject implements PhysicsBody {
-    Settings settings = Settings.instance;
+public class EnemyRabit extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
     private Vector2D velocity;
-    private Enemy1Aminator enemyAminator;
+    private EnemyRabitAminator enemyAminator;
     private Constraints constraints;
-    private final float SPEED = 1;
+    private final float SPEED = 0.7f;
     private boolean right = true;
     private boolean left;
+    Settings settings = Settings.instance;
 
-    public Enemy() {
+    public EnemyRabit() {
         super();
-        this.boxCollider = new BoxCollider(38, 32);
-        this.children.add(boxCollider);
-        this.enemyAminator = new Enemy1Aminator();
+        this.enemyAminator = new EnemyRabitAminator();
         this.renderer = enemyAminator;
+        this.boxCollider = new BoxCollider(32, 33);
+        this.children.add(boxCollider);
         this.velocity = new Vector2D();
-
-
-        this.setConstraints(new Constraints(
+        this.constraints = new Constraints(
                 settings.getWindowInsets().top,
                 settings.getGamePlayHeight(),
-                settings.getWindowInsets().left,
-                settings.getGamePlayWidth())
-        );
-    }
-    public static Enemy create() {
-        Enemy enemy = new Enemy();
-        return enemy;
+                settings.getWindowInsets().left ,
+                settings.getGamePlayWidth());
     }
 
-    public void setConstraints(Constraints constraints) {
-        this.constraints = constraints;
+    public static EnemyRabit create(){
+        EnemyRabit enemy = new EnemyRabit();
+        return enemy;
     }
 
     @Override
@@ -55,8 +47,9 @@ public class Enemy extends GameObject implements PhysicsBody {
         super.run(parentPosition);
         updatePhysics();
         hitPlayer();
-//        hitAlly();
+
         enemyAminator.update(this);
+
         if (constraints != null){
             constraints.make(position);
         }
@@ -121,6 +114,7 @@ public class Enemy extends GameObject implements PhysicsBody {
         }
     }
 
+
     @Override
     public BoxCollider getBoxCollider() {
         return boxCollider;
@@ -141,7 +135,7 @@ public class Enemy extends GameObject implements PhysicsBody {
     }
 
 //    private void hitAlly(){
-//        FriendlyObject ally = Physics.collideWith(this.boxCollider, FriendlyObject.class);
+//        Ally ally = Physics.collideWith(this.boxCollider, Ally.class);
 //        if (ally != null){
 //            ally.getHit();
 //        }

@@ -9,9 +9,8 @@ import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.renderers.ImageRenderer;
-import moaimoai.enemies.Enemy;
+import moaimoai.enemies.EnemyRabit;
 import moaimoai.players.Player;
-import moaimoai.players.PlayerDeath;
 import moaimoai.settings.Settings;
 
 
@@ -182,7 +181,7 @@ public class Platform extends GameObject implements PhysicsBody{
         if (player != null) {
             player.getHit();
         }
-        Enemy enemy = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), Enemy.class);
+        EnemyRabit enemy = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), EnemyRabit.class);
         if (enemy != null){
             enemy.getHit();
         }
@@ -228,5 +227,12 @@ public class Platform extends GameObject implements PhysicsBody{
 
     public void setMoving(boolean moving) {
         this.moving = moving;
+    }
+
+    public void explosion() {
+        BrokenPlatform brokenPlatform = new BrokenPlatform();
+        brokenPlatform.getPosition().set(this.getPosition());
+        GameObject.add(brokenPlatform);
+
     }
 }

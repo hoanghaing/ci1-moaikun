@@ -10,7 +10,7 @@ import java.awt.*;
 /**
  * Created by NguyenGiaThe on 9/4/2017.
  */
-public class Enemy1Aminator implements Renderer {
+public class EnemyRabitAminator implements Renderer {
     private Animation leftMoveing = new Animation(
             SpriteUtils.loadImage("assets/images/enemies/level2/left/1.png"),
             SpriteUtils.loadImage("assets/images/enemies/level2/left/2.png"),
@@ -27,7 +27,7 @@ public class Enemy1Aminator implements Renderer {
 
     private Animation current = rightMoving;
 
-    public void update(Enemy enemy){
+    public void update(EnemyRabit enemy){
         Vector2D velocity = enemy.getVelocity();
         if (velocity.x > 0){
             current = rightMoving;

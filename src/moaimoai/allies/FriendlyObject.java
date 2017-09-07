@@ -1,19 +1,11 @@
 package moaimoai.allies;
 
-import bases.Constraints;
 import bases.GameObject;
 import bases.Vector2D;
 import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.platforms.Platform;
-import bases.renderers.Animation;
-import bases.renderers.ImageRenderer;
-import com.sun.org.apache.xml.internal.serializer.ToUnknownStream;
-import moaimoai.enemies.Enemy;
-import moaimoai.enemies.Explosion;
-import moaimoai.players.Player;
-import tklibs.SpriteUtils;
 
 
 public class FriendlyObject extends GameObject implements PhysicsBody{
@@ -93,7 +85,7 @@ public class FriendlyObject extends GameObject implements PhysicsBody{
     }
 
 //    public void getHit(){
-//        Enemy enemy = Physics.collideWith(this.boxCollider, Enemy.class);
+//        EnemyRabit enemy = Physics.collideWith(this.boxCollider, EnemyRabit.class);
 //        if (enemy != null){
 //            this.isActive = false;
 //            Explosion explosion = new Explosion();

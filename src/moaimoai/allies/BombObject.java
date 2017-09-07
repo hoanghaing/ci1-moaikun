@@ -7,7 +7,7 @@ import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.platforms.Platform;
 import bases.renderers.ImageRenderer;
-import moaimoai.enemies.Enemy;
+import moaimoai.enemies.EnemyRabit;
 import moaimoai.enemies.Explosion;
 import tklibs.SpriteUtils;
 
@@ -52,7 +52,7 @@ public class BombObject extends GameObject implements PhysicsBody {
     }
 
     public void getHit(){
-        Enemy enemy = Physics.collideWith(this.boxCollider, Enemy.class);
+        EnemyRabit enemy = Physics.collideWith(this.boxCollider, EnemyRabit.class);
         if (enemy != null){
             this.isActive = false;
             Explosion explosion = new Explosion();
