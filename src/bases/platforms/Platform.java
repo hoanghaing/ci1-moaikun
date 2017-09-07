@@ -28,6 +28,7 @@ public class Platform extends GameObject implements PhysicsBody{
     private FrameCounter runingTime;
     private boolean moving;
     private boolean stopable;
+    private boolean trap;
 
 
     public Platform() {
@@ -85,6 +86,8 @@ public class Platform extends GameObject implements PhysicsBody{
                 break;
             case 10: //ĐINH GỈ
                 platform.renderer = ImageRenderer.create("assets/images/deadgrounds/dinhgi/white.png");
+                platform.trap = true;
+                platform.velocity = new Vector2D();
                 break;
             case 11: // ĐÁ MỀM, XÁM TRẮNG
                 platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/gray.png");
@@ -252,5 +255,13 @@ public class Platform extends GameObject implements PhysicsBody{
 
     public void setKillPlayer(boolean killPlayer) {
         this.killPlayer = killPlayer;
+    }
+
+    public void setHasGravity(boolean hasGravity) {
+        this.hasGravity = hasGravity;
+    }
+
+    public boolean isTrap() {
+        return trap;
     }
 }

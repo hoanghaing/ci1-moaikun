@@ -1,6 +1,8 @@
 package moaimoai.players;
 
+import bases.Vector2D;
 import bases.physics.Physics;
+import bases.platforms.Platform;
 import moaimoai.allies.BombObject;
 import moaimoai.allies.FriendlyObject;
 
@@ -14,13 +16,19 @@ public class PlayerHitFriend {
 //            if(friendlyObject.isBomb()){
 //                owner.setBomb(owner.getBomb() + 1);
 //                friendlyObject.setActive(false);
-    }
 
-    public void hitBomb(Player owner){
         BombObject bombObject = Physics.collideWith(owner.getBoxCollider(),BombObject.class);
         if(bombObject != null){
             owner.setBomb(owner.getBomb() + 1);
             bombObject.setActive(false);
+        }
+
+        Vector2D checkPos = owner.getScreenPosition().add(0,3);
+        Platform platform = Physics.collideWith(checkPos,owner.getBoxCollider().getWidth(),owner.getBoxCollider().getHeight(),Platform.class);
+        if(platform != null && platform.isTrap()){
+            if(owner.getPushingTime().run()){
+                platform.setHasGravity(true);
+            }
         }
     }
 }

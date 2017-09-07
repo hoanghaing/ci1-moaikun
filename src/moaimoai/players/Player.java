@@ -93,7 +93,6 @@ public class Player extends GameObject implements PhysicsBody {
         atack();
         setMine();
         playerHitFriend.hitAlly(this);
-        playerHitFriend.hitBomb(this);
         if (constraints != null) {
             constraints.make(this.position);
         }
