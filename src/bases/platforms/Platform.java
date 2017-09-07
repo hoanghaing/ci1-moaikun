@@ -88,6 +88,8 @@ public class Platform extends GameObject implements PhysicsBody{
                 platform.renderer = ImageRenderer.create("assets/images/deadgrounds/dinhgi/white.png");
                 platform.trap = true;
                 platform.velocity = new Vector2D();
+                platform.boxCollider = new BoxCollider(38,30);
+                platform.children.add(platform.boxCollider);
                 break;
             case 11: // ĐÁ MỀM, XÁM TRẮNG
                 platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/gray.png");
@@ -146,7 +148,7 @@ public class Platform extends GameObject implements PhysicsBody{
         Platform platform = Physics.collideWith(screenPosition,checkPositon, boxCollider.getWidth(), boxCollider.getHeight() - 2 , Platform.class);
         if (platform != null ){
             while (Physics.collideWith(screenPosition.add(Math.signum(velocity.x), 0), boxCollider.getWidth(),
-                    boxCollider.getHeight() , Platform.class) == null){
+                    boxCollider.getHeight() - 2 , Platform.class) == null){
                 position.addUp(Math.signum(velocity.x), 0);
                 screenPosition.addUp(Math.signum(velocity.x), 0);
             }
@@ -167,7 +169,7 @@ public class Platform extends GameObject implements PhysicsBody{
         Vector2D checkPosition = screenPosition.add(0,velocity.y);
         Platform platform =  Physics.collideWith(screenPosition,checkPosition,this.boxCollider.getWidth() - 2 ,this.boxCollider.getHeight(),Platform.class);
         if(platform != null){
-            while (Physics.collideWith(screenPosition,this.screenPosition.add(0,1),this.boxCollider.getWidth() ,this.boxCollider.getHeight(),Platform.class) == null){
+            while (Physics.collideWith(screenPosition,this.screenPosition.add(0,1),this.boxCollider.getWidth() - 2 ,this.boxCollider.getHeight(),Platform.class) == null){
                 position.addUp(0,1);
                 screenPosition.addUp(0,1);
             }
