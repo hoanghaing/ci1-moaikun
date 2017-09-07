@@ -14,8 +14,6 @@ import tklibs.SpriteUtils;
 public class BombObject extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
     private Vector2D velocity;
-    private static int BOMBNUMBER = 0;
-    private boolean isBomb;
 
     public BombObject(){
         super();
@@ -23,7 +21,6 @@ public class BombObject extends GameObject implements PhysicsBody {
         this.renderer = new ImageRenderer(SpriteUtils.loadImage("assets/images/items/bombs/blue.png"));
         this.children.add(boxCollider);
         this.velocity = new Vector2D();
-        this.isBomb = true;
     }
 
     public static BombObject create (){
@@ -32,18 +29,6 @@ public class BombObject extends GameObject implements PhysicsBody {
     }
 
 
-    public boolean isBomb() {
-        return isBomb;
-    }
-
-    public static int getBOMBNUMBER() {
-
-        return BOMBNUMBER;
-    }
-
-    public static void setBOMBNUMBER(int BOMBNUMBER) {
-        BombObject.BOMBNUMBER = BOMBNUMBER;
-    }
 
 
     @Override

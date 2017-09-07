@@ -7,29 +7,20 @@ import bases.Vector2D;
 import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
-import bases.platforms.BrokenPlatform;
 import bases.platforms.Platform;
-import bases.renderers.ImageRenderer;
 import moaimoai.GameWindow;
-import moaimoai.allies.BombObject;
-import moaimoai.allies.FriendlyObject;
-import moaimoai.enemies.Enemy;
-import moaimoai.enemies.Explosion;
 import moaimoai.inputs.InputManager;
 import moaimoai.scenes.GameOverScene;
-import moaimoai.scenes.Scene;
 import moaimoai.scenes.SceneManager;
 import moaimoai.settings.Settings;
-import tklibs.SpriteUtils;
+import tklibs.AudioUtils;
 
-import java.awt.*;
-import java.awt.image.BufferedImage;
+import javax.sound.sampled.Clip;
 
 /**
  * Created by NguyenGiaThe on 8/26/2017.
  */
 public class Player extends GameObject implements PhysicsBody {
-    Settings settings = Settings.instance;
     private final float SPEED = 2;
     private Vector2D velocity;
     private final float GRAVITY = 0.5f;
@@ -41,11 +32,22 @@ public class Player extends GameObject implements PhysicsBody {
     private int rangeAttack;
     private int bomb = 0;
 
+    private Clip hitRock;
+
+    private PlayerAtack playerAtack;
+    private PlayerPushing playerPushing;
+    private PlayerSetMine playerSetMine;
+    private PlayerHitFriend playerHitFriend;
+
 
     private FrameCounter attackCoolDown;
     private FrameCounter setMineTime;
+    private FrameCounter pushingTime;
+
 
     private PlayerAnimator playerAminator;
+
+
 
 
     public Player(){
@@ -57,14 +59,20 @@ public class Player extends GameObject implements PhysicsBody {
         this.playerAminator = new PlayerAnimator();
         this.renderer = playerAminator;
         this.attackCoolDown = new FrameCounter(20);
-        this.setMineTime = new FrameCounter(90);
-
+        this.setMineTime = new FrameCounter(50);
+        this.pushingTime = new FrameCounter(90);
+        this.hitRock = AudioUtils.loadSound("assets/music/sfx/enemy-explosion-big.wav");
+        this.playerAtack = new PlayerAtack();
+        this.playerPushing = new PlayerPushing();
+        this.playerSetMine = new PlayerSetMine();
+        this.playerHitFriend = new PlayerHitFriend();
         this.setConstraints(new Constraints(
-                        settings.getWindowInsets().top,
-                        settings.getGamePlayHeight(),
-                        settings.getWindowInsets().left,
-                        settings.getGamePlayWidth())
+                Settings.instance.getWindowInsets().top,
+                Settings.instance.getGamePlayHeight(),
+                Settings.instance.getWindowInsets().left,
+                Settings.instance.getGamePlayWidth())
         );
+
     }
 
     public static Player create(){
@@ -79,73 +87,40 @@ public class Player extends GameObject implements PhysicsBody {
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
-        updatePhysics();
         playerAminator.update(this);
-
+        updatePhysics();
+        atack();
+        setMine();
+        playerHitFriend.hitAlly(this);
+        playerHitFriend.hitBomb(this);
         if (constraints != null) {
             constraints.make(this.position);
         }
+    }
+
+    private void setMine() {
+        if(InputManager.instance.xPressed && InputManager.instance.downPressed){
+            if(setMineTime.run() && bomb != 0){
+                bomb --;
+                playerSetMine.setMine(this);
+                setMineTime.reset();
+            }
+        }
+    }
+
+    private void atack() {
         if (InputManager.instance.xPressed && !InputManager.instance.downPressed) {
             if (!attack) {
-                hitEnemy();
-                hitRock();
+                playerAtack.doAttack(this);
                 setAttack(true);
             }
         }else {
             unlockAttack();
         }
-        if(InputManager.instance.xPressed && InputManager.instance.downPressed){
-            if(setMineTime.run() && bomb != 0){
-                bomb --;
-                setMine();
-                setMineTime.reset();
-            }
-        }
-
-        hitFriendlyObject();
-    }
-
-    private void hitFriendlyObject() {
-        FriendlyObject friendlyObject = Physics.collideWith(boxCollider,FriendlyObject.class);
-        if(friendlyObject != null){
-            if(friendlyObject.isAlly()){
-                FriendlyObject.setAllynumber(FriendlyObject.getAllynumber() - 1);
-                friendlyObject.setActive(false);
-            }
-
-        }
-        BombObject bombObject = Physics.collideWith(boxCollider,BombObject.class);
-        if(bombObject != null){
-            if(bombObject.isBomb()){
-                this.bomb ++;
-                bombObject.setActive(false);
-            }
-        }
-    }
-
-    private void setMine() {
-        Vector2D checkPosition = screenPosition.add(0, 1);
-        Platform platform = Physics.collideWith(checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
-        if(platform != null && platform.isBreakable()){
-            platform.getHit();
-            Explosion explosion = new Explosion();
-            explosion.getPosition().set(platform.getPosition());
-            GameObject.add(explosion);
-        }
     }
 
 
-    private void hitEnemy() {
-        if(right){
-            rangeAttack = 10;
-        }else
-            rangeAttack = -10;
-        Vector2D checkPosition = screenPosition.add(rangeAttack, 0);
-        Enemy enemy = Physics.collideWith(checkPosition, boxCollider.getWidth(), 0, Enemy.class);
-        if (enemy != null) {
-            enemy.getHit();
-        }
-    }
+
 
     public void unlockAttack() {
         if (attack){
@@ -158,6 +133,7 @@ public class Player extends GameObject implements PhysicsBody {
     private void updatePhysics() {
         velocity.y += GRAVITY;
         velocity.x = 0;
+
         jump();
         moveHorizontal();
         updateVerticalPhysics();
@@ -180,27 +156,18 @@ public class Player extends GameObject implements PhysicsBody {
     }
 
     private void moveHorizontal() {
-        if (InputManager.instance.leftPressed && !InputManager.instance.xPressed && !InputManager.instance.downPressed){
+        if (InputManager.instance.leftPressed && !InputManager.instance.downPressed){
             velocity.x -= SPEED;
-            Platform platform = Physics.collideWith(screenPosition.add(Math.signum(velocity.x), 0), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
-            if(platform != null && platform.isMoveable()){
-//                platform.getScreenPosition().addUp(velocity.x,0);
-//                platform.getPosition().addUp(velocity.x, 0);
-                platform.getVelocity().x = this.getVelocity().x;
-            }
             left = true;
             right = false;
+            playerPushing.pushLeft(this);
+
         }
-        if (InputManager.instance.rightPressed && !InputManager.instance.xPressed && !InputManager.instance.downPressed){
+        if (InputManager.instance.rightPressed  && !InputManager.instance.downPressed){
             velocity.x += SPEED;
-            Platform platform = Physics.collideWith(screenPosition.add(Math.signum(velocity.x), 0), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
-            if(platform != null && platform.isMoveable()){
-//                platform.getScreenPosition().addUp(velocity.x,0);
-//                platform.getPosition().addUp(velocity.x, 0);
-                platform.getVelocity().x = this.getVelocity().x;
-            }
             left = false;
             right = true;
+            playerPushing.pushRight(this);
         }
     }
 
@@ -227,17 +194,6 @@ public class Player extends GameObject implements PhysicsBody {
         this.screenPosition.y += velocity.y;
     }
 
-    private void hitRock() {
-        if(right){
-            rangeAttack = 10;
-        }else
-            rangeAttack = -10;
-        Vector2D checkPosition = screenPosition.add(rangeAttack, 0);
-        Platform platform = Physics.collideWith(checkPosition, boxCollider.getWidth(), 0, Platform.class);
-        if(platform != null && platform.isBreakable()){
-            platform.getHit();
-        }
-    }
 
     public Vector2D getVelocity() {
         return velocity;
@@ -271,5 +227,45 @@ public class Player extends GameObject implements PhysicsBody {
     @Override
     public BoxCollider getBoxCollider() {
         return boxCollider;
+    }
+
+    public boolean isLeft() {
+        return left;
+    }
+
+    public boolean isRight() {
+        return right;
+    }
+
+    public int getRangeAttack() {
+        return rangeAttack;
+    }
+
+    public void setRangeAttack(int rangeAttack) {
+        this.rangeAttack = rangeAttack;
+    }
+
+    public Clip getHitRock() {
+        return hitRock;
+    }
+
+    public void setHitRock(Clip hitRock) {
+        this.hitRock = hitRock;
+    }
+
+    public FrameCounter getPushingTime() {
+        return pushingTime;
+    }
+
+    public void setPushingTime(FrameCounter pushingTime) {
+        this.pushingTime = pushingTime;
+    }
+
+    public int getBomb() {
+        return bomb;
+    }
+
+    public void setBomb(int bomb) {
+        this.bomb = bomb;
     }
 }

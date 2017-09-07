@@ -2,6 +2,7 @@ package bases.platforms;
 
 
 import bases.Constraints;
+import bases.FrameCounter;
 import bases.GameObject;
 import bases.Vector2D;
 import bases.physics.BoxCollider;
@@ -11,7 +12,7 @@ import bases.renderers.ImageRenderer;
 import moaimoai.enemies.Enemy;
 import moaimoai.players.Player;
 import moaimoai.players.PlayerDeath;
-
+import moaimoai.settings.Settings;
 
 
 public class Platform extends GameObject implements PhysicsBody{
@@ -25,6 +26,8 @@ public class Platform extends GameObject implements PhysicsBody{
     private boolean moveable;
     private boolean killPlayer;
     private int type;
+    private FrameCounter runingTime;
+    private boolean moving;
 
 
     public Platform() {
@@ -53,13 +56,19 @@ public class Platform extends GameObject implements PhysicsBody{
                 platform.velocity = new Vector2D();
                 platform.hasGravity = true;
                 platform.moveable = true;
+                platform.runingTime = new FrameCounter(18);
+                platform.setConstraints(new Constraints(
+                        Settings.instance.getWindowInsets().top,
+                        Settings.instance.getGamePlayHeight(),
+                        Settings.instance.getWindowInsets().left,
+                        Settings.instance.getGamePlayWidth())
+                );
                 break;
 
             case 5: // ĐÁ MỀM VÀNG
                 platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/orange.png");
                 break;
             case 6: //CỌC SẮT
-                platform.boxCollider = new BoxCollider(25,32);
                 platform.renderer = ImageRenderer.create("assets/images/deadgrounds/cocsat/coc2.png");
                 platform.velocity = new Vector2D();
                 platform.killPlayer = true;
@@ -131,25 +140,30 @@ public class Platform extends GameObject implements PhysicsBody{
 
     private void updateHorizontalPhysics() {
         Vector2D checkPositon = screenPosition.add(velocity.x, 0);
-        Platform platform = Physics.collideWith(screenPosition,checkPositon, boxCollider.getWidth(), boxCollider.getHeight() / 2, Platform.class);
+        Platform platform = Physics.collideWith(screenPosition,checkPositon, boxCollider.getWidth(), boxCollider.getHeight() - 2 , Platform.class);
         if (platform != null ){
             while (Physics.collideWith(screenPosition.add(Math.signum(velocity.x), 0), boxCollider.getWidth(),
-                    boxCollider.getHeight(), Platform.class) == null){
+                    boxCollider.getHeight() , Platform.class) == null){
                 position.addUp(Math.signum(velocity.x), 0);
                 screenPosition.addUp(Math.signum(velocity.x), 0);
             }
             velocity.x = 0;
         }
-        this.position.x += velocity.x;
-        this.screenPosition.x += velocity.x;
-        velocity.x = 0;
+        if(moving) {
+            this.position.x += velocity.x;
+            this.screenPosition.x += velocity.x;
+            if(runingTime.run()){
+                moving = false;
+                runingTime.reset();
+            }
+        }
     }
 
     private void updateVericalPhysics() {
         Vector2D checkPosition = screenPosition.add(0,velocity.y);
-        Platform platform =  Physics.collideWith(screenPosition,checkPosition,this.boxCollider.getWidth() / 2,this.boxCollider.getHeight(),Platform.class);
+        Platform platform =  Physics.collideWith(screenPosition,checkPosition,this.boxCollider.getWidth() - 2 ,this.boxCollider.getHeight(),Platform.class);
         if(platform != null){
-            while (Physics.collideWith(screenPosition,this.screenPosition.add(0,1),this.boxCollider.getWidth(),this.boxCollider.getHeight(),Platform.class) == null){
+            while (Physics.collideWith(screenPosition,this.screenPosition.add(0,1),this.boxCollider.getWidth() ,this.boxCollider.getHeight(),Platform.class) == null){
                 position.addUp(0,1);
                 screenPosition.addUp(0,1);
             }
@@ -158,6 +172,8 @@ public class Platform extends GameObject implements PhysicsBody{
         this.position.y += velocity.y;
         this.screenPosition.y += velocity.y;
     }
+
+
 
 
     private void hitPlayerAndEnemy(int dx, int dy) {
@@ -206,4 +222,11 @@ public class Platform extends GameObject implements PhysicsBody{
         return velocity;
     }
 
+    public boolean isMoving() {
+        return moving;
+    }
+
+    public void setMoving(boolean moving) {
+        this.moving = moving;
+    }
 }
