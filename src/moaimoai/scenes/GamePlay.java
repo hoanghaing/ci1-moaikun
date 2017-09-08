@@ -19,7 +19,15 @@ public class GamePlay extends Scene {
     private void addBackground(int backgroundType) {
         GameObject.add(new Background(backgroundType));
     }
+//    private void addPlatform(int level) {
+//        String stage = "assets/maps/jsonfile/stage"+level+".json";
+//        if(stage != null) {
+//            Map map = Map.load(stage);
+//            map.generate();
+//        }
+//    }
     private void addPlatform(int level) {
+        level = 8;
         String stage = "assets/maps/jsonfile/stage"+level+".json";
         if(stage != null) {
             Map map = Map.load(stage);
