@@ -19,7 +19,7 @@ public class EnemyMouse extends EnemyRabit {
         super();
         this.enemy2Animator = new EnemyMouseAnimator();
         this.renderer = enemy2Animator;
-        this.boxCollider = new BoxCollider(28, 30);
+        this.boxCollider = new BoxCollider(28, 32);
         this.children.add(boxCollider);
         confixAction(this);
     }
