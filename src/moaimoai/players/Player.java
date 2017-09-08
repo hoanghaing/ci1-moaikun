@@ -179,7 +179,7 @@ public class Player extends GameObject implements PhysicsBody {
     private void jump() {
         if (InputManager.instance.cPressed) {
             if (Physics.collideWith(screenPosition.add(0, 1), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) != null) {
-                velocity.y = -6;
+                velocity.y = -6.5f;
             }
         }
     }

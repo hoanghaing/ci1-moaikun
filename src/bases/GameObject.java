@@ -143,9 +143,11 @@ public class GameObject {
 //                return (GameObject) Door.create();
             case 24:
                 return (GameObject) BombObject.create();
+            case 25:
+                return (GameObject) EnemyMouse.create();
 
             case 26:
-                return (GameObject) EnemyMouse.create();
+                return (GameObject) EnemyRabit.create();
             case 30 : {
                 //return player
                 break;
