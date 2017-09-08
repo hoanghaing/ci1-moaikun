@@ -27,7 +27,10 @@ public class Platform extends GameObject implements PhysicsBody{
     private boolean moveable;
     private boolean killPlayer;
     private int type;
+
     private FrameCounter runingTime;
+    private FrameCounter standOnTrap;
+
     private boolean moving;
     private boolean stopable;
     private boolean trap;
@@ -35,7 +38,7 @@ public class Platform extends GameObject implements PhysicsBody{
 
     public Platform() {
         super();
-        this.boxCollider = new BoxCollider(38, 32);
+        this.boxCollider = new BoxCollider(36, 32);
         this.children.add(boxCollider);
     }
     public static Platform create(int platformType) {
@@ -59,6 +62,8 @@ public class Platform extends GameObject implements PhysicsBody{
                 platform.velocity = new Vector2D();
                 platform.hasGravity = true;
                 platform.moveable = true;
+                platform.boxCollider = new BoxCollider(36,30);
+                platform.children.add(platform.boxCollider);
                 platform.runingTime = new FrameCounter(18);
                 platform.setConstraints(new Constraints(
                         Settings.instance.getWindowInsets().top,
@@ -90,11 +95,11 @@ public class Platform extends GameObject implements PhysicsBody{
                 platform.renderer = ImageRenderer.create("assets/images/deadgrounds/dinhgi/white.png");
                 platform.trap = true;
                 platform.velocity = new Vector2D();
-                platform.boxCollider = new BoxCollider(38,30);
-                platform.children.add(platform.boxCollider);
+                platform.standOnTrap = new FrameCounter(15);
                 break;
             case 11: // ĐÁ MỀM, XÁM TRẮNG
                 platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/gray.png");
+                platform.breakable = true;
                 break;
             case 12: //ĐÁ RƠI VÀNG CAM
                 platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/orangesky.png");
@@ -113,6 +118,8 @@ public class Platform extends GameObject implements PhysicsBody{
                 break;
             case 17: //ĐÁ ĐỠ TRẮNG
                 platform.renderer = ImageRenderer.create("assets/images/standinggrounds/white/1.png");
+                platform.boxCollider = new BoxCollider(36,30);
+                platform.children.add(platform.boxCollider);
                 break;
 //            case 18:
 //                platform.renderer = ImageRenderer.create("assets/images/standinggrounds/white/1.png");
@@ -294,5 +301,9 @@ public class Platform extends GameObject implements PhysicsBody{
 
     public boolean isTrap() {
         return trap;
+    }
+
+    public FrameCounter getStandOnTrap() {
+        return standOnTrap;
     }
 }

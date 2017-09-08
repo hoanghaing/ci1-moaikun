@@ -13,14 +13,12 @@ import tklibs.SpriteUtils;
 
 public class BombObject extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
-    private Vector2D velocity;
 
     public BombObject(){
         super();
         boxCollider = new BoxCollider(30,30);
         this.renderer = new ImageRenderer(SpriteUtils.loadImage("assets/images/items/bombs/blue.png"));
         this.children.add(boxCollider);
-        this.velocity = new Vector2D();
     }
 
     public static BombObject create (){
@@ -30,26 +28,6 @@ public class BombObject extends GameObject implements PhysicsBody {
 
 
 
-
-    @Override
-    public void run(Vector2D parentPosition) {
-        super.run(parentPosition);
-        velocity.y += 0.5;
-        moveVertical();
-        position.addUp(velocity);
-    }
-
-    private void moveVertical() {
-        float deltaY = velocity.y > 0 ? 1: -1;
-        PhysicsBody body = Physics.collideWith(screenPosition,position.add(0, velocity.y), boxCollider.getWidth(), boxCollider.getHeight(),
-                Platform.class);
-        if (body != null) {
-            while(Physics.collideWith(screenPosition,position.add(0, deltaY), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) == null) {
-                position.addUp(0, deltaY);
-            }
-            this.velocity.y = 0;
-        }
-    }
 
     public void getHit(){
         EnemyRabit enemy = Physics.collideWith(this.boxCollider, EnemyRabit.class);

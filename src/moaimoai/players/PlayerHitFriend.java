@@ -26,9 +26,9 @@ public class PlayerHitFriend {
         Vector2D checkPos = owner.getScreenPosition().add(0,3);
         Platform platform = Physics.collideWith(checkPos,owner.getBoxCollider().getWidth(),owner.getBoxCollider().getHeight(),Platform.class);
         if(platform != null && platform.isTrap()){
-            if(owner.getStandOnTrap().run()){
+            if(platform.getStandOnTrap().run()){
                 platform.setHasGravity(true);
-                owner.getStandOnTrap().reset();
+                platform.getStandOnTrap().reset();
             }
         }
     }
