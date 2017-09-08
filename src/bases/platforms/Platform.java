@@ -30,10 +30,12 @@ public class Platform extends GameObject implements PhysicsBody{
 
     private FrameCounter runingTime;
     private FrameCounter standOnTrap;
+    private FrameCounter waitTime;
 
     private boolean moving;
     private boolean stopable;
     private boolean trap;
+    private boolean blowing;
 
 
     public Platform() {
@@ -62,7 +64,7 @@ public class Platform extends GameObject implements PhysicsBody{
                 platform.velocity = new Vector2D();
                 platform.hasGravity = true;
                 platform.moveable = true;
-                platform.boxCollider = new BoxCollider(36,30);
+                platform.boxCollider = new BoxCollider(38,30);
                 platform.children.add(platform.boxCollider);
                 platform.runingTime = new FrameCounter(18);
                 platform.setConstraints(new Constraints(
@@ -79,6 +81,8 @@ public class Platform extends GameObject implements PhysicsBody{
             case 6: //CỌC SẮT
                 platform.renderer = ImageRenderer.create("assets/images/deadgrounds/cocsat/coc2.png");
                 platform.velocity = new Vector2D();
+                platform.boxCollider = new BoxCollider(34,32);
+                platform.children.add(platform.boxCollider);
                 platform.killPlayer = true;
                 break;
             case 7: //MÂY HỒNG 1
@@ -99,6 +103,7 @@ public class Platform extends GameObject implements PhysicsBody{
                 break;
             case 11: // ĐÁ MỀM, XÁM TRẮNG
                 platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/gray.png");
+                platform.waitTime = new FrameCounter(60);
                 platform.breakable = true;
                 break;
             case 12: //ĐÁ RƠI VÀNG CAM
@@ -146,6 +151,11 @@ public class Platform extends GameObject implements PhysicsBody{
         if(killPlayer){
             hitPlayerAndEnemy(0,-2);
         }
+        if(blowing){
+                if(waitTime.run()){
+                    this.getHit();
+                }
+        }
         if(constraints != null){
             constraints.make(position);
         }
@@ -155,7 +165,7 @@ public class Platform extends GameObject implements PhysicsBody{
     private void updateHorizontalPhysics() {
         Vector2D checkPositon = screenPosition.add(velocity.x, 0);
         hitPlatform(checkPositon);
-        hitAlly(checkPositon);
+        hitAllyHorizontal(checkPositon);
         hitBomb();
         if(moving) {
             this.position.x += velocity.x;
@@ -166,6 +176,7 @@ public class Platform extends GameObject implements PhysicsBody{
             }
         }
     }
+
 
     private void hitPlatform(Vector2D checkPositon) {
         Platform platform = Physics.collideWith(screenPosition,checkPositon, boxCollider.getWidth(), boxCollider.getHeight() - 2 , Platform.class);
@@ -181,7 +192,7 @@ public class Platform extends GameObject implements PhysicsBody{
     }
 
 
-    private void hitAlly(Vector2D checkPositon) {
+    private void hitAllyHorizontal(Vector2D checkPositon) {
         FriendlyObject friendlyObject = Physics.collideWith(checkPositon, boxCollider.getWidth(), boxCollider.getHeight() - 2 , FriendlyObject.class);
         if (friendlyObject != null ){
             while (Physics.collideWith(screenPosition.add(Math.signum(velocity.x), 0), boxCollider.getWidth(),
@@ -194,18 +205,11 @@ public class Platform extends GameObject implements PhysicsBody{
         }
     }
 
-    private void hitBomb(){
-       BombObject bombObject = Physics.collideWith(boxCollider,BombObject.class);
-       if(bombObject != null){
-           bombObject.setActive(false);
-       }
-    }
-
     private void updateVericalPhysics() {
         Vector2D checkPosition = screenPosition.add(0,velocity.y);
-        Platform platform =  Physics.collideWith(screenPosition,checkPosition,this.boxCollider.getWidth() - 2 ,this.boxCollider.getHeight(),Platform.class);
+        Platform platform =  Physics.collideWith(screenPosition,checkPosition,this.boxCollider.getWidth() - 4 ,this.boxCollider.getHeight(),Platform.class);
         if(platform != null){
-            while (Physics.collideWith(screenPosition,this.screenPosition.add(0,1),this.boxCollider.getWidth() - 2 ,this.boxCollider.getHeight(),Platform.class) == null){
+            while (Physics.collideWith(screenPosition,this.screenPosition.add(0,1),this.boxCollider.getWidth() - 4 ,this.boxCollider.getHeight(),Platform.class) == null){
                 position.addUp(0,1);
                 screenPosition.addUp(0,1);
             }
@@ -213,6 +217,13 @@ public class Platform extends GameObject implements PhysicsBody{
         }
         this.position.y += velocity.y;
         this.screenPosition.y += velocity.y;
+    }
+
+    private void hitBomb(){
+       BombObject bombObject = Physics.collideWith(boxCollider,BombObject.class);
+       if(bombObject != null){
+           bombObject.setActive(false);
+       }
     }
 
 
@@ -240,6 +251,13 @@ public class Platform extends GameObject implements PhysicsBody{
         BrokenPlatform brokenPlatform = new BrokenPlatform();
         brokenPlatform.getPosition().set(this.getPosition());
         GameObject.add(brokenPlatform);
+    }
+
+    public void explosion() {
+        BrokenPlatform brokenPlatform = new BrokenPlatform();
+        brokenPlatform.getPosition().set(this.getPosition());
+        GameObject.add(brokenPlatform);
+
     }
 
     @Override
@@ -272,13 +290,6 @@ public class Platform extends GameObject implements PhysicsBody{
         this.moving = moving;
     }
 
-    public void explosion() {
-        BrokenPlatform brokenPlatform = new BrokenPlatform();
-        brokenPlatform.getPosition().set(this.getPosition());
-        GameObject.add(brokenPlatform);
-
-    }
-
     public boolean isStopable() {
         return stopable;
     }
@@ -305,5 +316,13 @@ public class Platform extends GameObject implements PhysicsBody{
 
     public FrameCounter getStandOnTrap() {
         return standOnTrap;
+    }
+
+    public boolean isBlowing() {
+        return blowing;
+    }
+
+    public void setBlowing(boolean blowing) {
+        this.blowing = blowing;
     }
 }

@@ -11,10 +11,14 @@ public class PlayerSetMine {
         Vector2D checkPosition = owner.getScreenPosition().add(0, 1);
         Platform platform = Physics.collideWith(checkPosition, owner.getBoxCollider().getWidth(), owner.getBoxCollider().getHeight(), Platform.class);
         if (platform != null && platform.isBreakable()) {
-            platform.getHit();
-            Explosion explosion = new Explosion();
-            explosion.getPosition().set(platform.getPosition());
-            GameObject.add(explosion);
+            if(owner.getSetMineTime().run()){
+                owner.setBomb(owner.getBomb() - 1);
+                Explosion explosion = new Explosion();
+                explosion.getPosition().set(platform.getPosition());
+                GameObject.add(explosion);
+                platform.setBlowing(true);
+                owner.getSetMineTime().reset();
+            }
         }
     }
 }

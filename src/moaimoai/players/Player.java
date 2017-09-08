@@ -105,10 +105,8 @@ public class Player extends GameObject implements PhysicsBody {
 
     private void setMine() {
         if(InputManager.instance.xPressed && InputManager.instance.downPressed){
-            if(setMineTime.run() && bomb != 0){
-                bomb --;
+            if(bomb > 0){
                 playerSetMine.setMine(this);
-                setMineTime.reset();
             }
         }
     }
@@ -277,4 +275,7 @@ public class Player extends GameObject implements PhysicsBody {
         this.bomb = bomb;
     }
 
+    public FrameCounter getSetMineTime() {
+        return setMineTime;
+    }
 }
