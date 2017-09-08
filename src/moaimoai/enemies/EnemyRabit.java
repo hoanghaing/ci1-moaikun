@@ -86,8 +86,28 @@ public class EnemyRabit extends GameObject implements PhysicsBody {
             left = false;
             right = true;
         }
+        updateMovie();
         this.position.x += velocity.x;
         this.screenPosition.x += velocity.x;
+    }
+
+    private void updateMovie() {
+        Vector2D check = screenPosition.add(0, velocity.y);
+        Platform platform = Physics.collideWith(check, boxCollider.getWidth(), boxCollider.getHeight(), Platform.class);
+        if (platform != null && right) {
+            if (Physics.collideWith(screenPosition.add(Math.signum(velocity.x), Math.signum(velocity.y)), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) == null) {
+                velocity.x = -SPEED;
+                left = true;
+                right = false;
+            }
+        }
+        if (platform != null && left) {
+            if (Physics.collideWith(screenPosition.add(Math.signum(velocity.x), Math.signum(velocity.y)), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) == null) {
+                velocity.x = SPEED;
+                left = false;
+                right = true;
+            }
+        }
     }
 
     private void updateVerticalPhysics() {
@@ -133,13 +153,6 @@ public class EnemyRabit extends GameObject implements PhysicsBody {
             player.getHit();
         }
     }
-
-//    private void hitAlly(){
-//        Ally ally = Physics.collideWith(this.boxCollider, Ally.class);
-//        if (ally != null){
-//            ally.getHit();
-//        }
-//    }
 
     public Vector2D getVelocity() {
         return velocity;

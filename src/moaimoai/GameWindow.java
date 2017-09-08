@@ -67,8 +67,6 @@ public class GameWindow extends Frame {
 
     private void setupLevel() {
         SceneManager.changeScene(new GamePlay());
-//        StartingMenu startingMenu = new StartingMenu();
-//        GameObject.add(startingMenu);
     }
     public static int getPlayerHP() {
         return playerHP;

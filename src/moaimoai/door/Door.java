@@ -17,30 +17,32 @@ public class Door extends GameObject implements PhysicsBody {
     private static int doortype;
     public Door(int type){
         super();
+        this.boxCollider = new BoxCollider(5, 5);
+        this.children.add(boxCollider);
         this.doortype = type;
         switch (type){
             case 1:{ //BLUE
                 this.renderer = ImageRenderer.create("assets/images/doors/blue/door11.png");
-                this.boxCollider = new BoxCollider(75, 64);
-                this.children.add(boxCollider);
+//                this.boxCollider = new BoxCollider(75, 64);
+//                this.children.add(boxCollider);
                 break;
             }
             case 2:{ // ORANGE
                 this.renderer = ImageRenderer.create("assets/images/doors/orange/door1.png");
-                this.boxCollider = new BoxCollider(75, 64);
-                this.children.add(boxCollider);
+//                this.boxCollider = new BoxCollider(75, 64);
+//                this.children.add(boxCollider);
                 break;
             }
             case 3:{ // PINK
                 this.renderer = ImageRenderer.create("assets/images/doors/pink/door1.png");
-                this.boxCollider = new BoxCollider(75, 64);
-                this.children.add(boxCollider);
+//                this.boxCollider = new BoxCollider(75, 64);
+//                this.children.add(boxCollider);
                 break;
             }
             case 4:{ // WHITE
                 this.renderer = ImageRenderer.create("assets/images/doors/white/door1.png");
-                this.boxCollider = new BoxCollider(75, 64);
-                this.children.add(boxCollider);
+//                this.boxCollider = new BoxCollider(75, 64);
+//                this.children.add(boxCollider);
                 break;
             }
         }

@@ -9,6 +9,7 @@ import bases.renderers.Renderer;
 import moaimoai.allies.BombObject;
 import moaimoai.allies.FriendlyObject;
 import moaimoai.door.Door;
+import moaimoai.enemies.EnemyMouse;
 import moaimoai.enemies.EnemyRabit;
 import moaimoai.players.Player;
 
@@ -144,7 +145,7 @@ public class GameObject {
                 return (GameObject) BombObject.create();
 
             case 26:
-                return (GameObject) EnemyRabit.create();
+                return (GameObject) EnemyMouse.create();
             case 30 : {
                 //return player
                 break;
