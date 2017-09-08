@@ -88,6 +88,10 @@
         {
          "firstgid":20,
          "source":"Bluedoor.tsx"
+        }, 
+        {
+         "firstgid":24,
+         "source":"Enemylvl1.tsx"
         }],
  "tilewidth":38,
  "type":"map",
