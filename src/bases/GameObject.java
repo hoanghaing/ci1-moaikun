@@ -96,11 +96,11 @@ public class GameObject {
             case 4 :
                 return (GameObject) Platform.create(gameObjectType);
             case 5:
-
+                return (GameObject) Platform.create(gameObjectType);
             case 6:
-
+                return (GameObject) Platform.create(gameObjectType);
             case 7:
-
+                return (GameObject) Platform.create(gameObjectType);
             case 8:
                 return (GameObject) Platform.create(gameObjectType);
             case 9:
@@ -123,14 +123,14 @@ public class GameObject {
                 //return platform
                 return (GameObject) Platform.create(gameObjectType);
             }
-            case 18 :
+            case 18 :// Player
                 return (GameObject) Player.create();
-            case 19 :
+            case 19 ://Ally
                 int allynumber = FriendlyObject.getAllynumber();
                 allynumber++;
                 FriendlyObject.setAllynumber(allynumber);
                 return (GameObject) FriendlyObject.create();
-            case 20 :
+            case 20 ://Door
                 return (GameObject) Door.create();
             case 21 :
 //                return (GameObject) Door.create();
