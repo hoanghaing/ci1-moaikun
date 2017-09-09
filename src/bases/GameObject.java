@@ -22,7 +22,6 @@ import java.util.Vector;
  * Created by huynq on 8/9/17.
  */
 public class GameObject {
-    public static boolean stop;
     protected Vector2D position;
     protected Vector2D screenPosition;
 
@@ -39,32 +38,17 @@ public class GameObject {
 
     public static void runAll() {
         for (GameObject gameObject : gameObjects) {
-            if (!stop) {
                 if (gameObject.isActive)
                     gameObject.run(new Vector2D(0, 0));
-            } else {
-                if (gameObject.getClass().equals(PlayerDeath.class)) {
-                    gameObject.run(new Vector2D(0, 0));
-                }
             }
-        }
 
         for (GameObject newGameObject : newGameObjects) {
             if (newGameObject instanceof PhysicsBody) {
                 Physics.add((PhysicsBody) newGameObject);
             }
         }
-
         gameObjects.addAll(newGameObjects);
         newGameObjects.clear();
-
-        for (GameObject gameObject1 : gameObjects) {
-            if (gameObject1.getClass().equals(Player.class)) {
-                if (!gameObject1.isActive) {
-                    stop = true;
-                }
-            }
-        }
     }
 
     public static void renderAll(Graphics2D g2d) {

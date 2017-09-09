@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69b48197-2efd-4b94-abef-fb8ddeb323ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/bases/GameObject.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/bases/GameObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/GamePlay.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/GamePlay.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/SceneManager.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/SceneManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/door/Door.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/door/Door.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bases/GameObject.java" afterPath="$PROJECT_DIR$/src/bases/GameObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/scenes/GameOverScene.java" afterPath="$PROJECT_DIR$/src/moaimoai/scenes/GameOverScene.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java" afterPath="$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/scenes/SceneManager.java" afterPath="$PROJECT_DIR$/src/moaimoai/scenes/SceneManager.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,7 +24,7 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/moaimoai/players/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="3215">
               <caret line="278" column="0" lean-forward="false" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
               <folding />
             </state>
@@ -54,11 +51,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+            <state relative-caret-position="53">
+              <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameOverScene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/GameOverScene.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -77,7 +84,7 @@
       <file leaf-file-name="Platform.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bases/platforms/Platform.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
+            <state relative-caret-position="1445">
               <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
               <folding />
             </state>
@@ -94,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GamePlay.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GamePlay.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+            <state relative-caret-position="206">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,7 +114,7 @@
       <file leaf-file-name="SceneManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/SceneManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
+            <state relative-caret-position="187">
               <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
               <folding />
             </state>
@@ -180,11 +187,11 @@
         <option value="$PROJECT_DIR$/src/moaimoai/players/Player.java" />
         <option value="$PROJECT_DIR$/src/bases/maps/Layer.java" />
         <option value="$PROJECT_DIR$/src/moaimoai/door/Door.java" />
-        <option value="$PROJECT_DIR$/src/bases/GameObject.java" />
         <option value="$PROJECT_DIR$/src/moaimoai/scenes/SceneManager.java" />
         <option value="$PROJECT_DIR$/src/moaimoai/players/PlayerDeath.java" />
-        <option value="$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java" />
+        <option value="$PROJECT_DIR$/src/bases/GameObject.java" />
         <option value="$PROJECT_DIR$/src/moaimoai/scenes/GameOverScene.java" />
+        <option value="$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java" />
       </list>
     </option>
   </component>
@@ -216,9 +223,8 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,7 +241,7 @@
               <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
               <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="music" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
@@ -293,10 +299,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TestGame" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistoryKey" value="La&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/bases/maps/Layer.java&#10;Ga&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/bases/GameObject.java&#10;stage&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/assets/maps/jsonfile/stage1.json&#10;pla&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/bases/platforms/Platform.java&#10;Pl&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/bases/platforms/Platform.java&#10;G&#9;PSI&#9;JAVA://bases.GameObject&#10;enemy&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/enemies/EnemyMouse.java&#10;Ene&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/enemies/EnemyRabit.java&#10;stage2&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/assets/maps/jsonfile/stage2.json&#10;sta&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/assets/maps/jsonfile/stage1.json&#10;Gam&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/scenes/GamePlay.java&#10;g&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/bases/GameObject.java&#10;e&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/enemies/EnemyMouse.java&#10;Pla&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/players/Player.java&#10;pl&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/players/Player.java&#10;Do&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/door/Door.java&#10;ga&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/GameWindow.java&#10;D&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/door/Door.java&#10;s&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/scenes/StartingMenu.java&#10;bo&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/allies/BombObject.java&#10;Start&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/scenes/StartingMenu.java&#10;te&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/scenes/testScene.java&#10;In&#9;PSI&#9;JAVA://moaimoai.inputs.InputManager&#10;do&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/door/Door.java&#10;S&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/scenes/testScene.java&#10;getHit&#9;PSI&#9;JAVA://moaimoai.players.Player#getHit&#10;getHi&#9;PSI&#9;JAVA://moaimoai.players.Player#getHit&#10;l&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/bases/maps/Layer.java&#10;F&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/allies/FriendlyObject.java&#10;la&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/bases/maps/Layer.java&#10;Al&#9;PSI&#9;JAVA://moaimoai.allies.AllyAnimator&#10;map&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/bases/maps/Map.java&#10;Enem&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/enemies/Enemy.java&#10;back&#9;PSI&#9;JAVA://moaimoai.scenes.Background&#10;bac&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/scenes/Background.java&#10;test&#9;FILE&#9;file://C:/Users/My PC/ci1-moaikun/src/moaimoai/scenes/testStage2.java&#10;layer&#9;PSI&#9;JAVA://bases.maps.Layer&#10;im&#9;PSI&#9;JAVA://bases.renderers.ImageRenderer" />
     <property name="findjar.last.used.dir" value="$USER_HOME$/jet-zero" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
@@ -928,14 +935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moaimoai/players/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="278" column="0" lean-forward="false" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/moaimoai/GameWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-306">
@@ -953,6 +952,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/SceneManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bases/platforms/Platform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/moaimoai/door/DoorOpen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/moaimoai/players/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3215">
+          <caret line="278" column="0" lean-forward="false" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/GameOverScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/moaimoai/players/PlayerDeath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/Background.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -961,10 +1008,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/SceneManager.java">
+    <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+        <state relative-caret-position="53">
+          <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -979,48 +1026,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/GameOverScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/moaimoai/players/PlayerDeath.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bases/platforms/Platform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/moaimoai/door/DoorOpen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
+        <state relative-caret-position="206">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
