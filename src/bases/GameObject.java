@@ -9,6 +9,7 @@ import bases.renderers.Renderer;
 import moaimoai.allies.BombObject;
 import moaimoai.allies.FriendlyObject;
 import moaimoai.door.Door;
+import moaimoai.door.DoorOpen;
 import moaimoai.enemies.EnemyMouse;
 import moaimoai.enemies.EnemyRabit;
 import moaimoai.players.Player;
@@ -22,6 +23,7 @@ import java.util.Vector;
  * Created by huynq on 8/9/17.
  */
 public class GameObject {
+    public static boolean stop;
     protected Vector2D position;
     protected Vector2D screenPosition;
 
@@ -37,10 +39,18 @@ public class GameObject {
     private static Vector<GameObject> newGameObjects = new Vector<>();
 
     public static void runAll() {
-        for (GameObject gameObject : gameObjects) {
+        if(!stop){
+            for (GameObject gameObject : gameObjects) {
                 if (gameObject.isActive)
                     gameObject.run(new Vector2D(0, 0));
             }
+        }else {
+            for (GameObject gameObject : gameObjects){
+                if(gameObject.getClass().equals(PlayerDeath.class) || gameObject.getClass().equals(Door.class) || gameObject.getClass().equals(DoorOpen.class)){
+                    gameObject.run(new Vector2D(0,0));
+                }
+            }
+        }
 
         for (GameObject newGameObject : newGameObjects) {
             if (newGameObject instanceof PhysicsBody) {
@@ -49,6 +59,12 @@ public class GameObject {
         }
         gameObjects.addAll(newGameObjects);
         newGameObjects.clear();
+
+        for(GameObject gameObject1 : gameObjects){
+            if(gameObject1.getClass().equals(PlayerDeath.class)){
+               stop = true;
+            }
+        }
     }
 
     public static void renderAll(Graphics2D g2d) {
