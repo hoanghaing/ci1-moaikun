@@ -146,7 +146,9 @@ public class GameObject {
             case 25:
                 return (GameObject) EnemyMouse.create();
 
-            case 26:
+            case 27:
+                return (GameObject) EnemyRabit.create();
+            case 28:
                 return (GameObject) EnemyRabit.create();
             case 30 : {
                 //return player

@@ -9,10 +9,10 @@ import moaimoai.enemies.EnemyRabit;
 public class PlayerAtack {
     public void doAttack(Player owner) {
         if(owner.isRight()){
-            owner.setRangeAttack(10);
+            owner.setRangeAttack(15);
         }
         else
-            owner.setRangeAttack(-10);
+            owner.setRangeAttack(-15);
         Vector2D checkPosition = owner.getScreenPosition().add(owner.getRangeAttack(), 0);
         Platform platform = Physics.collideWith(checkPosition, owner.getBoxCollider().getWidth(), 0, Platform.class);
         if(platform != null){
