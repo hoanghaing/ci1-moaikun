@@ -70,7 +70,7 @@ public class Door extends GameObject implements PhysicsBody {
         if(player != null && FriendlyObject.getAllynumber() == 0){
             player.setActive(false);
             DoorOpen doorOpen = new DoorOpen(doortype);
-            doorOpen.getPosition().set(this.position);
+            doorOpen.getPosition().set(this.boxCollider.getScreenPosition());
             GameObject.add(doorOpen);
 
             // TĂng lên 1 stage

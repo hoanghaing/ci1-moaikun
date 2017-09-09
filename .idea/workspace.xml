@@ -2,39 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69b48197-2efd-4b94-abef-fb8ddeb323ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage1.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage1.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage1.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage1.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage10.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage10.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage10.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage10.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage11.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage11.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage11.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage11.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage12.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage12.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage12.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage12.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage13.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage13.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage13.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage13.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage14.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage14.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage14.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage14.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage15.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage15.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage15.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage15.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage2.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage2.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage2.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage2.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage3.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage3.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage3.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage3.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage4.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage4.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage4.tmx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage5.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage5.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage5.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage5.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage6.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage6.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage6.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage6.tmx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage7.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage7.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage7.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage7.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage8.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage8.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage8.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage8.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage9.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage9.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage9.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage9.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bases/maps/Layer.java" afterPath="$PROJECT_DIR$/src/bases/maps/Layer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage15.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage15.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage11.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage11.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage14.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage14.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage14.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage14.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage10.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage10.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage6.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage4.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage4.tmx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/door/Door.java" afterPath="$PROJECT_DIR$/src/moaimoai/door/Door.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage11.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage11.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage13.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage13.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage10.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage10.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage2.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage2.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage9.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage15.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage15.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage9.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage9.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage12.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage12.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage8.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage8.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage3.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage3.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage13.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage13.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage4.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage1.json" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage1.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage1.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage3.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage3.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage12.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage12.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage7.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage7.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bases/maps/Layer.java" afterPath="$PROJECT_DIR$/src/bases/maps/Layer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage6.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage6.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage2.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage2.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage8.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage8.tmx" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,48 +49,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/moaimoai/players/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="278" column="0" lean-forward="false" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerDeath.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/moaimoai/players/PlayerDeath.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="40" column="33" lean-forward="false" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameOverScene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/GameOverScene.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Background.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/Background.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="160" column="16" lean-forward="false" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="16" />
-              <folding>
-                <marker date="1504938493776" expanded="false" signature="5757:5763" ph=" }" />
-                <marker date="1504938493776" expanded="false" signature="5835:5841" ph=" }" />
-                <marker date="1504938493776" expanded="false" signature="5903:5909" ph=" }" />
-                <marker date="1504938493776" expanded="false" signature="5983:5989" ph=" }" />
-                <marker date="1504938493776" expanded="false" signature="6270:6276" ph=" }" />
-                <marker date="1504938493776" expanded="false" signature="6864:6870" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GamePlay.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
-              <folding>
-                <marker date="1504938576025" expanded="false" signature="1011:1022" ph=" { " />
-                <marker date="1504938576025" expanded="false" signature="1040:1046" ph=" }" />
-                <marker date="1504938576025" expanded="false" signature="1100:1111" ph=" { " />
-                <marker date="1504938576025" expanded="false" signature="1144:1150" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Door.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/moaimoai/door/Door.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1504939074835" expanded="false" signature="3073:3084" ph=" { " />
-                <marker date="1504939074835" expanded="false" signature="3103:3109" ph=" }" />
-              </folding>
+            <state relative-caret-position="2">
+              <caret line="28" column="45" lean-forward="false" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,76 +102,48 @@
       <file leaf-file-name="DoorOpen.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/moaimoai/door/DoorOpen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+            <state relative-caret-position="68">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/moaimoai/GameWindow.java">
+      <file leaf-file-name="PlayerHitFriend.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/moaimoai/players/PlayerHitFriend.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-306">
-              <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-              <folding>
-                <element signature="e#2013#2014#0" expanded="true" />
-                <element signature="e#2069#2070#0" expanded="true" />
-                <element signature="e#2107#2108#0" expanded="true" />
-                <element signature="e#2138#2139#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="358">
+              <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/moaimoai/players/Player.java">
+      <file leaf-file-name="Platform.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bases/platforms/Platform.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-              <folding>
-                <element signature="e#2531#2532#0" expanded="true" />
-                <element signature="e#2577#2578#0" expanded="true" />
-                <element signature="e#6230#6231#0" expanded="true" />
-                <element signature="e#6261#6262#0" expanded="true" />
-                <marker date="1504938575993" expanded="false" signature="6652:6663" ph=" { " />
-                <marker date="1504938575993" expanded="false" signature="6684:6690" ph=" }" />
-                <marker date="1504938575993" expanded="false" signature="6721:6732" ph=" { " />
-                <marker date="1504938575993" expanded="false" signature="6746:6752" ph=" }" />
-                <marker date="1504938575993" expanded="false" signature="6807:6818" ph=" { " />
-                <marker date="1504938575993" expanded="false" signature="6837:6843" ph=" }" />
-                <marker date="1504938575993" expanded="false" signature="6872:6883" ph=" { " />
-                <marker date="1504938575993" expanded="false" signature="6895:6901" ph=" }" />
-                <marker date="1504938575993" expanded="false" signature="6931:6942" ph=" { " />
-                <marker date="1504938575993" expanded="false" signature="6955:6961" ph=" }" />
-                <marker date="1504938575993" expanded="false" signature="6994:7005" ph=" { " />
-                <marker date="1504938575993" expanded="false" signature="7024:7030" ph=" }" />
-                <marker date="1504938575993" expanded="false" signature="7079:7090" ph=" { " />
-                <marker date="1504938575993" expanded="false" signature="7121:7127" ph=" }" />
-                <marker date="1504938575993" expanded="false" signature="7157:7168" ph=" { " />
-                <marker date="1504938575993" expanded="false" signature="7183:7189" ph=" }" />
-                <marker date="1504938575993" expanded="false" signature="7231:7242" ph=" { " />
-                <marker date="1504938575993" expanded="false" signature="7265:7271" ph=" }" />
-                <marker date="1504938575993" expanded="false" signature="7313:7324" ph=" { " />
-                <marker date="1504938575993" expanded="false" signature="7343:7349" ph=" }" />
-                <marker date="1504938575993" expanded="false" signature="7407:7418" ph=" { " />
-                <marker date="1504938575993" expanded="false" signature="7449:7455" ph=" }" />
-                <marker date="1504938575993" expanded="false" signature="7481:7492" ph=" { " />
-                <marker date="1504938575993" expanded="false" signature="7504:7510" ph=" }" />
-                <marker date="1504938575993" expanded="false" signature="7545:7556" ph=" { " />
-                <marker date="1504938575993" expanded="false" signature="7573:7579" ph=" }" />
-                <marker date="1504938575993" expanded="false" signature="7621:7632" ph=" { " />
-                <marker date="1504938575993" expanded="false" signature="7651:7657" ph=" }" />
-              </folding>
+            <state relative-caret-position="147">
+              <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Layer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bases/maps/Layer.java">
+      <file leaf-file-name="Scene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/Scene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+            <state relative-caret-position="119">
+              <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GamePlay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -275,6 +251,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -297,29 +274,6 @@
             <path>
               <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
               <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="doors" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="doors" type="462c0819:PsiDirectoryNode" />
-              <item name="blue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="doors" type="462c0819:PsiDirectoryNode" />
-              <item name="orange" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -333,7 +287,7 @@
               <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="bases" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
+              <item name="platforms" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
@@ -341,11 +295,38 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="moaimoai" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="moaimoai" type="462c0819:PsiDirectoryNode" />
+              <item name="door" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="moaimoai" type="462c0819:PsiDirectoryNode" />
+              <item name="players" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="moaimoai" type="462c0819:PsiDirectoryNode" />
+              <item name="scenes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="moaimoai" type="462c0819:PsiDirectoryNode" />
+              <item name="settings" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -623,29 +604,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="-8" width="1315" height="784" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31944445" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3211488" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30126184" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4367284" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30092594" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21992032" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1852123" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39905363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -668,8 +648,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293461" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4367284" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30092594" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4367284" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21992032" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -880,7 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1210">
           <caret line="154" column="5" lean-forward="false" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -915,7 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="71" column="16" lean-forward="true" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -967,8 +945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bases/platforms/Platform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="144" column="31" lean-forward="false" selection-start-line="144" selection-start-column="31" selection-end-line="144" selection-end-column="31" />
+        <state relative-caret-position="147">
+          <caret line="97" column="22" lean-forward="false" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -977,7 +955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1015,6 +992,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,42 +1000,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/moaimoai/players/PlayerDeath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+        <state relative-caret-position="221">
+          <caret line="40" column="33" lean-forward="false" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="160" column="16" lean-forward="false" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="16" />
-          <folding>
-            <marker date="1504938493776" expanded="false" signature="5757:5763" ph=" }" />
-            <marker date="1504938493776" expanded="false" signature="5835:5841" ph=" }" />
-            <marker date="1504938493776" expanded="false" signature="5903:5909" ph=" }" />
-            <marker date="1504938493776" expanded="false" signature="5983:5989" ph=" }" />
-            <marker date="1504938493776" expanded="false" signature="6270:6276" ph=" }" />
-            <marker date="1504938493776" expanded="false" signature="6864:6870" ph=" }" />
-          </folding>
+        <state relative-caret-position="2">
+          <caret line="28" column="45" lean-forward="false" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="31" column="27" lean-forward="false" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
-          <folding>
-            <marker date="1504938576025" expanded="false" signature="1011:1022" ph=" { " />
-            <marker date="1504938576025" expanded="false" signature="1040:1046" ph=" }" />
-            <marker date="1504938576025" expanded="false" signature="1100:1111" ph=" { " />
-            <marker date="1504938576025" expanded="false" signature="1144:1150" ph=" }" />
-          </folding>
+        <state relative-caret-position="52">
+          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1075,48 +1042,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/moaimoai/players/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding>
-            <element signature="e#2531#2532#0" expanded="true" />
-            <element signature="e#2577#2578#0" expanded="true" />
-            <element signature="e#6230#6231#0" expanded="true" />
-            <element signature="e#6261#6262#0" expanded="true" />
-            <marker date="1504938575993" expanded="false" signature="6652:6663" ph=" { " />
-            <marker date="1504938575993" expanded="false" signature="6684:6690" ph=" }" />
-            <marker date="1504938575993" expanded="false" signature="6721:6732" ph=" { " />
-            <marker date="1504938575993" expanded="false" signature="6746:6752" ph=" }" />
-            <marker date="1504938575993" expanded="false" signature="6807:6818" ph=" { " />
-            <marker date="1504938575993" expanded="false" signature="6837:6843" ph=" }" />
-            <marker date="1504938575993" expanded="false" signature="6872:6883" ph=" { " />
-            <marker date="1504938575993" expanded="false" signature="6895:6901" ph=" }" />
-            <marker date="1504938575993" expanded="false" signature="6931:6942" ph=" { " />
-            <marker date="1504938575993" expanded="false" signature="6955:6961" ph=" }" />
-            <marker date="1504938575993" expanded="false" signature="6994:7005" ph=" { " />
-            <marker date="1504938575993" expanded="false" signature="7024:7030" ph=" }" />
-            <marker date="1504938575993" expanded="false" signature="7079:7090" ph=" { " />
-            <marker date="1504938575993" expanded="false" signature="7121:7127" ph=" }" />
-            <marker date="1504938575993" expanded="false" signature="7157:7168" ph=" { " />
-            <marker date="1504938575993" expanded="false" signature="7183:7189" ph=" }" />
-            <marker date="1504938575993" expanded="false" signature="7231:7242" ph=" { " />
-            <marker date="1504938575993" expanded="false" signature="7265:7271" ph=" }" />
-            <marker date="1504938575993" expanded="false" signature="7313:7324" ph=" { " />
-            <marker date="1504938575993" expanded="false" signature="7343:7349" ph=" }" />
-            <marker date="1504938575993" expanded="false" signature="7407:7418" ph=" { " />
-            <marker date="1504938575993" expanded="false" signature="7449:7455" ph=" }" />
-            <marker date="1504938575993" expanded="false" signature="7481:7492" ph=" { " />
-            <marker date="1504938575993" expanded="false" signature="7504:7510" ph=" }" />
-            <marker date="1504938575993" expanded="false" signature="7545:7556" ph=" { " />
-            <marker date="1504938575993" expanded="false" signature="7573:7579" ph=" }" />
-            <marker date="1504938575993" expanded="false" signature="7621:7632" ph=" { " />
-            <marker date="1504938575993" expanded="false" signature="7651:7657" ph=" }" />
-          </folding>
+        <state relative-caret-position="273">
+          <caret line="278" column="0" lean-forward="false" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1124,19 +1057,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-306">
           <caret line="46" column="31" lean-forward="false" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-          <folding>
-            <element signature="e#2013#2014#0" expanded="true" />
-            <element signature="e#2069#2070#0" expanded="true" />
-            <element signature="e#2107#2108#0" expanded="true" />
-            <element signature="e#2138#2139#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/moaimoai/door/DoorOpen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+        <state relative-caret-position="68">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1147,8 +1074,6 @@
           <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1504939074835" expanded="false" signature="3073:3084" ph=" { " />
-            <marker date="1504939074835" expanded="false" signature="3103:3109" ph=" }" />
           </folding>
         </state>
       </provider>

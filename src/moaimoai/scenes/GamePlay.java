@@ -9,7 +9,7 @@ import moaimoai.settings.Settings;
 public class GamePlay extends Scene {
     Door door = new Door(1);
     Settings settings = Settings.instance;
-    private static int stageLevel = 1;
+    private static int stageLevel = 4;
     @Override
     public void init() {
         addBackground(stageLevel);
