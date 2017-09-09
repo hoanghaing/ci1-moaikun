@@ -14,7 +14,7 @@ public class DoorOpen extends GameObject {
         switch (type){
             case 1:{
                 this.animation = new Animation(
-                        20,true,false,
+                        10,true,false,
                         SpriteUtils.loadImage("assets/images/doors/blue/door2.png"),
                         SpriteUtils.loadImage("assets/images/doors/blue/door3.png"),
                         SpriteUtils.loadImage("assets/images/doors/blue/door4.png"),
