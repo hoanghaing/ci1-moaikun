@@ -80,7 +80,7 @@ public class GameWindow extends Frame {
     }
 
     private void setupWindow() {
-        this.setSize(620, 460);
+        this.setSize(615, 458);
         this.setVisible(true);
         this.setTitle("CI1-Moaikun");
         this.addWindowListener(new WindowAdapter() {
