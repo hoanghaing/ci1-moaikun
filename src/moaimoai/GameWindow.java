@@ -66,7 +66,7 @@ public class GameWindow extends Frame {
     }
 
     private void setupLevel() {
-        SceneManager.changeScene(new GamePlay());
+            SceneManager.changeScene(new GamePlay());
     }
     public static int getPlayerHP() {
         return playerHP;
@@ -107,10 +107,9 @@ public class GameWindow extends Frame {
     }
 
     private void run() {
-        GameObject.runAll();
-        GameObject.runAllActions();
+            GameObject.runAll();
+            GameObject.runAllActions();
     }
-
     private void render() {
         backbufferGraphics.drawImage(blackBackground, 0, 0, null);
         GameObject.renderAll(backbufferGraphics);
