@@ -13,6 +13,7 @@ import moaimoai.audio.AudioManager;
 import moaimoai.players.Player;
 import moaimoai.scenes.GamePlay;
 import moaimoai.scenes.SceneManager;
+import moaimoai.scenes.VictoryScene;
 import tklibs.AudioUtils;
 
 public class Door extends GameObject implements PhysicsBody {
@@ -54,7 +55,13 @@ public class Door extends GameObject implements PhysicsBody {
         if(touchPlayer){
             GameObject.stop = true;
             if(counter.run()){
-                SceneManager.changeScene(new GamePlay());
+
+                if (GamePlay.getStageLevel() > 13){
+                    SceneManager.changeScene( new VictoryScene());
+                }
+                else {
+                    SceneManager.changeScene(new GamePlay());
+                }
             }
         }
     }
@@ -81,6 +88,7 @@ public class Door extends GameObject implements PhysicsBody {
                 GameWindow.setPlayerHP(HP);
             }
             touchPlayer = true;
+
 
             // Chuyển Scene
         }

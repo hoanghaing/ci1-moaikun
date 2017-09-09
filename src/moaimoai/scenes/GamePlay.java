@@ -33,7 +33,7 @@ public class GamePlay extends Scene {
 
 
     private void addMusic(int level){
-        if (level < 10){
+        if (level <= 13){
             AudioManager.register(AudioUtils.playMedia("assets/music/bgm/Stage1.wav"));
         }
     }
@@ -43,7 +43,7 @@ public class GamePlay extends Scene {
     }
 
     private void addPlatform(int level) {
-        String stage = "assets/maps/jsonfile/stage"+level+".json";
+        String stage = "assets/maps/jsonfile/stage"+13+".json";
         if(stage != null) {
             Map map = Map.load(stage);
             map.generate();
