@@ -17,6 +17,7 @@ import moaimoai.settings.Settings;
 import tklibs.AudioUtils;
 
 import javax.sound.sampled.Clip;
+import java.util.Set;
 
 /**
  * Created by NguyenGiaThe on 8/26/2017.
@@ -206,19 +207,16 @@ public class Player extends GameObject implements PhysicsBody {
 
     public void getHit(){
         this.isActive = false;
-
         int HP = GameWindow.getPlayerHP();
         HP--;
         GameWindow.setPlayerHP(HP);
+        PlayerDeath playerDeath = new PlayerDeath();
+        playerDeath.getPosition().set(screenPosition);
 
-        if(HP == 0)
-            SceneManager.changeScene(new GameOverScene());
-        else {
-            PlayerDeath playerDeath = new PlayerDeath();
-            playerDeath.getPosition().set(this.getPosition());
-            GameObject.add(playerDeath);
-            FriendlyObject.setAllynumber(0);
-        }
+
+        GameObject.add(playerDeath);
+        FriendlyObject.setAllynumber(0);
+
 
     }
 

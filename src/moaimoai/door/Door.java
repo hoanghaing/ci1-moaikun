@@ -1,5 +1,6 @@
 package moaimoai.door;
 
+import bases.FrameCounter;
 import bases.GameObject;
 import bases.Vector2D;
 import bases.physics.BoxCollider;
@@ -15,10 +16,14 @@ import moaimoai.scenes.SceneManager;
 public class Door extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
     private static int doortype;
+    private boolean touchPlayer;
+
+    private FrameCounter counter;
     public Door(int type){
         super();
         this.boxCollider = new BoxCollider(5, 5);
         this.children.add(boxCollider);
+        this.counter = new FrameCounter(60);
         this.doortype = type;
         switch (type){
             case 1:{ //BLUE
@@ -52,6 +57,11 @@ public class Door extends GameObject implements PhysicsBody {
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
         hitPlayer();
+        if(touchPlayer){
+            if(counter.run()){
+                SceneManager.changeScene(new GamePlay());
+            }
+        }
     }
 
     private void hitPlayer() {
@@ -71,10 +81,11 @@ public class Door extends GameObject implements PhysicsBody {
             int HP = GameWindow.getPlayerHP();
             HP++;
             GameWindow.setPlayerHP(HP);
+            touchPlayer = true;
 
             // Chuyển Scene
-            SceneManager.changeScene(new GamePlay());
         }
+
     }
     @Override
     public BoxCollider getBoxCollider() {

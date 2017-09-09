@@ -28,7 +28,6 @@ public class GamePlay extends Scene {
 //        }
 //    }
     private void addPlatform(int level) {
-        level = 1;
         String stage = "assets/maps/jsonfile/stage"+level+".json";
         if(stage != null) {
             Map map = Map.load(stage);
