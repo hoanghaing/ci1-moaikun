@@ -23,11 +23,20 @@ public class Layer {
         for(int titleY = 0; titleY < height; titleY ++){
             for(int titleX = 0 ; titleX < width; titleX ++){
                 int mapData = data.get(titleY * width + titleX);
-                if(mapData != 0){
-                    GameObject gameObject = GameObject.create(mapData);
-                    gameObject.getPosition().set(titleX * 38 + 19, titleY * 32 + 16);
-                    GameObject.add(gameObject);
+                if(mapData != 0 ){
+                    if(mapData != 20){
+                        GameObject gameObject = GameObject.create(mapData);
+                        gameObject.getPosition().set(titleX * 38 + 19, titleY * 32 + 16);
+                        GameObject.add(gameObject);
+                    }
+
+                    if(mapData == 20){
+                        GameObject gameObject = GameObject.create(mapData);
+                        gameObject.getPosition().set(titleX * 38 + 19 + 19, titleY * 32 + 16 + 16);
+                        GameObject.add(gameObject);
+                    }
                 }
+
             }
         }
     }

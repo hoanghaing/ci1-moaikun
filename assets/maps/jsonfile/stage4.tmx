@@ -20,12 +20,12 @@
  <tileset firstgid="20" source="Bluedoor.tsx"/>
  <tileset firstgid="24" source="BlueBomb.tsx"/>
  <tileset firstgid="25" source="Enemylvl1.tsx"/>
- <tileset firstgid="27" source="Enemylvl2.tsx"/>
+ <tileset firstgid="26" source="Enemylvl2.tsx"/>
  <layer name="Tile Layer 1" width="16" height="14">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,20,20,0,0,
-0,0,0,0,0,0,19,0,0,0,0,0,20,20,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,
+0,0,0,0,0,0,19,0,0,0,0,0,0,0,0,0,
 0,0,0,0,7,8,8,9,0,7,8,8,8,8,9,0,
 0,0,4,0,0,0,0,0,25,0,0,0,0,0,0,0,
 0,7,8,9,0,0,0,0,0,0,0,0,0,0,0,0,
