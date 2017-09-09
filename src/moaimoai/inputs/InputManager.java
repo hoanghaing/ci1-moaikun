@@ -1,5 +1,7 @@
 package moaimoai.inputs;
 
+import moaimoai.scenes.Scene;
+
 import java.awt.event.KeyEvent;
 
 import static java.awt.event.KeyEvent.*;
@@ -15,6 +17,7 @@ public class InputManager {
     public static final InputManager instance = new InputManager();
     public boolean enterPressed;
     public boolean shiftPressed;
+    private Scene currentScene;
 
 
     private InputManager() {
@@ -48,6 +51,10 @@ public class InputManager {
                 shiftPressed = true;
                 break;
         }
+
+        if(currentScene != null && currentScene.inputHandler != null){
+            currentScene.inputHandler.KeyPressed(e);
+        }
     }
 
     public void keyReleased(KeyEvent e) {
@@ -77,5 +84,18 @@ public class InputManager {
                 shiftPressed = false;
                 break;
         }
+
+
+        if(currentScene != null && currentScene.inputHandler != null){
+            currentScene.inputHandler.KeyReleased(e);
+        }
+    }
+
+    public void register(Scene scene){
+        currentScene = scene;
+    }
+
+    public void unRegister(){
+        currentScene = null;
     }
 }

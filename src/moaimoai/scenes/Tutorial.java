@@ -25,8 +25,5 @@ public class Tutorial extends GameObject{
     @Override
     public void run(Vector2D parentPosition) {
         super.run(parentPosition);
-//        if(InputManager.instance.cPressed){
-//            this.isActive = false;
-//        }
     }
 }

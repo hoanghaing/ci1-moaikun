@@ -5,7 +5,9 @@ import bases.GameObject;
 import bases.Vector2D;
 import bases.renderers.Animation;
 import moaimoai.GameWindow;
+import moaimoai.inputs.InputManager;
 import moaimoai.scenes.GameOverScene;
+import moaimoai.scenes.GamePlay;
 import moaimoai.scenes.SceneManager;
 import tklibs.AudioUtils;
 import tklibs.SpriteUtils;
@@ -45,6 +47,7 @@ public class PlayerDeath extends GameObject{
         int HP = GameWindow.getPlayerHP();
         if(HP == 0 && position.y <= 0){
             SceneManager.changeScene(new GameOverScene());
+
         }
         if(this.position.y <= 0){
             SceneManager.changeScene(SceneManager.getCurrentScene());

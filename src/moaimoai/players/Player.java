@@ -12,6 +12,7 @@ import moaimoai.GameWindow;
 import moaimoai.allies.FriendlyObject;
 import moaimoai.inputs.InputManager;
 import moaimoai.scenes.GameOverScene;
+import moaimoai.scenes.GamePlay;
 import moaimoai.scenes.SceneManager;
 import moaimoai.settings.Settings;
 import tklibs.AudioUtils;
@@ -115,6 +116,7 @@ public class Player extends GameObject implements PhysicsBody {
         if(screenPosition.y > constraints.bottom){
             this.getHit();
         }
+        System.out.println(GameWindow.getPlayerHP());
     }
 
     private void setMine() {
