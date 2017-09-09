@@ -20,6 +20,9 @@ public class PlayerDeath extends GameObject{
     private Clip death;
 
     public PlayerDeath(){
+        int HP = GameWindow.getPlayerHP();
+        HP--;
+        GameWindow.setPlayerHP(HP);
         this.death = AudioUtils.loadSound("assets/music/sfx/Death (online-audio-converter.com).wav");
         this.animation = new Animation(
                 7,

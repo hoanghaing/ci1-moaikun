@@ -230,9 +230,9 @@ public class Player extends GameObject implements PhysicsBody {
 
     public void getHit(){
         this.isActive = false;
-        int HP = GameWindow.getPlayerHP();
-        HP--;
-        GameWindow.setPlayerHP(HP);
+//        int HP = GameWindow.getPlayerHP();
+//        HP--;
+//        GameWindow.setPlayerHP(HP);
         PlayerDeath playerDeath = new PlayerDeath();
         playerDeath.getPosition().set(screenPosition);
 
