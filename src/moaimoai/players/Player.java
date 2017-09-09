@@ -276,4 +276,5 @@ public class Player extends GameObject implements PhysicsBody {
     public FrameCounter getSetMineTime() {
         return setMineTime;
     }
+
 }

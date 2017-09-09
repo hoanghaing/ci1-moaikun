@@ -12,6 +12,7 @@ import moaimoai.door.Door;
 import moaimoai.enemies.EnemyMouse;
 import moaimoai.enemies.EnemyRabit;
 import moaimoai.players.Player;
+import moaimoai.players.PlayerDeath;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -36,18 +37,16 @@ public class GameObject {
     private static Vector<GameObject> newGameObjects = new Vector<>();
 
     public static void runAll() {
-
         for (GameObject gameObject : gameObjects) {
-            if (gameObject.isActive)
-                gameObject.run(new Vector2D(0, 0)); // TODO: Optimize
-        }
+                if (gameObject.isActive)
+                    gameObject.run(new Vector2D(0, 0));
+            }
 
         for (GameObject newGameObject : newGameObjects) {
             if (newGameObject instanceof PhysicsBody) {
-                Physics.add((PhysicsBody)newGameObject);
+                Physics.add((PhysicsBody) newGameObject);
             }
         }
-
         gameObjects.addAll(newGameObjects);
         newGameObjects.clear();
     }

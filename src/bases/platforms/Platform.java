@@ -100,7 +100,7 @@ public class Platform extends GameObject implements PhysicsBody{
                 platform.renderer = ImageRenderer.create("assets/images/deadgrounds/dinhgi/white.png");
                 platform.trap = true;
                 platform.velocity = new Vector2D();
-                platform.standOnTrap = new FrameCounter(15);
+                platform.standOnTrap = new FrameCounter(25);
                 break;
             case 11: // ĐÁ MỀM, XÁM TRẮNG
                 platform.renderer = ImageRenderer.create("assets/images/rocks/weakrock/gray.png");
@@ -206,14 +206,16 @@ public class Platform extends GameObject implements PhysicsBody{
     }
 
     private void updateVericalPhysics() {
-        Vector2D checkPosition = screenPosition.add(0,velocity.y);
-        Platform platform =  Physics.collideWith(screenPosition,checkPosition,this.boxCollider.getWidth() - 4 ,this.boxCollider.getHeight(),Platform.class);
-        if(platform != null && !platform.isTrap()){
-            while (Physics.collideWith(screenPosition,this.screenPosition.add(0,1),this.boxCollider.getWidth() - 4 ,this.boxCollider.getHeight(),Platform.class) == null){
-                position.addUp(0,1);
-                screenPosition.addUp(0,1);
+        if(!isTrap()){
+            Vector2D checkPosition = screenPosition.add(0,velocity.y);
+            Platform platform =  Physics.collideWith(screenPosition,checkPosition,this.boxCollider.getWidth() - 4 ,this.boxCollider.getHeight(),Platform.class);
+            if(platform != null ){
+                while (Physics.collideWith(screenPosition,this.screenPosition.add(0,1),this.boxCollider.getWidth() - 4 ,this.boxCollider.getHeight(),Platform.class) == null){
+                    position.addUp(0,1);
+                    screenPosition.addUp(0,1);
+                }
+                velocity.y = 0;
             }
-            velocity.y = 0;
         }
         this.position.y += velocity.y;
         this.screenPosition.y += velocity.y;
