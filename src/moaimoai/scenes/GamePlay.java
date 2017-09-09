@@ -12,6 +12,7 @@ public class GamePlay extends Scene {
     private static int stageLevel = -5;
     @Override
     public void init() {
+        GameObject.stop = false;
         addBackground(stageLevel);
         addPlatform(stageLevel);
 

@@ -51,6 +51,7 @@ public class Door extends GameObject implements PhysicsBody {
         super.run(parentPosition);
         hitPlayer();
         if(touchPlayer){
+            GameObject.stop = true;
             if(counter.run()){
                 SceneManager.changeScene(new GamePlay());
             }
@@ -58,11 +59,12 @@ public class Door extends GameObject implements PhysicsBody {
     }
 
     private void hitPlayer() {
-        Player player = Physics.collideWith(this.boxCollider, Player.class);
+        Vector2D checkPosition = screenPosition.add(1,0);
+        Player player = Physics.collideWith(checkPosition,boxCollider.getWidth() ,boxCollider.getHeight(),Player.class);
         if(player != null && FriendlyObject.getAllynumber() == 0){
             player.setActive(false);
             DoorOpen doorOpen = new DoorOpen(doortype);
-            doorOpen.getPosition().set(this.boxCollider.getScreenPosition());
+            doorOpen.getPosition().set(screenPosition);
             GameObject.add(doorOpen);
             AudioUtils.play(player.getVictory());
 
