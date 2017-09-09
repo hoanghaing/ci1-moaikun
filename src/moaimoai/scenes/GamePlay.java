@@ -9,7 +9,7 @@ import moaimoai.settings.Settings;
 public class GamePlay extends Scene {
     Door door = new Door(1);
     Settings settings = Settings.instance;
-    private static int stageLevel = 14;
+    private static int stageLevel = 1;
     @Override
     public void init() {
         addBackground(stageLevel);
@@ -27,7 +27,7 @@ public class GamePlay extends Scene {
 //        }
 //    }
     private void addPlatform(int level) {
-        level = 4;
+        level = 1;
         String stage = "assets/maps/jsonfile/stage"+level+".json";
         if(stage != null) {
             Map map = Map.load(stage);

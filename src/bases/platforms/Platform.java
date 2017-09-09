@@ -55,6 +55,7 @@ public class Platform extends GameObject implements PhysicsBody{
                 platform.velocity = new Vector2D();
                 platform.hasGravity = true;
                 platform.breakable = true;
+                platform.waitTime = new FrameCounter(60);
                 break;
             case 3: // ĐÁ CỨNG DA CAM
                 platform.renderer = ImageRenderer.create("assets/images/rocks/unbreakrock/orange.png");
@@ -141,9 +142,8 @@ public class Platform extends GameObject implements PhysicsBody{
         super.run(parentPosition);
         if(hasGravity) {
             velocity.y += GRAVITY;
-
-            updateVericalPhysics();
-            updateHorizontalPhysics();
+                updateVericalPhysics();
+                updateHorizontalPhysics();
             if(!moveable) {
                 hitPlayerAndEnemy(0,2);
             }
@@ -208,7 +208,7 @@ public class Platform extends GameObject implements PhysicsBody{
     private void updateVericalPhysics() {
         Vector2D checkPosition = screenPosition.add(0,velocity.y);
         Platform platform =  Physics.collideWith(screenPosition,checkPosition,this.boxCollider.getWidth() - 4 ,this.boxCollider.getHeight(),Platform.class);
-        if(platform != null){
+        if(platform != null && !platform.isTrap()){
             while (Physics.collideWith(screenPosition,this.screenPosition.add(0,1),this.boxCollider.getWidth() - 4 ,this.boxCollider.getHeight(),Platform.class) == null){
                 position.addUp(0,1);
                 screenPosition.addUp(0,1);
