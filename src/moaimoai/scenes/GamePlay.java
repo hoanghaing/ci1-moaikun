@@ -23,7 +23,6 @@ public class GamePlay extends Scene {
         addBackground(stageLevel);
         addPlatform(stageLevel);
         addMusic(stageLevel);
-
         if (stageLevel < 1){
             Tutorial tut = new Tutorial(stageLevel);
             GameObject.add(tut);

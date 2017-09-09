@@ -168,6 +168,7 @@ public class Player extends GameObject implements PhysicsBody {
             playerDeath.getPosition().set(screenPosition);
             GameObject.add(playerDeath);
             this.isActive = false;
+            FriendlyObject.setAllynumber(0);
         }
     }
 
@@ -262,8 +263,6 @@ public class Player extends GameObject implements PhysicsBody {
 
         GameObject.add(playerDeath);
         FriendlyObject.setAllynumber(0);
-
-
     }
 
     public void setAttack(boolean attack) {
