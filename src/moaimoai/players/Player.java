@@ -35,9 +35,7 @@ public class Player extends GameObject implements PhysicsBody {
     private int bomb = 0;
 
     private Clip hitBall;
-    private Clip hitRock;
-    private Clip hitEnemy;
-    private Clip death;
+//    private Clip hitRock;
     private Clip jump;
     private Clip victory;
     private Clip hitAlly;
@@ -73,9 +71,7 @@ public class Player extends GameObject implements PhysicsBody {
         this.pushingTime = new FrameCounter(60);
 
         this.hitBall = AudioUtils.loadSound("assets/music/sfx/Concrete-break (mp3cut.net).wav");
-        this.hitRock = AudioUtils.loadSound("assets/music/sfx/Concrete-break (mp3cut.net).wav");
-        this.hitEnemy = AudioUtils.loadSound("assets/music/sfx/Punch.wav");
-        this.death = AudioUtils.loadSound("assets/music/sfx/Death (online-audio-converter.com).wav");
+//        this.hitRock = AudioUtils.loadSound("assets/music/sfx/Concrete-break (mp3cut.net).wav");
         this.jump = AudioUtils.loadSound("assets/music/sfx/Jump.wav");
         this.victory = AudioUtils.loadSound("assets/music/sfx/Victory.wav");
         this.hitAlly = AudioUtils.loadSound("assets/music/sfx/Giải cứu.wav");
@@ -111,6 +107,7 @@ public class Player extends GameObject implements PhysicsBody {
         updatePhysics();
         atack();
         setMine();
+        sucide();
         playerHitFriend.hitAlly(this);
         if (constraints != null) {
             constraints.make(this.position);
@@ -138,6 +135,15 @@ public class Player extends GameObject implements PhysicsBody {
             }else {
                 unlockAttack();
             }
+        }
+    }
+
+    private void sucide(){
+        if (InputManager.instance.shiftPressed){
+            PlayerDeath playerDeath = new PlayerDeath();
+            playerDeath.getPosition().set(screenPosition);
+            GameObject.add(playerDeath);
+            this.isActive = false;
         }
     }
 
@@ -240,9 +246,9 @@ public class Player extends GameObject implements PhysicsBody {
         this.attack = attack;
     }
 
-    public boolean isAttack() {
-        return attack;
-    }
+//    public boolean isAttack() {
+//        return attack;
+//    }
 
     @Override
     public BoxCollider getBoxCollider() {
@@ -269,10 +275,6 @@ public class Player extends GameObject implements PhysicsBody {
         return hitBall;
     }
 
-    public Clip getHitRock() {
-        return hitRock;
-    }
-
     public Clip getVictory() {
         return victory;
     }
@@ -289,9 +291,9 @@ public class Player extends GameObject implements PhysicsBody {
         return pushingTime;
     }
 
-    public void setPushingTime(FrameCounter pushingTime) {
-        this.pushingTime = pushingTime;
-    }
+//    public void setPushingTime(FrameCounter pushingTime) {
+//        this.pushingTime = pushingTime;
+//    }
 
     public int getBomb() {
         return bomb;

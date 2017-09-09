@@ -49,11 +49,9 @@ public class PlayerAnimator implements Renderer {
 
     //ATTACK (Đánh đầu tấn công)
     private Animation leftAttackAnimation = new Animation(10, false, false,
-//            SpriteUtils.loadImage("assets/images/player/left/attack/1.png"),
             SpriteUtils.loadImage("assets/images/player/left/attack/2.png")
     );
     private Animation rightAttackAnimation = new Animation(10, false, false,
-//            SpriteUtils.loadImage("assets/images/player/right/attack/1.png"),
             SpriteUtils.loadImage("assets/images/player/right/attack/2.png")
 
     );
