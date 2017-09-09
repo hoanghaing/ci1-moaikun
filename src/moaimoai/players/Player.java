@@ -75,7 +75,7 @@ public class Player extends GameObject implements PhysicsBody {
         this.hitBall = AudioUtils.loadSound("assets/music/sfx/Concrete-break (mp3cut.net).wav");
 //        this.hitRock = AudioUtils.loadSound("assets/music/sfx/Concrete-break (mp3cut.net).wav");
         this.jump = AudioUtils.loadSound("assets/music/sfx/Jump.wav");
-        this.victory = AudioUtils.loadSound("assets/music/sfx/Victory.wav");
+        this.victory = AudioUtils.loadSound("assets/music/bgm/Epic Win Sound Effects (mp3cut.net).wav");
         this.hitAlly = AudioUtils.loadSound("assets/music/sfx/Giải cứu.wav");
         this.hitBomb = AudioUtils.loadSound("assets/music/sfx/powerup.wav");
         this.push = AudioUtils.loadSound("assets/music/sfx/item-collect.wav");
@@ -118,7 +118,7 @@ public class Player extends GameObject implements PhysicsBody {
         if(screenPosition.y > constraints.bottom){
             this.getHit();
         }
-        System.out.println(GameWindow.getPlayerHP());
+//        System.out.println(GameWindow.getPlayerHP());
     }
 
     private void setMine() {

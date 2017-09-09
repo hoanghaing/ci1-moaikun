@@ -9,6 +9,7 @@ import bases.physics.PhysicsBody;
 import bases.renderers.ImageRenderer;
 import moaimoai.GameWindow;
 import moaimoai.allies.FriendlyObject;
+import moaimoai.audio.AudioManager;
 import moaimoai.players.Player;
 import moaimoai.scenes.GamePlay;
 import moaimoai.scenes.SceneManager;
@@ -24,7 +25,7 @@ public class Door extends GameObject implements PhysicsBody {
         super();
         this.boxCollider = new BoxCollider(5, 5);
         this.children.add(boxCollider);
-        this.counter = new FrameCounter(250);
+        this.counter = new FrameCounter(100);
         this.doortype = type;
         switch (type){
             case 1:{ //BLUE
@@ -67,6 +68,7 @@ public class Door extends GameObject implements PhysicsBody {
             doorOpen.getPosition().set(screenPosition);
             GameObject.add(doorOpen);
             AudioUtils.play(player.getVictory());
+            AudioManager.unregister();
 
             // TĂng lên 1 stage
             int stage = GamePlay.getStageLevel();

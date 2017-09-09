@@ -5,6 +5,7 @@ import bases.GameObject;
 import bases.Vector2D;
 import bases.renderers.Animation;
 import moaimoai.GameWindow;
+import moaimoai.audio.AudioManager;
 import moaimoai.inputs.InputManager;
 import moaimoai.scenes.GameOverScene;
 import moaimoai.scenes.GamePlay;
@@ -36,6 +37,7 @@ public class PlayerDeath extends GameObject{
         this.renderer = animation;
         this.waittingTime = new FrameCounter(60);
         AudioUtils.play(death);
+        AudioManager.unregister();
     }
 
     @Override

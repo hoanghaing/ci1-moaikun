@@ -4,9 +4,11 @@ import bases.GameObject;
 import bases.renderers.ImageRenderer;
 import moaimoai.GameOver;
 import moaimoai.GameWindow;
+import moaimoai.audio.AudioManager;
 import moaimoai.inputs.InputHandler;
 import moaimoai.inputs.InputManager;
 import moaimoai.settings.Settings;
+import tklibs.AudioUtils;
 
 import javax.sound.sampled.Clip;
 import java.awt.event.KeyEvent;
@@ -29,12 +31,12 @@ public class GameOverScene extends Scene {
             @Override
             public void KeyReleased(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-//                    GamePlay.setStageLevel(1);
                     SceneManager.changeScene(new GamePlay());
                     GameWindow.setPlayerHP(3);
                 }
             }
         };
         InputManager.instance.register(this);
+        AudioManager.register(AudioUtils.playMedia("assets/music/bgm/SAD-MUSIC-_2.wav"));
     }
 }

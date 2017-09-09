@@ -2,9 +2,11 @@ package moaimoai.scenes;
 
 import bases.GameObject;
 import bases.maps.Map;
+import moaimoai.audio.AudioManager;
 import moaimoai.door.Door;
 import moaimoai.inputs.InputManager;
 import moaimoai.settings.Settings;
+import tklibs.AudioUtils;
 
 
 public class GamePlay extends Scene {
@@ -15,6 +17,7 @@ public class GamePlay extends Scene {
         GameObject.stop = false;
         addBackground(stageLevel);
         addPlatform(stageLevel);
+        addMusic(stageLevel);
 
         if (stageLevel < 1){
             Tutorial tut = new Tutorial(stageLevel);
@@ -22,10 +25,17 @@ public class GamePlay extends Scene {
         }
 
     }
-    private void addBackground(int backgroundType)
-    {
+
+    private void addMusic(int level){
+        if (level < 10){
+            AudioManager.register(AudioUtils.playMedia("assets/music/bgm/Stage1.wav"));
+        }
+    }
+
+    private void addBackground(int backgroundType){
         GameObject.add(new Background(backgroundType));
     }
+
     private void addPlatform(int level) {
 //        level = 1;
         String stage = "assets/maps/jsonfile/stage"+level+".json";

@@ -1,6 +1,7 @@
 package moaimoai.scenes;
 
 import bases.GameObject;
+import moaimoai.audio.AudioManager;
 import moaimoai.inputs.InputHandler;
 import moaimoai.inputs.InputManager;
 
@@ -11,6 +12,7 @@ public abstract class Scene {
     public void destroy(){
         GameObject.clearAll();
         InputManager.instance.unRegister();
+        AudioManager.unregister();
     }
     public abstract void init();
     public InputHandler inputHandler;
