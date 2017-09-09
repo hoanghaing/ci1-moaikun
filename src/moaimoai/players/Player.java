@@ -41,6 +41,7 @@ public class Player extends GameObject implements PhysicsBody {
     private Clip victory;
     private Clip hitAlly;
     private Clip hitBomb;
+    private Clip push;
 
     private PlayerAtack playerAtack;
     private PlayerPushing playerPushing;
@@ -77,6 +78,7 @@ public class Player extends GameObject implements PhysicsBody {
         this.victory = AudioUtils.loadSound("assets/music/sfx/Victory.wav");
         this.hitAlly = AudioUtils.loadSound("assets/music/sfx/Giải cứu.wav");
         this.hitBomb = AudioUtils.loadSound("assets/music/sfx/powerup.wav");
+        this.push = AudioUtils.loadSound("assets/music/sfx/item-collect.wav");
 
 
         this.playerAtack = new PlayerAtack();
@@ -289,13 +291,14 @@ public class Player extends GameObject implements PhysicsBody {
         return hitBomb;
     }
 
+    public Clip getPush() {
+        return push;
+    }
+
     public FrameCounter getPushingTime() {
         return pushingTime;
     }
 
-//    public void setPushingTime(FrameCounter pushingTime) {
-//        this.pushingTime = pushingTime;
-//    }
 
     public int getBomb() {
         return bomb;

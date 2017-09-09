@@ -11,6 +11,7 @@ import bases.physics.PhysicsBody;
 import bases.renderers.ImageRenderer;
 import moaimoai.allies.BombObject;
 import moaimoai.allies.FriendlyObject;
+import moaimoai.enemies.EnemyMouse;
 import moaimoai.enemies.EnemyRabit;
 import moaimoai.players.Player;
 import moaimoai.settings.Settings;
@@ -247,6 +248,10 @@ public class Platform extends GameObject implements PhysicsBody{
         EnemyRabit enemy = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), EnemyRabit.class);
         if (enemy != null){
             enemy.getHit();
+        }
+        EnemyMouse enemyMouse = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), EnemyMouse.class);
+        if (enemyMouse != null){
+            enemyMouse.getHit();
         }
     }
 
