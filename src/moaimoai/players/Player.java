@@ -33,7 +33,7 @@ public class Player extends GameObject implements PhysicsBody {
     private boolean left = true;
     private boolean right;
     private int rangeAttack;
-    private int bomb = 0;
+    public static int bomb = 0;
 
     private Clip hitBall;
 //    private Clip hitRock;

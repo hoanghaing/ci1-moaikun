@@ -68,7 +68,6 @@ public class Door extends GameObject implements PhysicsBody {
             doorOpen.getPosition().set(screenPosition);
             GameObject.add(doorOpen);
             AudioUtils.play(player.getVictory());
-            AudioManager.unregister();
 
             // TĂng lên 1 stage
             int stage = GamePlay.getStageLevel();
@@ -76,9 +75,11 @@ public class Door extends GameObject implements PhysicsBody {
             GamePlay.setStageLevel(stage);
 
             // Cho thêm 1 mạng
-            int HP = GameWindow.getPlayerHP();
-            HP++;
-            GameWindow.setPlayerHP(HP);
+            if(GamePlay.getStageLevel() > 0){
+                int HP = GameWindow.getPlayerHP();
+                HP++;
+                GameWindow.setPlayerHP(HP);
+            }
             touchPlayer = true;
 
             // Chuyển Scene

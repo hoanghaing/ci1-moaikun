@@ -2,7 +2,6 @@ package moaimoai.scenes;
 
 import bases.GameObject;
 import bases.renderers.ImageRenderer;
-import moaimoai.GameOver;
 import moaimoai.GameWindow;
 import moaimoai.audio.AudioManager;
 import moaimoai.inputs.InputHandler;
@@ -10,7 +9,6 @@ import moaimoai.inputs.InputManager;
 import moaimoai.settings.Settings;
 import tklibs.AudioUtils;
 
-import javax.sound.sampled.Clip;
 import java.awt.event.KeyEvent;
 
 public class GameOverScene extends Scene {
