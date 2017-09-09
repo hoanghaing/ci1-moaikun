@@ -31,10 +31,10 @@ public class GameOverScene extends Scene {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 //                    GamePlay.setStageLevel(1);
                     SceneManager.changeScene(new GamePlay());
+                    GameWindow.setPlayerHP(3);
                 }
             }
         };
         InputManager.instance.register(this);
     }
-
 }
