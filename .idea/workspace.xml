@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69b48197-2efd-4b94-abef-fb8ddeb323ba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/moaimoai/scenes/Tutorial.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/standinggrounds/green/grass1.png" afterPath="$PROJECT_DIR$/assets/images/standinggrounds/green/grass1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/standinggrounds/pink/grass1.png" afterPath="$PROJECT_DIR$/assets/images/standinggrounds/pink/grass1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/standinggrounds/pink/grass11.png" afterPath="$PROJECT_DIR$/assets/images/standinggrounds/pink/grass11.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/GameWindow$1.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/GameWindow$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/GameWindow$2.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/GameWindow$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/GameWindow.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/GameWindow.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/GamePlay.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/GamePlay.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/StartingMenu.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/StartingMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/maps/jsonfile/stage0.tmx" afterPath="$PROJECT_DIR$/assets/maps/jsonfile/stage0.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/GameWindow.java" afterPath="$PROJECT_DIR$/src/moaimoai/GameWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java" afterPath="$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/scenes/Scene.java" afterPath="$PROJECT_DIR$/src/moaimoai/scenes/Scene.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/scenes/StartingMenu.java" afterPath="$PROJECT_DIR$/src/moaimoai/scenes/StartingMenu.java" />
-    </list>
+    <list default="true" id="69b48197-2efd-4b94-abef-fb8ddeb323ba" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
