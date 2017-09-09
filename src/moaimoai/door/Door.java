@@ -12,6 +12,7 @@ import moaimoai.allies.FriendlyObject;
 import moaimoai.players.Player;
 import moaimoai.scenes.GamePlay;
 import moaimoai.scenes.SceneManager;
+import tklibs.AudioUtils;
 
 public class Door extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
@@ -23,32 +24,23 @@ public class Door extends GameObject implements PhysicsBody {
         super();
         this.boxCollider = new BoxCollider(5, 5);
         this.children.add(boxCollider);
-        this.counter = new FrameCounter(120);
+        this.counter = new FrameCounter(250);
         this.doortype = type;
         switch (type){
             case 1:{ //BLUE
-//                this.renderer = ImageRenderer.create("assets/images/doors/blue/door11.png");
                 this.renderer = ImageRenderer.create("assets/images/doors/blue/door1.png");
-//                this.boxCollider = new BoxCollider(75, 64);
-//                this.children.add(boxCollider);
                 break;
             }
             case 2:{ // ORANGE
                 this.renderer = ImageRenderer.create("assets/images/doors/orange/door1.png");
-//                this.boxCollider = new BoxCollider(75, 64);
-//                this.children.add(boxCollider);
                 break;
             }
             case 3:{ // PINK
                 this.renderer = ImageRenderer.create("assets/images/doors/pink/door1.png");
-//                this.boxCollider = new BoxCollider(75, 64);
-//                this.children.add(boxCollider);
                 break;
             }
             case 4:{ // WHITE
                 this.renderer = ImageRenderer.create("assets/images/doors/white/door1.png");
-//                this.boxCollider = new BoxCollider(75, 64);
-//                this.children.add(boxCollider);
                 break;
             }
         }
@@ -72,6 +64,7 @@ public class Door extends GameObject implements PhysicsBody {
             DoorOpen doorOpen = new DoorOpen(doortype);
             doorOpen.getPosition().set(this.boxCollider.getScreenPosition());
             GameObject.add(doorOpen);
+            AudioUtils.play(player.getVictory());
 
             // TĂng lên 1 stage
             int stage = GamePlay.getStageLevel();

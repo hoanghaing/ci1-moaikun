@@ -7,16 +7,20 @@ import bases.renderers.Animation;
 import moaimoai.GameWindow;
 import moaimoai.scenes.GameOverScene;
 import moaimoai.scenes.SceneManager;
+import tklibs.AudioUtils;
 import tklibs.SpriteUtils;
 
+import javax.sound.sampled.Clip;
 import java.awt.*;
 
 public class PlayerDeath extends GameObject{
     private Animation animation;
     private final int SPEED = 2;
     private FrameCounter waittingTime;
+    private Clip death;
 
     public PlayerDeath(){
+        this.death = AudioUtils.loadSound("assets/music/sfx/Death (online-audio-converter.com).wav");
         this.animation = new Animation(
                 7,
                 false,
@@ -26,6 +30,7 @@ public class PlayerDeath extends GameObject{
         );
         this.renderer = animation;
         this.waittingTime = new FrameCounter(60);
+        AudioUtils.play(death);
     }
 
     @Override

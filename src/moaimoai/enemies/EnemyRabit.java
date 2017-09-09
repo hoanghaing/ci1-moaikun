@@ -9,6 +9,9 @@ import bases.physics.PhysicsBody;
 import bases.platforms.Platform;
 import moaimoai.players.Player;
 import moaimoai.settings.Settings;
+import tklibs.AudioUtils;
+
+import javax.sound.sampled.Clip;
 
 /**
  * Created by NguyenGiaThe on 9/1/2017.
@@ -21,10 +24,13 @@ public class EnemyRabit extends GameObject implements PhysicsBody {
     private final float SPEED = 0.7f;
     private boolean right = true;
     private boolean left;
+    private Clip death;
+
     Settings settings = Settings.instance;
 
     public EnemyRabit() {
         super();
+        this.death = AudioUtils.loadSound("assets/music/sfx/Punch.wav");
         this.enemyAminator = new EnemyRabitAminator();
         this.renderer = enemyAminator;
         this.boxCollider = new BoxCollider(32, 33);
@@ -135,6 +141,8 @@ public class EnemyRabit extends GameObject implements PhysicsBody {
     }
 
 
+
+
     @Override
     public BoxCollider getBoxCollider() {
         return boxCollider;
@@ -144,6 +152,8 @@ public class EnemyRabit extends GameObject implements PhysicsBody {
         this.isActive = false;
         Explosion explosion = new Explosion();
         explosion.getPosition().set(this.position);
+
+        AudioUtils.play(death);
         GameObject.add(explosion);
     }
 
@@ -154,7 +164,12 @@ public class EnemyRabit extends GameObject implements PhysicsBody {
         }
     }
 
+    public Clip getDeath() {
+        return death;
+    }
+
     public Vector2D getVelocity() {
         return velocity;
     }
+
 }

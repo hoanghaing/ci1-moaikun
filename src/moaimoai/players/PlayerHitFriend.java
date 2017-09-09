@@ -5,6 +5,7 @@ import bases.physics.Physics;
 import bases.platforms.Platform;
 import moaimoai.allies.BombObject;
 import moaimoai.allies.FriendlyObject;
+import tklibs.AudioUtils;
 
 public class PlayerHitFriend {
     public void hitAlly(Player owner){
@@ -12,15 +13,14 @@ public class PlayerHitFriend {
         if(friendlyObject != null){
             FriendlyObject.setAllynumber(FriendlyObject.getAllynumber() - 1);
             friendlyObject.setActive(false);
+            AudioUtils.play(owner.getHitAlly());
         }
-//            if(friendlyObject.isBomb()){
-//                owner.setBomb(owner.getBomb() + 1);
-//                friendlyObject.setActive(false);
 
         BombObject bombObject = Physics.collideWith(owner.getBoxCollider(),BombObject.class);
         if(bombObject != null){
             owner.setBomb(owner.getBomb() + 1);
             bombObject.setActive(false);
+            AudioUtils.play(owner.getHitBomb());
         }
 
         Vector2D checkPos = owner.getScreenPosition().add(0,3);

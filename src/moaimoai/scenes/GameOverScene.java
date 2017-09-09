@@ -3,6 +3,9 @@ package moaimoai.scenes;
 import bases.GameObject;
 import bases.renderers.ImageRenderer;
 import moaimoai.settings.Settings;
+
+import javax.sound.sampled.Clip;
+
 public class GameOverScene extends Scene {
     Settings settings = Settings.instance;
     @Override

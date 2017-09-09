@@ -1,3 +1,4 @@
+import javafx.embed.swing.JFXPanel;
 import moaimoai.GameWindow;
 
 /**
@@ -6,6 +7,7 @@ import moaimoai.GameWindow;
 public class Program {
     public static void main(String[] args) {
         GameWindow gameWindow = new GameWindow();
+        final JFXPanel fxPanel = new JFXPanel();
         gameWindow.loop();
     }
 }

@@ -14,6 +14,9 @@ import moaimoai.allies.FriendlyObject;
 import moaimoai.enemies.EnemyRabit;
 import moaimoai.players.Player;
 import moaimoai.settings.Settings;
+import tklibs.AudioUtils;
+
+import javax.sound.sampled.Clip;
 
 
 public class Platform extends GameObject implements PhysicsBody{
@@ -37,9 +40,12 @@ public class Platform extends GameObject implements PhysicsBody{
     private boolean trap;
     private boolean blowing;
 
+    private Clip explosionMp3;
+
 
     public Platform() {
         super();
+        this.explosionMp3 = AudioUtils.loadSound("assets/music/sfx/Concrete-break (mp3cut.net).wav");
         this.boxCollider = new BoxCollider(36, 32);
         this.children.add(boxCollider);
     }
@@ -154,6 +160,7 @@ public class Platform extends GameObject implements PhysicsBody{
         if(blowing){
                 if(waitTime.run()){
                     this.getHit();
+//                    AudioUtils.play();
                 }
         }
         if(constraints != null){
@@ -252,6 +259,7 @@ public class Platform extends GameObject implements PhysicsBody{
         this.isActive = false;
         BrokenPlatform brokenPlatform = new BrokenPlatform();
         brokenPlatform.getPosition().set(this.getPosition());
+        AudioUtils.play(explosionMp3);
         GameObject.add(brokenPlatform);
     }
 

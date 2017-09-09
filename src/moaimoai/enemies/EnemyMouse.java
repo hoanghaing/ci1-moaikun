@@ -7,6 +7,9 @@ import bases.actions.ActionRepeatForever;
 import bases.actions.SequenceAction;
 import bases.actions.WaitAction;
 import bases.physics.BoxCollider;
+import tklibs.AudioUtils;
+
+import javax.sound.sampled.Clip;
 
 /**
  * Created by NguyenGiaThe on 9/6/2017.
@@ -14,6 +17,7 @@ import bases.physics.BoxCollider;
 public class EnemyMouse extends EnemyRabit {
     private EnemyMouseAnimator enemy2Animator;
     private BoxCollider boxCollider;
+    private Clip shoott;
 
     public EnemyMouse() {
         super();
@@ -22,6 +26,7 @@ public class EnemyMouse extends EnemyRabit {
         this.boxCollider = new BoxCollider(28, 32);
         this.children.add(boxCollider);
         confixAction(this);
+        this.shoott = AudioUtils.loadSound("assets/music/sfx/player-shoot.wav");
     }
 
     public static EnemyMouse create(){
@@ -36,6 +41,7 @@ public class EnemyMouse extends EnemyRabit {
 
                 EnemyBullet enemyBullet = new EnemyBullet();
                 enemyBullet.getPosition().set(owner.getPosition().add(5,0));
+                AudioUtils.play(shoott);
                 GameObject.add(enemyBullet);
                 if (enemy.getVelocity().x > 0) {
                     enemyBullet.getPosition().set(owner.getPosition().add(10,0));
@@ -72,6 +78,7 @@ public class EnemyMouse extends EnemyRabit {
         this.isActive = false;
         Explosion explosion = new Explosion();
         explosion.getPosition().set(this.position);
+        AudioUtils.play(super.getDeath());
         GameObject.add(explosion);
     }
 

@@ -46,4 +46,9 @@ public class AudioUtils {
         mediaPlayer.play();
         return mediaPlayer;
     }
+
+    public static void play(Clip clip){
+        clip.setFramePosition(0); // reset con trỏ về đầu đoạn sound
+        clip.start();
+    }
 }

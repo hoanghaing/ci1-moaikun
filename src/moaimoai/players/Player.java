@@ -34,7 +34,14 @@ public class Player extends GameObject implements PhysicsBody {
     private int rangeAttack;
     private int bomb = 0;
 
+    private Clip hitBall;
     private Clip hitRock;
+    private Clip hitEnemy;
+    private Clip death;
+    private Clip jump;
+    private Clip victory;
+    private Clip hitAlly;
+    private Clip hitBomb;
 
     private PlayerAtack playerAtack;
     private PlayerPushing playerPushing;
@@ -65,7 +72,16 @@ public class Player extends GameObject implements PhysicsBody {
         this.setMineTime = new FrameCounter(50);
         this.pushingTime = new FrameCounter(60);
 
-        this.hitRock = AudioUtils.loadSound("assets/music/sfx/enemy-explosion-big.wav");
+        this.hitBall = AudioUtils.loadSound("assets/music/sfx/Concrete-break (mp3cut.net).wav");
+        this.hitRock = AudioUtils.loadSound("assets/music/sfx/Concrete-break (mp3cut.net).wav");
+        this.hitEnemy = AudioUtils.loadSound("assets/music/sfx/Punch.wav");
+        this.death = AudioUtils.loadSound("assets/music/sfx/Death (online-audio-converter.com).wav");
+        this.jump = AudioUtils.loadSound("assets/music/sfx/Jump.wav");
+        this.victory = AudioUtils.loadSound("assets/music/sfx/Victory.wav");
+        this.hitAlly = AudioUtils.loadSound("assets/music/sfx/Giải cứu.wav");
+        this.hitBomb = AudioUtils.loadSound("assets/music/sfx/powerup.wav");
+
+
         this.playerAtack = new PlayerAtack();
         this.playerPushing = new PlayerPushing();
         this.playerSetMine = new PlayerSetMine();
@@ -181,6 +197,7 @@ public class Player extends GameObject implements PhysicsBody {
         if (InputManager.instance.cPressed) {
             if (Physics.collideWith(screenPosition.add(0, 1), boxCollider.getWidth(), boxCollider.getHeight(), Platform.class) != null) {
                 velocity.y = -6.5f;
+                AudioUtils.play(this.jump);
             }
         }
     }
@@ -212,7 +229,6 @@ public class Player extends GameObject implements PhysicsBody {
         GameWindow.setPlayerHP(HP);
         PlayerDeath playerDeath = new PlayerDeath();
         playerDeath.getPosition().set(screenPosition);
-
 
         GameObject.add(playerDeath);
         FriendlyObject.setAllynumber(0);
@@ -249,12 +265,24 @@ public class Player extends GameObject implements PhysicsBody {
         this.rangeAttack = rangeAttack;
     }
 
+    public Clip getHitBall() {
+        return hitBall;
+    }
+
     public Clip getHitRock() {
         return hitRock;
     }
 
-    public void setHitRock(Clip hitRock) {
-        this.hitRock = hitRock;
+    public Clip getVictory() {
+        return victory;
+    }
+
+    public Clip getHitAlly() {
+        return hitAlly;
+    }
+
+    public Clip getHitBomb() {
+        return hitBomb;
     }
 
     public FrameCounter getPushingTime() {

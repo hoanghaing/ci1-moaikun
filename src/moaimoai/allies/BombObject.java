@@ -9,16 +9,21 @@ import bases.platforms.Platform;
 import bases.renderers.ImageRenderer;
 import moaimoai.enemies.EnemyRabit;
 import moaimoai.enemies.Explosion;
+import tklibs.AudioUtils;
 import tklibs.SpriteUtils;
+
+import javax.sound.sampled.Clip;
 
 public class BombObject extends GameObject implements PhysicsBody {
     private BoxCollider boxCollider;
+    private Clip bomb;
 
     public BombObject(){
         super();
         boxCollider = new BoxCollider(30,30);
         this.renderer = new ImageRenderer(SpriteUtils.loadImage("assets/images/items/bombs/blue.png"));
         this.children.add(boxCollider);
+        this.bomb = AudioUtils.loadSound("assets/music/sfx/Explosion.wav");
     }
 
     public static BombObject create (){
@@ -26,8 +31,9 @@ public class BombObject extends GameObject implements PhysicsBody {
         return bombObject;
     }
 
-
-
+    public Clip getBomb() {
+        return bomb;
+    }
 
     public void getHit(){
         EnemyRabit enemy = Physics.collideWith(this.boxCollider, EnemyRabit.class);
