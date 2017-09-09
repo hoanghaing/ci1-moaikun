@@ -8,6 +8,8 @@ import bases.physics.BoxCollider;
 import bases.physics.Physics;
 import bases.physics.PhysicsBody;
 import bases.platforms.Platform;
+import bases.pools.GameObjectPool;
+import bases.renderers.TextRenderer;
 import moaimoai.GameWindow;
 import moaimoai.allies.FriendlyObject;
 import moaimoai.inputs.InputManager;
@@ -15,6 +17,7 @@ import moaimoai.scenes.GameOverScene;
 import moaimoai.scenes.GamePlay;
 import moaimoai.scenes.SceneManager;
 import moaimoai.settings.Settings;
+import moaimoai.text.TextObject;
 import tklibs.AudioUtils;
 
 import javax.sound.sampled.Clip;
@@ -56,7 +59,8 @@ public class Player extends GameObject implements PhysicsBody {
 
     private PlayerAnimator playerAminator;
 
-
+    private TextObject textObjectBomb;
+    private TextObject textObjectHp;
 
 
     public Player(){
@@ -91,12 +95,28 @@ public class Player extends GameObject implements PhysicsBody {
                 Settings.instance.getWindowInsets().left,
                 Settings.instance.getGamePlayWidth())
         );
-
+        addTitle();
     }
 
     public static Player create(){
         Player player = new Player();
         return player;
+    }
+
+    private void addTitle() {
+        textObjectHp = GameObjectPool.recycle(TextObject.class);
+        TextRenderer textRenderer1 = ((TextRenderer)textObjectHp.getRenderer());
+        textRenderer1.setText("HP: " + String.valueOf(GameWindow.getPlayerHP()));
+        textObjectHp.getPosition().set(20,100);
+        textObjectBomb = GameObjectPool.recycle(TextObject.class);
+        TextRenderer textRenderer = ((TextRenderer)textObjectBomb.getRenderer());
+        textRenderer.setText("Bomb: "+ bomb);
+        textObjectBomb.getPosition().set( 20,75);
+    }
+
+    private void updateTitle(){
+        TextRenderer textRenderer = ((TextRenderer)textObjectBomb.getRenderer());
+        textRenderer.setText("Bomb: "+ bomb);
     }
 
     public void setConstraints(Constraints constraints) {
@@ -118,6 +138,7 @@ public class Player extends GameObject implements PhysicsBody {
         if(screenPosition.y > constraints.bottom){
             this.getHit();
         }
+        updateTitle();
     }
 
     private void setMine() {
@@ -299,7 +320,7 @@ public class Player extends GameObject implements PhysicsBody {
     }
 
 
-    public int getBomb() {
+    public static int getBomb() {
         return bomb;
     }
 

@@ -28,19 +28,10 @@ public class GamePlay extends Scene {
             Tutorial tut = new Tutorial(stageLevel);
             GameObject.add(tut);
         }
-        addTitle();
+        Player.bomb = 0;
     }
 
-    private void addTitle() {
-        TextObject bomb = GameObjectPool.recycle(TextObject.class);
-        TextRenderer textRenderer = ((TextRenderer)bomb.getRenderer());
-        textRenderer.setText("Bomb: "+ Player.bomb);
-        bomb.getPosition().set( 20,75);
-        TextObject hp = GameObjectPool.recycle(TextObject.class);
-        TextRenderer  textRenderer1 = ((TextRenderer)hp.getRenderer());
-        textRenderer1.setText("HP: " + String.valueOf(GameWindow.getPlayerHP()));
-        hp.getPosition().set(20,100);
-    }
+
     private void addMusic(int level){
         if (level < 10){
             AudioManager.register(AudioUtils.playMedia("assets/music/bgm/Stage1.wav"));

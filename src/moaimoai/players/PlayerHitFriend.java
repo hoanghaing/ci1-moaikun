@@ -3,8 +3,11 @@ package moaimoai.players;
 import bases.Vector2D;
 import bases.physics.Physics;
 import bases.platforms.Platform;
+import bases.pools.GameObjectPool;
+import bases.renderers.TextRenderer;
 import moaimoai.allies.BombObject;
 import moaimoai.allies.FriendlyObject;
+import moaimoai.text.TextObject;
 import tklibs.AudioUtils;
 
 public class PlayerHitFriend {
@@ -18,7 +21,8 @@ public class PlayerHitFriend {
 
         BombObject bombObject = Physics.collideWith(owner.getBoxCollider(),BombObject.class);
         if(bombObject != null){
-            owner.setBomb(owner.getBomb() + 1);
+            owner.setBomb(owner.getBomb()+1);
+            System.out.println(owner.getBomb());
             bombObject.setActive(false);
             AudioUtils.play(owner.getHitBomb());
         }
