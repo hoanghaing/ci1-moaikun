@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69b48197-2efd-4b94-abef-fb8ddeb323ba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ci-begin/bases/renderers/TextRenderer.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/text/TextObject.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bases/renderers/TextRenderer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/moaimoai/text/TextObject.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/GameOver.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/moaimoai/GameOver.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/bases/platforms/Platform.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/bases/platforms/Platform.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/door/Door.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/door/Door.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/players/Player.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/players/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/GameOverScene$1.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/GameOverScene$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/GameOverScene.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/GameOverScene.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/GamePlay.class" afterPath="$PROJECT_DIR$/out/production/ci-begin/moaimoai/scenes/GamePlay.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/door/Door.java" afterPath="$PROJECT_DIR$/src/moaimoai/door/Door.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bases/platforms/Platform.java" afterPath="$PROJECT_DIR$/src/bases/platforms/Platform.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/players/Player.java" afterPath="$PROJECT_DIR$/src/moaimoai/players/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/scenes/GameOverScene.java" afterPath="$PROJECT_DIR$/src/moaimoai/scenes/GameOverScene.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java" afterPath="$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,6 +23,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/moaimoai/players/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-136">
+              <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="TextRenderer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bases/renderers/TextRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -40,26 +43,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Background.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/Background.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="41" column="18" lean-forward="false" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -74,18 +57,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GamePlay.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GamePlay.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+            <state relative-caret-position="272">
+              <caret line="27" column="52" lean-forward="true" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
               <folding>
-                <element signature="e#1656#1657#0" expanded="true" />
-                <element signature="e#1718#1719#0" expanded="true" />
-                <marker date="1504970804740" expanded="false" signature="1999:2010" ph=" { " />
-                <marker date="1504970804740" expanded="false" signature="2028:2034" ph=" }" />
-                <marker date="1504970804740" expanded="false" signature="2088:2099" ph=" { " />
-                <marker date="1504970804740" expanded="false" signature="2132:2138" ph=" }" />
+                <element signature="e#1577#1578#0" expanded="true" />
+                <element signature="e#1639#1640#0" expanded="true" />
+                <marker date="1504972191202" expanded="false" signature="1920:1931" ph=" { " />
+                <marker date="1504972191202" expanded="false" signature="1949:1955" ph=" }" />
+                <marker date="1504972191202" expanded="false" signature="2009:2020" ph=" { " />
+                <marker date="1504972191202" expanded="false" signature="2053:2059" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -99,6 +82,16 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Platform.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bases/platforms/Platform.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="160" column="19" lean-forward="false" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Door.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Door.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/moaimoai/door/Door.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
+            <state relative-caret-position="144">
+              <caret line="68" column="37" lean-forward="true" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -208,7 +201,6 @@
         <option value="$PROJECT_DIR$/assets/maps/jsonfile/stage6.json" />
         <option value="$PROJECT_DIR$/src/moaimoai/players/PlayerAtack.java" />
         <option value="$PROJECT_DIR$/out/production/ci-begin/moaimoai/players/PlayerSetMine.class" />
-        <option value="$PROJECT_DIR$/src/bases/platforms/Platform.java" />
         <option value="$PROJECT_DIR$/assets/maps/jsonfile/stage1.json" />
         <option value="$PROJECT_DIR$/src/bases/maps/Layer.java" />
         <option value="$PROJECT_DIR$/src/moaimoai/GameWindow.java" />
@@ -218,11 +210,12 @@
         <option value="$PROJECT_DIR$/src/moaimoai/GameOver.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/moaimoai/inputs/InputManager.java" />
-        <option value="$PROJECT_DIR$/src/moaimoai/players/Player.java" />
         <option value="$PROJECT_DIR$/src/moaimoai/players/PlayerDeath.java" />
         <option value="$PROJECT_DIR$/src/moaimoai/scenes/GameOverScene.java" />
-        <option value="$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java" />
         <option value="$PROJECT_DIR$/src/moaimoai/door/Door.java" />
+        <option value="$PROJECT_DIR$/src/moaimoai/players/Player.java" />
+        <option value="$PROJECT_DIR$/src/bases/platforms/Platform.java" />
+        <option value="$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java" />
       </list>
     </option>
   </component>
@@ -300,6 +293,13 @@
               <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="bases" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ci1-moaikun" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="bases" type="462c0819:PsiDirectoryNode" />
+              <item name="platforms" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ci1-moaikun" type="b2602c69:ProjectViewProjectNode" />
@@ -746,11 +746,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/images/enemies/level1/left/2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/images/enemies/level1/left/tile.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1010,47 +1005,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moaimoai/players/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3392">
-          <caret line="35" column="10" lean-forward="false" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3241#3242#0" expanded="true" />
-            <element signature="e#3287#3288#0" expanded="true" />
-            <marker date="1504969820961" expanded="false" signature="7342:7353" ph=" { " />
-            <marker date="1504969820961" expanded="false" signature="7369:7375" ph=" }" />
-            <marker date="1504969820961" expanded="false" signature="7770:7781" ph=" { " />
-            <marker date="1504969820961" expanded="false" signature="7802:7808" ph=" }" />
-            <marker date="1504969820961" expanded="false" signature="7931:7942" ph=" { " />
-            <marker date="1504969820961" expanded="false" signature="7961:7967" ph=" }" />
-            <marker date="1504969820961" expanded="false" signature="8019:8025" ph=" }" />
-            <marker date="1504969820961" expanded="false" signature="8055:8066" ph=" { " />
-            <marker date="1504969820961" expanded="false" signature="8079:8085" ph=" }" />
-            <marker date="1504969820961" expanded="false" signature="8118:8129" ph=" { " />
-            <marker date="1504969820961" expanded="false" signature="8148:8154" ph=" }" />
-            <marker date="1504969820961" expanded="false" signature="8203:8214" ph=" { " />
-            <marker date="1504969820961" expanded="false" signature="8245:8251" ph=" }" />
-            <marker date="1504969820961" expanded="false" signature="8281:8292" ph=" { " />
-            <marker date="1504969820961" expanded="false" signature="8307:8313" ph=" }" />
-            <marker date="1504969820961" expanded="false" signature="8343:8354" ph=" { " />
-            <marker date="1504969820961" expanded="false" signature="8369:8375" ph=" }" />
-            <marker date="1504969820961" expanded="false" signature="8405:8416" ph=" { " />
-            <marker date="1504969820961" expanded="false" signature="8431:8437" ph=" }" />
-            <marker date="1504969820961" expanded="false" signature="8467:8478" ph=" { " />
-            <marker date="1504969820961" expanded="false" signature="8493:8499" ph=" }" />
-            <marker date="1504969820961" expanded="false" signature="8526:8537" ph=" { " />
-            <marker date="1504969820961" expanded="false" signature="8549:8555" ph=" }" />
-            <marker date="1504969820961" expanded="false" signature="8597:8608" ph=" { " />
-            <marker date="1504969820961" expanded="false" signature="8627:8633" ph=" }" />
-            <marker date="1504969820961" expanded="false" signature="8660:8671" ph=" { " />
-            <marker date="1504969820961" expanded="false" signature="8683:8689" ph=" }" />
-            <marker date="1504969820961" expanded="false" signature="8724:8735" ph=" { " />
-            <marker date="1504969820961" expanded="false" signature="8752:8758" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/Tutorial.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1078,16 +1032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bases/renderers/TextRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/StartingMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1107,39 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/GameOverScene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="25" column="48" lean-forward="true" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding>
-            <element signature="e#1656#1657#0" expanded="true" />
-            <element signature="e#1718#1719#0" expanded="true" />
-            <marker date="1504970804740" expanded="false" signature="1999:2010" ph=" { " />
-            <marker date="1504970804740" expanded="false" signature="2028:2034" ph=" }" />
-            <marker date="1504970804740" expanded="false" signature="2088:2099" ph=" { " />
-            <marker date="1504970804740" expanded="false" signature="2132:2138" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/Scene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/moaimoai/GameWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="526">
@@ -1154,9 +1065,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/moaimoai/door/Door.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
+        <state relative-caret-position="144">
+          <caret line="68" column="37" lean-forward="true" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/moaimoai/players/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bases/renderers/TextRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bases/platforms/Platform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="160" column="19" lean-forward="false" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/GameOverScene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="25" column="48" lean-forward="true" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/moaimoai/scenes/GamePlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="27" column="52" lean-forward="true" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+          <folding>
+            <element signature="e#1577#1578#0" expanded="true" />
+            <element signature="e#1639#1640#0" expanded="true" />
+            <marker date="1504972191202" expanded="false" signature="1920:1931" ph=" { " />
+            <marker date="1504972191202" expanded="false" signature="1949:1955" ph=" }" />
+            <marker date="1504972191202" expanded="false" signature="2009:2020" ph=" { " />
+            <marker date="1504972191202" expanded="false" signature="2053:2059" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>

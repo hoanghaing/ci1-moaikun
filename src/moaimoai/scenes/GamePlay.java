@@ -35,11 +35,11 @@ public class GamePlay extends Scene {
         TextObject bomb = GameObjectPool.recycle(TextObject.class);
         TextRenderer textRenderer = ((TextRenderer)bomb.getRenderer());
         textRenderer.setText("Bomb: "+ Player.bomb);
-        bomb.getPosition().set(Settings.instance.getGamePlayWidth() - 100,75);
+        bomb.getPosition().set( 20,75);
         TextObject hp = GameObjectPool.recycle(TextObject.class);
         TextRenderer  textRenderer1 = ((TextRenderer)hp.getRenderer());
         textRenderer1.setText("HP: " + String.valueOf(GameWindow.getPlayerHP()));
-        hp.getPosition().set(Settings.instance.getGamePlayWidth() - 100,100);
+        hp.getPosition().set(20,100);
     }
     private void addMusic(int level){
         if (level < 10){

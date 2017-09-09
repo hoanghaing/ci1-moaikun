@@ -118,7 +118,6 @@ public class Player extends GameObject implements PhysicsBody {
         if(screenPosition.y > constraints.bottom){
             this.getHit();
         }
-//        System.out.println(GameWindow.getPlayerHP());
     }
 
     private void setMine() {
