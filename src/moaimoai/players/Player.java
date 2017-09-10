@@ -107,11 +107,11 @@ public class Player extends GameObject implements PhysicsBody {
         textObjectHp = GameObjectPool.recycle(TextObject.class);
         TextRenderer textRenderer1 = ((TextRenderer)textObjectHp.getRenderer());
         textRenderer1.setText("HP: " + String.valueOf(GameWindow.getPlayerHP()));
-        textObjectHp.getPosition().set(20,100);
+        textObjectHp.getPosition().set(20,50);
         textObjectBomb = GameObjectPool.recycle(TextObject.class);
         TextRenderer textRenderer = ((TextRenderer)textObjectBomb.getRenderer());
         textRenderer.setText("Bomb: "+ bomb);
-        textObjectBomb.getPosition().set( 20,75);
+        textObjectBomb.getPosition().set( 500,50);
     }
 
     private void updateTitle(){
