@@ -152,15 +152,13 @@ public class Platform extends GameObject implements PhysicsBody{
                 updateVericalPhysics();
                 updateHorizontalPhysics();
             if(!moveable) {
-                hitPlayer();
+                hitPlayerAndEnemy(0,2);
             }
         }
         if(killPlayer){
-            hitPlayer();
+            hitPlayerAndEnemy(0,-2);
         }
-        if(moveable){
-            hitEnemy();
-        }
+
         if(blowing){
                 if(waitTime.run()){
                     this.getHit();
@@ -172,16 +170,6 @@ public class Platform extends GameObject implements PhysicsBody{
         }
     }
 
-    private void hitEnemy() {
-        EnemyRabit enemy = Physics.collideWith(boxCollider, EnemyRabit.class);
-        if (enemy != null){
-            enemy.getHit();
-        }
-        EnemyMouse enemyMouse = Physics.collideWith(boxCollider, EnemyMouse.class);
-        if (enemyMouse != null){
-            enemyMouse.getHit();
-        }
-    }
 
 
     private void updateHorizontalPhysics() {
@@ -251,6 +239,21 @@ public class Platform extends GameObject implements PhysicsBody{
     }
 
 
+    private void hitPlayerAndEnemy(int dx, int dy) {
+        Vector2D checkPosition = screenPosition.add(dx, dy);
+        Player player = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), Player.class);
+        if (player != null) {
+            player.getHit();
+        }
+        EnemyRabit enemy = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), EnemyRabit.class);
+        if (enemy != null){
+            enemy.getHit();
+        }
+        EnemyMouse enemyMouse = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), EnemyMouse.class);
+        if (enemyMouse != null){
+            enemyMouse.getHit();
+        }
+    }
 
 
     private void hitPlayer() {
