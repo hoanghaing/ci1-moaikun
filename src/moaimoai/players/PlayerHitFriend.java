@@ -22,7 +22,6 @@ public class PlayerHitFriend {
         BombObject bombObject = Physics.collideWith(owner.getBoxCollider(),BombObject.class);
         if(bombObject != null){
             owner.setBomb(owner.getBomb()+1);
-            System.out.println(owner.getBomb());
             bombObject.setActive(false);
             AudioUtils.play(owner.getHitBomb());
         }

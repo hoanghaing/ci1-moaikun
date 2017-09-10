@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ci-begin:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ci_begin_jar</output-path>
+    <root id="archive" name="ci-begin.jar">
+      <element id="module-output" name="ci-begin" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.1/gson-2.8.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

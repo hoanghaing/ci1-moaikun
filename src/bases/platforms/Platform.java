@@ -29,7 +29,7 @@ public class Platform extends GameObject implements PhysicsBody{
     private boolean hasGravity;
     private boolean breakable;
     private boolean moveable;
-    private boolean killPlayer;
+    private boolean canKill;
     private int type;
 
     private FrameCounter runingTime;
@@ -91,7 +91,7 @@ public class Platform extends GameObject implements PhysicsBody{
                 platform.velocity = new Vector2D();
                 platform.boxCollider = new BoxCollider(34,30);
                 platform.children.add(platform.boxCollider);
-                platform.killPlayer = true;
+                platform.canKill = true;
                 break;
             case 7: //MÂY HỒNG 1
                 platform.renderer = ImageRenderer.create("assets/images/standinggrounds/pink/grass111.png");
@@ -153,11 +153,11 @@ public class Platform extends GameObject implements PhysicsBody{
                 updateHorizontalPhysics();
                 hitPlayer();
             if(moveable) {
-                hitPlayerAndEnemy(0,2);
+                hitEnemy();
             }
         }
-        if(killPlayer){
-            hitPlayerAndEnemy(0,-2);
+        if(canKill){
+            hitPlayer(0,-2);
         }
 
         if(blowing){
@@ -198,7 +198,7 @@ public class Platform extends GameObject implements PhysicsBody{
                 screenPosition.addUp(Math.signum(velocity.x), 0);
             }
             velocity.x = 0;
-            this.killPlayer = false;
+            this.canKill = false;
         }
     }
 
@@ -212,7 +212,7 @@ public class Platform extends GameObject implements PhysicsBody{
                 screenPosition.addUp(Math.signum(velocity.x), 0);
             }
             velocity.x = 0;
-            this.killPlayer = false;
+            this.canKill = false;
         }
     }
 
@@ -240,17 +240,21 @@ public class Platform extends GameObject implements PhysicsBody{
     }
 
 
-    private void hitPlayerAndEnemy(int dx, int dy) {
+    private void hitPlayer(int dx, int dy) {
         Vector2D checkPosition = screenPosition.add(dx, dy);
         Player player = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), Player.class);
         if (player != null) {
             player.getHit();
         }
-        EnemyRabit enemy = Physics.collideWith( checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), EnemyRabit.class);
+
+    }
+
+    private void hitEnemy(){
+        EnemyRabit enemy = Physics.collideWith(boxCollider, EnemyRabit.class);
         if (enemy != null){
             enemy.getHit();
         }
-        EnemyMouse enemyMouse = Physics.collideWith( checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), EnemyMouse.class);
+        EnemyMouse enemyMouse = Physics.collideWith(boxCollider, EnemyMouse.class);
         if (enemyMouse != null){
             enemyMouse.getHit();
         }
@@ -258,9 +262,11 @@ public class Platform extends GameObject implements PhysicsBody{
 
 
     private void hitPlayer() {
-        Player player = Physics.collideWith(boxCollider,Player.class);
-        if (player != null) {
-            player.getHit();
+        if(!moveable){
+            Player player = Physics.collideWith(boxCollider,Player.class);
+            if (player != null) {
+                player.getHit();
+            }
         }
     }
 
@@ -322,12 +328,12 @@ public class Platform extends GameObject implements PhysicsBody{
         this.stopable = stopable;
     }
 
-    public boolean isKillPlayer() {
-        return killPlayer;
+    public boolean isCanKill() {
+        return canKill;
     }
 
-    public void setKillPlayer(boolean killPlayer) {
-        this.killPlayer = killPlayer;
+    public void setCanKill(boolean canKill) {
+        this.canKill = canKill;
     }
 
     public void setHasGravity(boolean hasGravity) {

@@ -23,7 +23,7 @@ public class PlayerAtack {
             if(platform.isMoveable()){
                 platform.getVelocity().x =  owner.getRangeAttack() *2/5;
                 platform.setMoving(true);
-                platform.setKillPlayer(true);
+                platform.setCanKill(true);
                 platform.setStopable(false);
                 AudioUtils.play(owner.getHitBall());
             }
