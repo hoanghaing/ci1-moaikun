@@ -89,7 +89,7 @@ public class Platform extends GameObject implements PhysicsBody{
             case 6: //CỌC SẮT
                 platform.renderer = ImageRenderer.create("assets/images/deadgrounds/cocsat/coc2.png");
                 platform.velocity = new Vector2D();
-                platform.boxCollider = new BoxCollider(34,32);
+                platform.boxCollider = new BoxCollider(34,30);
                 platform.children.add(platform.boxCollider);
                 platform.killPlayer = true;
                 break;
@@ -151,7 +151,8 @@ public class Platform extends GameObject implements PhysicsBody{
             velocity.y += GRAVITY;
                 updateVericalPhysics();
                 updateHorizontalPhysics();
-            if(!moveable) {
+                hitPlayer();
+            if(moveable) {
                 hitPlayerAndEnemy(0,2);
             }
         }
@@ -245,11 +246,11 @@ public class Platform extends GameObject implements PhysicsBody{
         if (player != null) {
             player.getHit();
         }
-        EnemyRabit enemy = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), EnemyRabit.class);
+        EnemyRabit enemy = Physics.collideWith( checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), EnemyRabit.class);
         if (enemy != null){
             enemy.getHit();
         }
-        EnemyMouse enemyMouse = Physics.collideWith(screenPosition, checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), EnemyMouse.class);
+        EnemyMouse enemyMouse = Physics.collideWith( checkPosition, boxCollider.getWidth(), boxCollider.getHeight(), EnemyMouse.class);
         if (enemyMouse != null){
             enemyMouse.getHit();
         }

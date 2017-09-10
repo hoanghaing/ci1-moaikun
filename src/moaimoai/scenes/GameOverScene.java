@@ -16,6 +16,7 @@ public class GameOverScene extends Scene {
     @Override
     public void init() {
         GameObject.stop = false;
+        AudioManager.unregister();
         ImageRenderer imageRenderer = ImageRenderer.create("assets/images/scene images/GAMEOVER image.png");
         GameObject background = new GameObject().setRenderer(imageRenderer);
         background.getPosition().set(settings.getGamePlayWidth() / 2, settings.getGamePlayHeight() / 2);
