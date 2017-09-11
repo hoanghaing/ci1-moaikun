@@ -72,7 +72,7 @@ public class Platform extends GameObject implements PhysicsBody{
                 platform.velocity = new Vector2D();
                 platform.hasGravity = true;
                 platform.moveable = true;
-                platform.boxCollider = new BoxCollider(38,30);
+                platform.boxCollider = new BoxCollider(34,30);
                 platform.children.add(platform.boxCollider);
                 platform.runingTime = new FrameCounter(18);
                 platform.setConstraints(new Constraints(
