@@ -10,7 +10,7 @@ import tklibs.AudioUtils;
 public class PlayerSetMine {
     public void setMine(Player owner) {
         Vector2D checkPosition = owner.getScreenPosition().add(0, 1);
-        Platform platform = Physics.collideWith(checkPosition, owner.getBoxCollider().getWidth(), owner.getBoxCollider().getHeight(), Platform.class);
+        Platform platform = Physics.collideWith(checkPosition, 0, owner.getBoxCollider().getHeight(), Platform.class);
         if (platform != null && platform.isBreakable()) {
             if(owner.getSetMineTime().run()){
                 owner.setBomb(owner.getBomb() - 1);

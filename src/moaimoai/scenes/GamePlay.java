@@ -16,7 +16,7 @@ import tklibs.AudioUtils;
 
 public class GamePlay extends Scene {
     Door door = new Door(1);
-    private static int stageLevel = -5;
+    private static int stageLevel = - 2;
     @Override
     public void init() {
         GameObject.stop = false;
